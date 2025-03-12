@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4657c4fc41809bd41a7a5b7361b2a290, type: 3}
   m_Name: CardKey
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  itemPrefab: {fileID: 0}
-  itemName: 
-  itemDescription: 
+  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  itemPrefab: {fileID: 575718656319487588, guid: e8d8e6a005d91dc49aff57ca9986a44d,
+    type: 3}
+  itemName: "\uCE74\uB4DC\uD0A4"
+  itemDescription: "\uBB38\uC744 \uC5F4 \uB54C \uC0AC\uC6A9\uD558\uB294 \uCE74\uB4DC
+    \uD0A4"

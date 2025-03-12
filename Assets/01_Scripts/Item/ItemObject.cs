@@ -22,14 +22,14 @@ public class ItemObject : MonoBehaviour, IInteractable
 
     public string GetInteractPrompt()
     {
-        string str = $"{data.itemName}";
+        string str = data.itemName;
 
         return str;
     }
 
     public void OnInteract()
     {
-        //CharacterManager.Instance.Player.addItem?.Invoke();
+        //CharacterManager.Instance.Player.itemData = data;
         Destroy(this.gameObject);
     }
 }
