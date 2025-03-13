@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7944848955305237598}
   - component: {fileID: 8324363687938597658}
   - component: {fileID: 1777835484714316883}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,8 +94,8 @@ GameObject:
   - component: {fileID: 8459486065212271590}
   - component: {fileID: 5400970557141760012}
   - component: {fileID: 7524244477190765964}
-  m_Layer: 0
-  m_Name: Card
+  m_Layer: 5
+  m_Name: Card_Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7944848955305237598}

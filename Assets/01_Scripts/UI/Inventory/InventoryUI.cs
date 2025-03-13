@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,13 +12,16 @@ public class InventoryUI : MonoBehaviour
     public GameObject inventoryWindow;
     public Transform slotPanel;
 
+    public Button detailButton;
+    public GameObject detailWindow;
+    public DetailUI detailUI;
+
     [Header("Select Item Info")]
     public Image selectedItemIcon;
     public TextMeshProUGUI selectedItemName;
     public TextMeshProUGUI selectedItemDescription;
 
     private ItemData selectedItem;
-    private int selectedItemIndex = 0;
 
     private void Start()
     {
@@ -43,6 +47,7 @@ public class InventoryUI : MonoBehaviour
         selectedItemIcon.gameObject.SetActive(false);
         selectedItemName.text = string.Empty;
         selectedItemDescription.text = string.Empty;
+        detailButton.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -142,11 +147,21 @@ public class InventoryUI : MonoBehaviour
         }
 
         selectedItem = slots[index].item;
-        selectedItemIndex = index;
 
         selectedItemIcon.gameObject.SetActive(true);
+        detailButton.gameObject.SetActive(true);
         selectedItemIcon.sprite = selectedItem.icon;
         selectedItemName.text = selectedItem.itemName;
         selectedItemDescription.text = selectedItem.itemDescription;
+    }
+
+    /// <summary>
+    /// 버튼을 클릭하면 디테일창에 selectedItem 정보를 넘기고, 인벤토리창이 꺼지며 디테일 창이 켜진다
+    /// </summary>
+    public void OnClickDetailButton()
+    {
+        detailUI.GetItemInfo(selectedItem);
+        detailWindow.SetActive(true);
+        InventoryToggle();
     }
 }
