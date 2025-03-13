@@ -21,7 +21,6 @@ public class PlayerControlloer : MonoBehaviour
     public float minXLook;
     public float maxXLook;
 
-
     private float camCurXRot;
     public float lookSensitivity;
     private Vector2 mouseDelta;
@@ -32,11 +31,15 @@ public class PlayerControlloer : MonoBehaviour
     public Action option;
 
     private Rigidbody _rigidbody;
+
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameManager.Instance;
         _rigidbody = GetComponent<Rigidbody>();
+        animator=GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
@@ -77,10 +80,12 @@ public class PlayerControlloer : MonoBehaviour
         if (context.phase == InputActionPhase.Performed)
         {
             curMovementInput = context.ReadValue<Vector2>();
+            animator.SetBool("IsMoving", true);
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
             curMovementInput = Vector2.zero;
+            animator.SetBool("IsMoving", false);
         }
     }
 
@@ -107,4 +112,10 @@ public class PlayerControlloer : MonoBehaviour
 
 
     #endregion
+
+
+    public void OnFootstep()
+    {
+        // �߼Ҹ�
+    }
 }
