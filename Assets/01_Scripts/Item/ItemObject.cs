@@ -29,7 +29,7 @@ public class ItemObject : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-        //CharacterManager.Instance.Player.itemData = data;
+        //GameManager.Instance.Player.itemData = data;
         Destroy(this.gameObject);
     }
 }
