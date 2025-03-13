@@ -18,6 +18,7 @@ public class PlayerFootstep : MonoBehaviour
     /// </summary>
     public void OnFootStep()
     {
-        SoundManager.Instance.PlaySFX(audioClips[Random.Range(0, audioClips.Length)].name, transform.position);
+        Debug.Log("¹ß¼Ò¸®");
+        //SoundManager.Instance.PlaySFX(audioClips[Random.Range(0, audioClips.Length)].name, transform.position);
     }
 }
