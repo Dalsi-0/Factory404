@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4657c4fc41809bd41a7a5b7361b2a290, type: 3}
+  m_Name: Flashlight
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 455080a9717e2024eba27e6ef82b59d8, type: 3}
+  itemPrefab: {fileID: 6891808573644525144, guid: d15d89a69e5525446b5eca1d481c37d4,
+    type: 3}
+  detailPrefab: {fileID: 6891808573644525144, guid: 5888af275e762f54fa1e3f1c190a1444,
+    type: 3}
+  itemName: "\uC190\uC804\uB4F1"
+  itemDescription: "\uC5B4\uB460\uC744 \uBC1D\uD600\uC8FC\uB294 \uC544\uC774\uD15C.
+    'F'\uD0A4\uB97C \uB20C\uB7EC \uC0AC\uC6A9\uD560 \uC218 \uC788\uB2E4."
+  canStack: 0
+  maxStackAmount: 0
