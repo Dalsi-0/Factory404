@@ -177,4 +177,10 @@ public class SoundManager : Singleton<SoundManager>
     {
         sfxVolume = Mathf.Clamp01(volume);
     }
+
+    public void SetMute(bool mute)
+    {
+        bgmVolume = 0;
+        sfxVolume = 0;
+    }
 }
