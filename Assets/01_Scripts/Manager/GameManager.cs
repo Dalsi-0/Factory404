@@ -5,7 +5,16 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
 
-    private void Start()
+
+    private Player _player;
+
+    public Player Player
+    {
+        get { return _player; }
+        set { _player = value; }
+    }
+
+    private void Awake()
     {
         DontDestroyOnLoad(gameObject);
     }

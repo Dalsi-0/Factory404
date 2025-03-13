@@ -11,4 +11,8 @@ public class ItemData : ScriptableObject
     public GameObject detailPrefab;
     public string itemName;
     public string itemDescription;
+
+    [Header("Stacking")]
+    public bool canStack;
+    public int maxStackAmount;
 }
