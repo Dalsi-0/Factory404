@@ -120,6 +120,7 @@ public class PlayerControlloer : MonoBehaviour
         if (context.phase == InputActionPhase.Started)
         {
             inventory?.Invoke();
+            ToggleCursor();
         }
     }
 
@@ -128,6 +129,7 @@ public class PlayerControlloer : MonoBehaviour
         if (context.phase == InputActionPhase.Started)
         {
             option?.Invoke();
+            ToggleCursor();
         }
     }
 
@@ -150,6 +152,16 @@ public class PlayerControlloer : MonoBehaviour
     public void OnFootstep()
     {
         // 발소리
+    }
+
+    /// <summary>
+    /// 마우스 커서 보이게/안보이게
+    /// </summary>
+    private void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        canLook = !toggle;
     }
 
     /// <summary>
