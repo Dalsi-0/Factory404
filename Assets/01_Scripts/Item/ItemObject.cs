@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public interface IInteractable
 {
     /// <summary>
-    /// 상호작용 가능한 오브젝트를 바라봤을 때, 프롬프트 창에 띄울 텍스트를 전달하는 함수
+    /// UI에 띄울 이름을 반환하는 함수
     /// </summary>
-    /// <returns> 아이템 이름같은 오브젝트 정보 전달 </returns>
-    public string GetInteractPrompt();
+    /// <returns> 아이템의 이름 </returns>
+    public string GetNameText();
+
+    /// <summary>
+    /// UI에 띄울 상호작용 가능한 키를 반환하는 함수
+    /// </summary>
+    /// <returns> 상호작용 가능한 키에 대한 설명 </returns>
+    public string GetInteractionText();
 
     /// <summary>
     /// 상호작용 가능한 오브젝트와 플레이어가 상호작용했을 때 호출되는 함수
@@ -16,19 +23,20 @@ public interface IInteractable
     public void OnInteract();
 }
 
-public class ItemObject : MonoBehaviour, IInteractable
+public class ItemObject : InteractableObject, IInteractable
 {
     public ItemData data;
-    private QuickOutline outline;
 
-    private void Start()
-    {
-        outline = GetComponent<QuickOutline>();
-    }
-
-    public string GetInteractPrompt()
+    public string GetNameText()
     {
         string str = data.itemName;
+
+        return str;
+    }
+
+    public string GetInteractionText()
+    {
+        string str = "'E'키를 눌러 아이템 획득";
 
         return str;
     }
@@ -37,15 +45,5 @@ public class ItemObject : MonoBehaviour, IInteractable
     {
         //GameManager.Instance.Player.itemData = data;
         Destroy(this.gameObject);
-    }
-
-    public void OnOutline()
-    {
-        outline.enabled = true;
-    }
-
-    public void OffOutline()
-    {
-        outline.enabled = false;
     }
 }
