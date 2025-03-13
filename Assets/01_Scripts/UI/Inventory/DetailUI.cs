@@ -35,7 +35,7 @@ public class DetailUI : MonoBehaviour
     private void OnEnable()
     {
         ItemSpawn();
-        curFOV = uiCamera.fieldOfView;
+        curFOV = 60f;
         targetFOV = curFOV;
     }
 

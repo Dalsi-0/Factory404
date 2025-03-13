@@ -156,6 +156,23 @@ public class InventoryUI : MonoBehaviour
     }
 
     /// <summary>
+    /// 인벤토리에 아이템이 존재하는 지 찾는 함수
+    /// </summary>
+    /// <param name="name"> -> 찾고 싶은 아이템의 이름 </param>
+    /// <returns> 아이템이 존재하면 그 아이템의 정보를 반환, 아이템이 없으면 null을 반환 </returns>
+    public ItemData FindItem(string name)
+    {
+        for(int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item.itemName == name)
+            {
+                return slots[i].item;
+            }
+        }
+        return null;
+    }
+
+    /// <summary>
     /// 버튼을 클릭하면 디테일창에 selectedItem 정보를 넘기고, 인벤토리창이 꺼지며 디테일 창이 켜진다
     /// </summary>
     public void OnClickDetailButton()

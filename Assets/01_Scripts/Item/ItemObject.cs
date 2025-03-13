@@ -19,6 +19,12 @@ public interface IInteractable
 public class ItemObject : MonoBehaviour, IInteractable
 {
     public ItemData data;
+    private QuickOutline outline;
+
+    private void Start()
+    {
+        outline = GetComponent<QuickOutline>();
+    }
 
     public string GetInteractPrompt()
     {
@@ -31,5 +37,15 @@ public class ItemObject : MonoBehaviour, IInteractable
     {
         //GameManager.Instance.Player.itemData = data;
         Destroy(this.gameObject);
+    }
+
+    public void OnOutline()
+    {
+        outline.enabled = true;
+    }
+
+    public void OffOutline()
+    {
+        outline.enabled = false;
     }
 }
