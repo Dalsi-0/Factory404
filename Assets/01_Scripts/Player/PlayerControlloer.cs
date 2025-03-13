@@ -21,6 +21,12 @@ public class PlayerControlloer : MonoBehaviour
     public float minXLook;
     public float maxXLook;
 
+    [Header("Flash")]
+    [SerializeField]private GameObject flash;
+    [SerializeField]private Light handLight;
+    private bool isHaveFlash;
+    private bool isOnFlash;
+
     private float camCurXRot;
     public float lookSensitivity;
     private Vector2 mouseDelta;
@@ -40,6 +46,12 @@ public class PlayerControlloer : MonoBehaviour
         gameManager = GameManager.Instance;
         _rigidbody = GetComponent<Rigidbody>();
         animator=GetComponentInChildren<Animator>();
+        isHaveFlash = true;
+        isOnFlash = false;
+
+
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     private void FixedUpdate()
@@ -55,7 +67,9 @@ public class PlayerControlloer : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// 실제 이동 부분
+    /// </summary>
     private void Move()
     {
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
@@ -65,6 +79,9 @@ public class PlayerControlloer : MonoBehaviour
         _rigidbody.velocity = dir;
     }
 
+    /// <summary>
+    /// 카메라 시점 회전 및 캐릭터 회전
+    /// </summary>
     private void CameraLook()
     {
         camCurXRot += mouseDelta.y * lookSensitivity;
@@ -74,6 +91,10 @@ public class PlayerControlloer : MonoBehaviour
         transform.eulerAngles += new Vector3(0, mouseDelta.x * lookSensitivity, 0);
     }
 
+    /// <summary>
+    /// 인풋시스템 관련
+    /// </summary>
+    /// <param name="context"></param>
     #region InputAction
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -112,18 +133,30 @@ public class PlayerControlloer : MonoBehaviour
 
     public void OnFlash(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started)
+        if (context.phase == InputActionPhase.Started && isHaveFlash)
         {
             // flash On/Off
+            isOnFlash = !isOnFlash;
+            handLight.gameObject.SetActive(isOnFlash);
         }
     }
-
 
     #endregion
 
 
+    /// <summary>
+    /// 걷는 애니메이션 발소리
+    /// </summary>
     public void OnFootstep()
     {
         // 발소리
+    }
+
+    /// <summary>
+    /// 플래시 획득할 때 호출
+    /// </summary>
+    public void SetHaveFlash()
+    {
+        isHaveFlash = true;
     }
 }
