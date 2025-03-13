@@ -3,7 +3,7 @@ using UnityEngine;
 
 
 // ¸ð³ë½Ì±ÛÅæ
-public class Singleton<T> : MonoBehaviour, IDisposable where T : class,new()
+public class Singleton<T> : MonoBehaviour, IDisposable where T : class
 {
     protected Singleton()
     {
@@ -15,7 +15,7 @@ public class Singleton<T> : MonoBehaviour, IDisposable where T : class,new()
         get
         {
             if (_instance == null)
-                _instance = new T();
+                _instance = FindObjectOfType(typeof(T)) as T;
 
             return _instance;
         }
