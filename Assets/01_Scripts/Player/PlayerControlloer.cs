@@ -29,6 +29,7 @@ public class PlayerControlloer : MonoBehaviour
     public bool canLook = true;
 
     public Action inventory;
+    public Action option;
 
     private Rigidbody _rigidbody;
     // Start is called before the first frame update
@@ -95,5 +96,15 @@ public class PlayerControlloer : MonoBehaviour
             inventory?.Invoke();
         }
     }
+
+    public void OnOption(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            option?.Invoke();
+        }
+    }
+
+
     #endregion
 }
