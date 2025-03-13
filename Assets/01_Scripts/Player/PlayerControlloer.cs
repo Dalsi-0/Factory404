@@ -145,15 +145,6 @@ public class PlayerControlloer : MonoBehaviour
 
     #endregion
 
-
-    /// <summary>
-    /// 걷는 애니메이션 발소리
-    /// </summary>
-    public void OnFootstep()
-    {
-        // 발소리
-    }
-
     /// <summary>
     /// 마우스 커서 보이게/안보이게
     /// </summary>
