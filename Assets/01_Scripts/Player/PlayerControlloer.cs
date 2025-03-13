@@ -110,12 +110,20 @@ public class PlayerControlloer : MonoBehaviour
         }
     }
 
+    public void OnFlash(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            // flash On/Off
+        }
+    }
+
 
     #endregion
 
 
     public void OnFootstep()
     {
-        // 锟竭家革拷
+        // 惯家府
     }
 }
