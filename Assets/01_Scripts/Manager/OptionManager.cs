@@ -118,20 +118,20 @@ public class OptionManager : MonoBehaviour
 
     public void LoadStage(int stageNumber)
     {
-        SceneManager.LoadScene("Stage0" + stageNumber); //스테이지 로드
+        SceneLoader.Instance.LoadScene("Stage1" + stageNumber); //스테이지 로드
     }
 
     void OnPlayRestart()
     {
         int lastStage = PlayerPrefs.GetInt("Stage", 1); // 마지막 스테이지에서 다시 시작
-        SceneManager.LoadScene("stage" + lastStage);
+        SceneLoader.Instance.LoadScene("stage" + lastStage);
     }
 
     void ResetGame()
     {
         PlayerPrefs.SetInt("Stage", 1); // 처음 1스테이지부터로 초기화
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Stage1");
+        SceneLoader.Instance.LoadScene("Stage1");
     }
 
     void CleaerStage5()
