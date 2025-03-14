@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace NavKeypad
 {
-    public class KeypadButton : MonoBehaviour
+    public class KeypadButton : InteractableObject, IInteractable
     {
         [Header("Value")]
         [SerializeField] private string value;
@@ -60,6 +60,23 @@ namespace NavKeypad
             transform.localPosition = endPos;
 
             moving = false;
+        }
+
+        public string GetNameText()
+        {
+            return value;
+        }
+
+        public string GetInteractionText()
+        {
+            string str = "'E'키를 눌러 번호 입력";
+
+            return str;
+        }
+
+        public void OnInteract()
+        {
+            PressButton();
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DetailUI : MonoBehaviour
 {
@@ -37,6 +38,12 @@ public class DetailUI : MonoBehaviour
         ItemSpawn();
         curFOV = 60f;
         targetFOV = curFOV;
+        GameManager.Instance.Player.GetComponent<PlayerInput>().enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.Player.GetComponent<PlayerInput>().enabled = true;
     }
 
     /// <summary>

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4657c4fc41809bd41a7a5b7361b2a290, type: 3}
+  m_Name: DailyRecord_4
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 9acbaf2fa4b0e9b45b56ab04039ba328, type: 3}
+  itemPrefab: {fileID: 2490602572821942813, guid: 85d572006dde38a4d94aee5f26b31644,
+    type: 3}
+  detailPrefab: {fileID: 2490602572821942813, guid: 44f701049a5360c409d860a108a0dc82,
+    type: 3}
+  itemName: "\uC5C5\uBB34 \uC77C\uC9C04"
+  itemDescription: "\uB204\uAD70\uAC00\uAC00 \uC801\uC5B4\uB454 \uC5C5\uBB34\uC77C\uC9C0\uC774\uB2E4.
+    \uC885\uC774\uAC00 \uB9CE\uC774 \uB0A1\uC544\uBCF4\uC778\uB2E4."
+  canStack: 0
+  maxStackAmount: 0
