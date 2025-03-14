@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2867830648784725343}
   - component: {fileID: 1457504657656773718}
   - component: {fileID: 5850783389088452442}
+  - component: {fileID: 1111225646823943178}
   m_Layer: 7
   m_Name: bttnEnter
   m_TagString: Untagged
@@ -123,6 +124,24 @@ MonoBehaviour:
   moveDist: 0.0025
   buttonPressedTime: 0.1
   keypad: {fileID: 5896005593866861130}
+--- !u!114 &1111225646823943178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218081987184205825}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &549204639898986312
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +155,7 @@ GameObject:
   - component: {fileID: 3753140765315031581}
   - component: {fileID: 7540343653783420733}
   - component: {fileID: 5945872358516672559}
+  - component: {fileID: 4685507842576343717}
   m_Layer: 7
   m_Name: bttn7
   m_TagString: Untagged
@@ -246,6 +266,24 @@ MonoBehaviour:
   moveDist: 0.0025
   buttonPressedTime: 0.1
   keypad: {fileID: 5896005593866861130}
+--- !u!114 &4685507842576343717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549204639898986312}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &699059178104898757
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +295,7 @@ GameObject:
   - component: {fileID: 1076663513159594153}
   - component: {fileID: 5896005593866861130}
   - component: {fileID: 7948602171171089367}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Keypad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +459,7 @@ GameObject:
   - component: {fileID: 1613217718977921985}
   - component: {fileID: 6559422305284453145}
   - component: {fileID: 6541489257836219585}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,6 +565,7 @@ GameObject:
   - component: {fileID: 6236803844537346696}
   - component: {fileID: 3450320463084307970}
   - component: {fileID: 103882545613053459}
+  - component: {fileID: 2927777911070177811}
   m_Layer: 7
   m_Name: bttn8
   m_TagString: Untagged
@@ -637,6 +676,24 @@ MonoBehaviour:
   moveDist: 0.0025
   buttonPressedTime: 0.1
   keypad: {fileID: 5896005593866861130}
+--- !u!114 &2927777911070177811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066849783157579794}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2939111700623246480
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +707,7 @@ GameObject:
   - component: {fileID: 7576990329133933940}
   - component: {fileID: 5944395557061296579}
   - component: {fileID: 8174084130762459114}
+  - component: {fileID: 2894930523362057298}
   m_Layer: 7
   m_Name: bttn3
   m_TagString: Untagged
@@ -760,6 +818,24 @@ MonoBehaviour:
   moveDist: 0.0025
   buttonPressedTime: 0.1
   keypad: {fileID: 5896005593866861130}
+--- !u!114 &2894930523362057298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939111700623246480}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4151917624170829394
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,6 +849,7 @@ GameObject:
   - component: {fileID: 1935996004460669292}
   - component: {fileID: 1071527349795881957}
   - component: {fileID: 7050189890471670853}
+  - component: {fileID: 37802551477669302}
   m_Layer: 7
   m_Name: bttn5
   m_TagString: Untagged
@@ -883,6 +960,24 @@ MonoBehaviour:
   moveDist: 0.0025
   buttonPressedTime: 0.1
   keypad: {fileID: 5896005593866861130}
+--- !u!114 &37802551477669302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4151917624170829394}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4450516753986522610
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,7 +989,7 @@ GameObject:
   - component: {fileID: 8527177974218440639}
   - component: {fileID: 8033744179834168004}
   - component: {fileID: 1552923868169237454}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: DisplayCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,7 +1071,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 518904074285909601}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,6 +1117,7 @@ GameObject:
   - component: {fileID: 7877086506292994011}
   - component: {fileID: 2513219390760639279}
   - component: {fileID: 116747534318412204}
+  - component: {fileID: 3221568982441255552}
   m_Layer: 7
   m_Name: bttn2
   m_TagString: Untagged
@@ -1132,6 +1228,24 @@ MonoBehaviour:
   moveDist: 0.0025
   buttonPressedTime: 0.1
   keypad: {fileID: 5896005593866861130}
+--- !u!114 &3221568982441255552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4660914242190443201}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &5058561710757471123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,7 +1257,7 @@ GameObject:
   - component: {fileID: 7577038325007019871}
   - component: {fileID: 7602539311386675297}
   - component: {fileID: 1671603125542765825}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: DisplayText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1280,6 +1394,7 @@ GameObject:
   - component: {fileID: 8938428710734094346}
   - component: {fileID: 9201514506406953345}
   - component: {fileID: 4340098361074676427}
+  - component: {fileID: 8161574736671636668}
   m_Layer: 7
   m_Name: bttn9
   m_TagString: Untagged
@@ -1390,6 +1505,24 @@ MonoBehaviour:
   moveDist: 0.0025
   buttonPressedTime: 0.1
   keypad: {fileID: 5896005593866861130}
+--- !u!114 &8161574736671636668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5367609031892798050}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &5667953017690793439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,6 +1536,7 @@ GameObject:
   - component: {fileID: 4127695584773228294}
   - component: {fileID: 7655613421634469438}
   - component: {fileID: 8873165660282542642}
+  - component: {fileID: 2444331275861218270}
   m_Layer: 7
   m_Name: bttn0
   m_TagString: Untagged
@@ -1513,6 +1647,24 @@ MonoBehaviour:
   moveDist: 0.0025
   buttonPressedTime: 0.1
   keypad: {fileID: 5896005593866861130}
+--- !u!114 &2444331275861218270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5667953017690793439}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &6195318412478226592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,6 +1678,7 @@ GameObject:
   - component: {fileID: 7826294471753714536}
   - component: {fileID: 5445257432643234343}
   - component: {fileID: 8034155487954582485}
+  - component: {fileID: 1162636118508418053}
   m_Layer: 7
   m_Name: bttn4
   m_TagString: Untagged
@@ -1636,6 +1789,24 @@ MonoBehaviour:
   moveDist: 0.0025
   buttonPressedTime: 0.1
   keypad: {fileID: 5896005593866861130}
+--- !u!114 &1162636118508418053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6195318412478226592}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &7825021809436624317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1820,7 @@ GameObject:
   - component: {fileID: 6856034366012377787}
   - component: {fileID: 3207619102889963305}
   - component: {fileID: 2405627407620561892}
+  - component: {fileID: 6977100309732210752}
   m_Layer: 7
   m_Name: bttn6
   m_TagString: Untagged
@@ -1759,6 +1931,24 @@ MonoBehaviour:
   moveDist: 0.0025
   buttonPressedTime: 0.1
   keypad: {fileID: 5896005593866861130}
+--- !u!114 &6977100309732210752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7825021809436624317}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &7932663197700040836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,7 +1958,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2539008605612350204}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: KeypadVisuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1806,6 +1996,7 @@ GameObject:
   - component: {fileID: 2979815083672002621}
   - component: {fileID: 7371633562578861279}
   - component: {fileID: 6704809217980811489}
+  - component: {fileID: 2389467418021490368}
   m_Layer: 7
   m_Name: bttn1
   m_TagString: Untagged
@@ -1916,3 +2107,21 @@ MonoBehaviour:
   moveDist: 0.0025
   buttonPressedTime: 0.1
   keypad: {fileID: 5896005593866861130}
+--- !u!114 &2389467418021490368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8461864384149625230}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
