@@ -47,6 +47,16 @@ public class SceneLoader : Singleton<SceneLoader>
         }
     }
 
+
+    /// <summary>
+    /// 현재씬 이름 가져오기
+    /// </summary>
+    /// <returns></returns>
+    public string GetCurrentScene()
+    {
+        return nextScene;
+    }
+
     /// <summary>
     /// 씬을 비동기적으로 로드하며 먼저 로딩 씬을 거쳐서 진행
     /// </summary>
@@ -54,6 +64,7 @@ public class SceneLoader : Singleton<SceneLoader>
     public void LoadScene(string sceneName)
     {
         nextScene = sceneName;
+        RenderSettings.fog = false;
         StartCoroutine(LoadSceneCoroutine());
     }
 

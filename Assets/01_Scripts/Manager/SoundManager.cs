@@ -16,13 +16,13 @@ public class SoundManager : Singleton<SoundManager>
 
     private void Start()
     {
-        InitSoundManager();
+       // Init();
     }
 
     /// <summary>
     /// 오디오 클립을 Dictionary에 저장하고 BGM 플레이어를 설정
     /// </summary>
-    void InitSoundManager()
+    protected override void Init()
     {
         // Dictionary 초기화
         soundDict = new Dictionary<string, AudioClip>();
