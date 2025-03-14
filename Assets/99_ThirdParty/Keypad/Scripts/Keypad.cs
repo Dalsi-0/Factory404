@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using TMPro;
@@ -20,6 +21,9 @@ namespace NavKeypad
         [Header("Settings")]
         [SerializeField] private string accessGrantedText = "Granted";
         [SerializeField] private string accessDeniedText = "Denied";
+
+        [Header("Settings")]
+        [SerializeField] private GameObject door;
 
         [Header("Visuals")]
         [SerializeField] private float displayResultTime = 1f;
@@ -107,7 +111,7 @@ namespace NavKeypad
         private void AccessDenied()
         {
             keypadDisplayText.text = accessDeniedText;
-            onAccessDenied?.Invoke();
+            //onAccessDenied?.Invoke();
             panelMesh.material.SetVector("_EmissionColor", screenDeniedColor * screenIntensity);
             audioSource.PlayOneShot(accessDeniedSfx);
         }
@@ -122,7 +126,8 @@ namespace NavKeypad
         {
             accessWasGranted = true;
             keypadDisplayText.text = accessGrantedText;
-            onAccessGranted?.Invoke();
+            //onAccessGranted?.Invoke();
+            door.transform.DOMove(new Vector3(0, 10f, 0), 2f);
             panelMesh.material.SetVector("_EmissionColor", screenGrantedColor * screenIntensity);
             audioSource.PlayOneShot(accessGrantedSfx);
         }
