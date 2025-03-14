@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
@@ -21,11 +22,18 @@ public class InventoryUI : MonoBehaviour
     public TextMeshProUGUI selectedItemName;
     public TextMeshProUGUI selectedItemDescription;
 
+    private PlayerControlloer controller;
+
     private ItemData selectedItem;
 
     private void Start()
     {
-        inventoryWindow.SetActive(true);
+        controller = GameManager.Instance.Player.controlloer;
+
+        controller.inventory += InventoryToggle;
+        GameManager.Instance.Player.addItem += AddItem;
+
+        inventoryWindow.SetActive(false);
         slots = new ItemSlot[slotPanel.childCount];
 
         for(int i = 0; i < slots.Length; i++)
@@ -74,14 +82,17 @@ public class InventoryUI : MonoBehaviour
     /// æ∆¿Ã≈€¿ª »πµÊ«œ¥¬ «‘ºˆ
     /// </summary>
     /// <param name="data"> -> »πµÊ«“ æ∆¿Ã≈€ </param>
-    public void AddItem(ItemData data)
+    public void AddItem()
     {
+        ItemData data = GameManager.Instance.Player.curItemData;
+
         ItemSlot emptySlot = GetEmptySlot();
 
         if(emptySlot != null)
         {
             emptySlot.item = data;
             UpdateSlots();
+            GameManager.Instance.Player.curItemData = null;
         }
         else
         {

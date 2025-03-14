@@ -12,7 +12,7 @@ public class ItemData : ScriptableObject
     public string itemName;
     public string itemDescription;
 
-    [Header("Stacking")]
+    [Header("Stackable")]
     public bool canStack;
     public int maxStackAmount;
 }
