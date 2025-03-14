@@ -161,5 +161,6 @@ public class PlayerControlloer : MonoBehaviour
     public void SetHaveFlash()
     {
         isHaveFlash = true;
+        flash.SetActive(true);
     }
 }
