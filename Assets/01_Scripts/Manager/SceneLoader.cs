@@ -64,6 +64,7 @@ public class SceneLoader : Singleton<SceneLoader>
     public void LoadScene(string sceneName)
     {
         nextScene = sceneName;
+        RenderSettings.fog = false;
         StartCoroutine(LoadSceneCoroutine());
     }
 
