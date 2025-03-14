@@ -15,7 +15,6 @@ public class PlayerControlloer : MonoBehaviour
     public float jumpPow;
     private Vector2 curMovementInput;
 
-
     [Header("Look")]
     public Transform cameraContainer;
     public float minXLook;
@@ -73,9 +72,19 @@ public class PlayerControlloer : MonoBehaviour
     private void Move()
     {
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
+        
+
+        Ray ray = new Ray(transform.position, Vector3.down);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 1f))
+        {
+            if (hit.normal != Vector3.up)
+            {
+                dir = Vector3.ProjectOnPlane(dir, hit.normal).normalized;
+            }
+        } 
         dir *= moveSpeed;
         dir.y = _rigidbody.velocity.y;
-
         _rigidbody.velocity = dir;
     }
 
@@ -161,5 +170,6 @@ public class PlayerControlloer : MonoBehaviour
     public void SetHaveFlash()
     {
         isHaveFlash = true;
+        flash.SetActive(true);
     }
 }
