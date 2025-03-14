@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.SceneManagement;
@@ -8,23 +8,34 @@ using UnityEngine.UI;
 
 public class OptionManager : MonoBehaviour
 {
+    public SceneLoader sefse;
     public GameObject OptionPanel;
-    public Slider bgmSlider; // Bgm ½½¶óÀÌ´õ
-    public Slider sfxSlider; // SFX ½½¶óÀÌ´õ
-    public Slider mouseSensitivitySlider; // ¸¶¿ì½º °¨µµ
-    public Button continueButton; // °è¼ÓÇÏ±â ¹öÆ°
+    public Slider bgmSlider; // Bgm ìŠ¬ë¼ì´ë”
+    public Slider sfxSlider; // SFX ìŠ¬ë¼ì´ë”
+    public Slider mouseSensitivitySlider; // ë§ˆìš°ìŠ¤ ê°ë„
+    public GameObject continueButton; // ê³„ì†í•˜ê¸° ë²„íŠ¼
 
-    private float mouseSensitivity = 1.0f; // ¸¶¿ì½º °¨µµ ±âº»°ª
+    private float mouseSensitivity = 1.0f; // ë§ˆìš°ìŠ¤ ê°ë„ ê¸°ë³¸ê°’
     private float xRotation = 0f;
-    private int currentStage; // ÇöÀç ½ºÅ×ÀÌÁö
+    private int currentStage; // í˜„ì¬ ìŠ¤í…Œì´ì§€
 
-    public void ToggleOptionPanel() // ¿É¼Ç ÆĞ³Î on/off ±â´É
+    public void ToggleOptionPanel() // ì˜µì…˜ íŒ¨ë„ on/off ê¸°ëŠ¥
     {
         if (OptionPanel != null)
         {
-            OptionPanel.SetActive(!OptionPanel.activeSelf);
+            bool test = OptionPanel.activeSelf;
+            OptionPanel.SetActive(!test);
 
-            if (!OptionPanel.activeSelf)
+            Debug.Log(test);
+            if (test)
+            {
+                Debug.Log(test);
+            }
+            else
+            {
+                Debug.Log(test);
+            }
+            if (test == false)
             {
                 Savevalue();
             }
@@ -35,49 +46,52 @@ public class OptionManager : MonoBehaviour
     {
         if (OptionPanel != null)
         {
-            OptionPanel.SetActive(false); // ¿É¼Ç ÆĞ³Î ºñÈ°¼ºÈ­
+            OptionPanel.SetActive(false); // ì˜µì…˜ íŒ¨ë„ ë¹„í™œì„±í™”
         }
     }
 
     public void ExitGame()
     {
-        Debug.Log("°ÔÀÓ Á¾·á");
+        Debug.Log("ê²Œì„ ì¢…ë£Œ");
         Application.Quit();
     }
 
 
     void Start()
     {
-        // ½½¶óÀÌ´õ °ª º¯°æ
+        // ìŠ¬ë¼ì´ë” ê°’ ë³€ê²½
         bgmSlider.onValueChanged.AddListener(SetBgmVolume);
         sfxSlider.onValueChanged.AddListener(SetSfxVolume);
 
-        // Ã³À½À¸·Î ½ÃÀÛÇÒ¶§ º¼·ı
+        // ì²˜ìŒìœ¼ë¡œ ì‹œì‘í• ë•Œ ë³¼ë¥¨
         bgmSlider.value = PlayerPrefs.GetFloat("BgmVolume", 1f);
         sfxSlider.value = PlayerPrefs.GetFloat("SfxVolume", 1f);
 
 
-        ApplySound(); // º¼·ıÀû¿ë
+        ApplySound(); // ë³¼ë¥¨ì ìš©
 
         mouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 1.0f);
-        mouseSensitivitySlider.value = mouseSensitivity; // ÀúÀåµÈ °¨µµ ºÒ·¯¿À±â
+        mouseSensitivitySlider.value = mouseSensitivity; // ì €ì¥ëœ ê°ë„ ë¶ˆëŸ¬ì˜¤ê¸°
 
-        mouseSensitivitySlider.onValueChanged.AddListener(UpdateSmouseSensitivitySlider); // °¨µµ Á¶Àı
+        mouseSensitivitySlider.onValueChanged.AddListener(UpdateSmouseSensitivitySlider); // ê°ë„ ì¡°ì ˆ
 
-        //Cursor.lockState = CursorLockMode.Locked; // ¸¶¿ì½º Ä¿¼­ °íÁ¤
+        //Cursor.lockState = CursorLockMode.Locked; // ë§ˆìš°ìŠ¤ ì»¤ì„œ ê³ ì •
 
         OptionPanel.SetActive(false);
 
-        int saveStage = PlayerPrefs.GetInt("Stage", 1); // ±âº»°ª 1·Î °íÁ¤
-        LoadStage(saveStage);
+        int saveStage = PlayerPrefs.GetInt("Stage", 1); // ê¸°ë³¸ê°’ 1ë¡œ ê³ ì •
+
+        ContinueButton();
+
+
     }
 
-    public void SetBgmVolume(float volume) // BgmVolume Á¶Àı
+    public void SetBgmVolume(float volume) // BgmVolume ì¡°ì ˆ
     {
         bgmSlider.value = volume;
     }
 
-    public void SetSfxVolume(float volume) //SfxVolume Á¶Àı
+    public void SetSfxVolume(float volume) //SfxVolume ì¡°ì ˆ
     {
         sfxSlider.value = volume;
     }
@@ -99,6 +113,7 @@ public class OptionManager : MonoBehaviour
 
     public void Savevalue()
     {
+        Debug.Log("sesse");
         PlayerPrefs.SetFloat("BgmVolume", bgmSlider.value);
         PlayerPrefs.SetFloat("SfxVolume", sfxSlider.value);
         PlayerPrefs.SetFloat("MouseSensitivity", mouseSensitivity);
@@ -116,27 +131,27 @@ public class OptionManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void LoadStage(int stageNumber)
+    public void LoadStage()
     {
-        SceneLoader.Instance.LoadScene("Stage1" + stageNumber); //½ºÅ×ÀÌÁö ·Îµå
+        SceneLoader.Instance.LoadScene("Stage1" + currentStage); //ìŠ¤í…Œì´ì§€ ë¡œë“œ
     }
 
     void OnPlayRestart()
     {
-        int lastStage = PlayerPrefs.GetInt("Stage", 1); // ¸¶Áö¸· ½ºÅ×ÀÌÁö¿¡¼­ ´Ù½Ã ½ÃÀÛ
+        int lastStage = PlayerPrefs.GetInt("Stage", 1); // ë§ˆì§€ë§‰ ìŠ¤í…Œì´ì§€ì—ì„œ ë‹¤ì‹œ ì‹œì‘
         SceneLoader.Instance.LoadScene("stage" + lastStage);
     }
 
     void ResetGame()
     {
-        PlayerPrefs.SetInt("Stage", 1); // Ã³À½ 1½ºÅ×ÀÌÁöºÎÅÍ·Î ÃÊ±âÈ­
+        PlayerPrefs.SetInt("Stage", 1); // ì²˜ìŒ 1ìŠ¤í…Œì´ì§€ë¶€í„°ë¡œ ì´ˆê¸°í™”
         PlayerPrefs.Save();
         SceneLoader.Instance.LoadScene("Stage1");
     }
 
     void CleaerStage5()
     {
-        PlayerPrefs.SetInt("Stage", 1); // ÁøÇàµ¥ÀÌÅÍ ÃÊ±âÈ­
+        PlayerPrefs.SetInt("Stage", 1); // ì§„í–‰ë°ì´í„° ì´ˆê¸°í™”
         PlayerPrefs.Save();
 
         GameObject continueButton = GameObject.Find("ContinueButton");
@@ -150,13 +165,13 @@ public class OptionManager : MonoBehaviour
     {
         currentStage = PlayerPrefs.GetInt("Stage", 1);
 
-        if (currentStage == 1 || currentStage > 1) // ½ºÅ×ÀÌÁö 1ÀÌ³ª 5¸¦ Å¬¸®¾î Çß´Ù¸é ¹öÆ° ºñÈ°¼ºÈ­
+        if (currentStage == 1 || currentStage > 1) // ìŠ¤í…Œì´ì§€ 1ì´ë‚˜ 5ë¥¼ í´ë¦¬ì–´ í–ˆë‹¤ë©´ ë²„íŠ¼ ë¹„í™œì„±í™”
         {
-            continueButton.gameObject.SetActive(false);
+            continueButton.SetActive(false);
         }
         else
         {
-            continueButton.gameObject.SetActive(true);
+            continueButton.SetActive(true);
         }
     }
 }
