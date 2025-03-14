@@ -43,7 +43,10 @@ public class ItemObject : InteractableObject, IInteractable
 
     public void OnInteract()
     {
-        //GameManager.Instance.Player.itemData = data;
+        GameManager.Instance.Player.curItemData = data;
+
+        GameManager.Instance.Player.addItem?.Invoke();
+
         Destroy(this.gameObject);
     }
 }
