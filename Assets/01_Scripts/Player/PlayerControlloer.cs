@@ -45,7 +45,7 @@ public class PlayerControlloer : MonoBehaviour
         gameManager = GameManager.Instance;
         _rigidbody = GetComponent<Rigidbody>();
         animator=GetComponentInChildren<Animator>();
-        isHaveFlash = true;
+        isHaveFlash = false;
         isOnFlash = false;
 
 
