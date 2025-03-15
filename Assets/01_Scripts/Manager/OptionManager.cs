@@ -23,32 +23,16 @@ public class OptionManager : MonoBehaviour
     {
         if (OptionPanel != null)
         {
-            bool test = OptionPanel.activeSelf;
-            OptionPanel.SetActive(!test);
+            bool wasActive = OptionPanel.activeSelf;
+            OptionPanel.SetActive(!wasActive);
 
-            Debug.Log(test);
-            if (test)
-            {
-                Debug.Log(test);
-            }
-            else
-            {
-                Debug.Log(test);
-            }
-            if (test == false)
+            if (wasActive) 
             {
                 Savevalue();
             }
         }
     }
 
-    public void CloseOptionpaenl()
-    {
-        if (OptionPanel != null)
-        {
-            OptionPanel.SetActive(false); // 옵션 패널 비활성화
-        }
-    }
 
     public void ExitGame()
     {
@@ -113,7 +97,6 @@ public class OptionManager : MonoBehaviour
 
     public void Savevalue()
     {
-        Debug.Log("sesse");
         PlayerPrefs.SetFloat("BgmVolume", bgmSlider.value);
         PlayerPrefs.SetFloat("SfxVolume", sfxSlider.value);
         PlayerPrefs.SetFloat("MouseSensitivity", mouseSensitivity);
