@@ -1,3 +1,4 @@
+using Cinemachine;
 using DG.Tweening;
 using System;
 using System.Collections;
@@ -22,8 +23,11 @@ namespace NavKeypad
         [SerializeField] private string accessGrantedText = "Granted";
         [SerializeField] private string accessDeniedText = "Denied";
 
-        [Header("Settings")]
+        [Header("Doors")]
         [SerializeField] private GameObject door;
+
+        [Header("Cams")]
+        [SerializeField] private CinemachineVirtualCamera doorCamera;
 
         [Header("Visuals")]
         [SerializeField] private float displayResultTime = 1f;
@@ -47,10 +51,14 @@ namespace NavKeypad
         private bool displayingResult = false;
         private bool accessWasGranted = false;
 
+        private Camera mainCam;
+        public LayerMask doorLayerMask;
+
         private void Awake()
         {
             ClearInput();
             panelMesh.material.SetVector("_EmissionColor", screenNormalColor * screenIntensity);
+            mainCam = Camera.main;
         }
 
 
@@ -127,9 +135,27 @@ namespace NavKeypad
             accessWasGranted = true;
             keypadDisplayText.text = accessGrantedText;
             //onAccessGranted?.Invoke();
-            door.transform.DOMove(new Vector3(0, 10f, 0), 2f);
+            door.transform.DOMove(door.transform.position + new Vector3(0, 5f, 0), 10f);
+
             panelMesh.material.SetVector("_EmissionColor", screenGrantedColor * screenIntensity);
             audioSource.PlayOneShot(accessGrantedSfx);
+
+            StartCoroutine(ChangeCamPriority(doorCamera, 2000, 5f));
+        }
+
+        private IEnumerator ChangeCamPriority(CinemachineVirtualCamera cam, int priority, float delay)
+        {
+            int originalPriority = cam.Priority;
+            cam.Priority = priority;
+            LayerMask layermask = mainCam.cullingMask;
+            mainCam.cullingMask = doorLayerMask;
+
+            yield return new WaitForSeconds(delay);
+
+            cam.Priority = originalPriority;
+
+            yield return new WaitForSeconds(2);
+            mainCam.cullingMask = layermask;
         }
 
     }
