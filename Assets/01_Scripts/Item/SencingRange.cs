@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class SensingRange : MonoBehaviour
 {
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerStay(Collider other)
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Debug.Log("°¨ÁöµÊ!");
+
+            GameManager.Instance.Player.stress.GetStress(Time.deltaTime * 105);
         }
     }
 }

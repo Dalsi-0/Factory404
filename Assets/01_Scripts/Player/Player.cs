@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     public PlayerControlloer controlloer;
+    public PlayerStress stress;
+
 
     public ItemData curItemData;
     public Action addItem;
@@ -16,5 +18,6 @@ public class Player : MonoBehaviour
     {
         GameManager.Instance.Player = this;
         controlloer = GetComponent<PlayerControlloer>();
+        stress= GetComponent<PlayerStress>();
     }
 }
