@@ -1,11 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UniRx;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UI;
 
 enum ABNORMAL
 {
+    NONE,
     INETENSITY,
     GHOSTLIGHT,
 
@@ -14,35 +19,34 @@ enum ABNORMAL
 
 public class PlayerStress : MonoBehaviour
 {
-    [SerializeField] private float stress;
+    //[SerializeField] private float stress;
+
+    public float level1Value;
+    public float level2Value;
+
+    private IntReactiveProperty nowStressLevel;
 
     private float CCTVStress;
 
-    private bool level1;
-    private bool level2;
-
-
+    // 위치 이동 필요
     [SerializeField] private Light[] stressLight;
+
+    Image slider;
+
+    private FloatReactiveProperty stress;
 
     // Start is called before the first frame update
     void Start()
     {
         CCTVStress = 5;
-        level1 = level2 = false;
+        nowStressLevel.Value = 0;
+        stress.DistinctUntilChanged().Select(val=> s.fillAmount = val).Subscribe();
+        nowStressLevel.Distinct().Subscribe(val => SetStressLevel(val));
     }
 
     public void GetStress(float amount)
     {
-        stress += amount;
-
-        if(stress>30&&!level1)
-        {
-            SetStressLevel(1);
-        }
-        else if(stress>70&&!level2)
-        {
-            SetStressLevel(2);
-        }
+        stress.Value += amount;
     }
 
     private void SetStressLevel(int level)
@@ -55,25 +59,16 @@ public class PlayerStress : MonoBehaviour
         switch (situation)
         {
             case ABNORMAL.INETENSITY:
-                level1 = true;
+                // 카메라 시야 줄이기 -> Volume 호출하는법?
                 break;
             case ABNORMAL.GHOSTLIGHT:
-                level2 = true;
+                // 불끄기 -> 라이트 목록 다른곳에 두고 호출만 하기
                 foreach (Light light in stressLight)
                 {
-                    light.enabled = true;
+                    light.GetComponent<StressLight>().enabled = true;
                 }
                 break;
 
-        }
-    }
-
-    private IEnumerator SensedCCTV()
-    {
-        while (true)
-        {
-            stress += CCTVStress * Time.deltaTime;
-            yield return null;
         }
     }
 
