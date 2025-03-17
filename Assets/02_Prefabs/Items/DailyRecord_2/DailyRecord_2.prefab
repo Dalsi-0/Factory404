@@ -121,12 +121,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uC5C5\uBB34 \uC77C\uC9C02 (3\uC6D4 9\uC77C\uC790)\n\n\uC77C\uC8FC\uC77C\uBC16\uC5D0
-    \uC9C0\uB098\uC9C0 \uC54A\uC558\uB294\uB370\uB3C4 \uBC8C\uC368 \uC774\uC815\uB3C4\uB77C\uB2C8.
+    \uC9C0\uB098\uC9C0 \uC54A\uC558\uB294\uB370\uB3C4 \uBC8C\uC368 \uC774 \uC815\uB3C4\uB77C\uB2C8.
     \uC774 \uC815\uB3C4\uB77C\uBA74 \uBB3C\uB7C9\uC744 \uC870\uAE08 \uB354 \uB298\uB824\uB3C4
     \uB418\uACA0\uB294\uAC78?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 624db7ef3feb6cc4ba186c8a3c4d0cad, type: 2}
-  m_sharedMaterial: {fileID: 8586119712792642901, guid: 624db7ef3feb6cc4ba186c8a3c4d0cad,
+  m_fontAsset: {fileID: 11400000, guid: 10e8bb076fa41b14cb9c0fce19acaa56, type: 2}
+  m_sharedMaterial: {fileID: 4946097208866494722, guid: 10e8bb076fa41b14cb9c0fce19acaa56,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -151,8 +151,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 4525894102267365091}
   - component: {fileID: 8203152776883383354}
   - component: {fileID: 5749217754541739410}
+  - component: {fileID: -4666911412465859330}
   m_Layer: 7
   m_Name: DailyRecord_2
   m_TagString: Untagged
@@ -281,6 +282,33 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!54 &-4666911412465859330
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898998700353497604}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3722349856312308701
 GameObject:
   m_ObjectHideFlags: 0
