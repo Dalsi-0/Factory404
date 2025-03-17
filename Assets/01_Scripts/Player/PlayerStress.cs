@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UniRx;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 enum ABNORMAL
@@ -21,27 +18,31 @@ public class PlayerStress : MonoBehaviour
 {
     //[SerializeField] private float stress;
 
-    public float level1Value;
-    public float level2Value;
 
-    private IntReactiveProperty nowStressLevel;
+    [SerializeField]private IntReactiveProperty nowStressLevel = new IntReactiveProperty();
 
-    private float CCTVStress;
 
     // 위치 이동 필요
     [SerializeField] private Light[] stressLight;
 
-    Image slider;
+    // UI 표현 방식 확정 필요
+    public Image slider;
 
-    private FloatReactiveProperty stress;
+    [SerializeField]private FloatReactiveProperty stress;
+
+
+    [SerializeField]private Volume volume;
+    private Vignette vignette;
 
     // Start is called before the first frame update
     void Start()
     {
-        CCTVStress = 5;
         nowStressLevel.Value = 0;
-        stress.DistinctUntilChanged().Select(val=> s.fillAmount = val).Subscribe();
+        stress.DistinctUntilChanged().Select(val => slider.fillAmount = val/100)
+            .Where(x => x > 0.3f).Select(_ => nowStressLevel.Value = 1)
+            .Where(x => x > 0.7f).Select(_ => nowStressLevel.Value = 2).Subscribe();
         nowStressLevel.Distinct().Subscribe(val => SetStressLevel(val));
+
     }
 
     public void GetStress(float amount)
@@ -59,7 +60,10 @@ public class PlayerStress : MonoBehaviour
         switch (situation)
         {
             case ABNORMAL.INETENSITY:
-                // 카메라 시야 줄이기 -> Volume 호출하는법?
+                if(volume.profile.TryGet<Vignette>(out vignette))
+                {
+                    vignette.intensity.value = 0.6f;
+                }
                 break;
             case ABNORMAL.GHOSTLIGHT:
                 // 불끄기 -> 라이트 목록 다른곳에 두고 호출만 하기
