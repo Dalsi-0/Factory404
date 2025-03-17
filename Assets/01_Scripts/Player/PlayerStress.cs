@@ -67,10 +67,7 @@ public class PlayerStress : MonoBehaviour
                 break;
             case ABNORMAL.GHOSTLIGHT:
                 // 불끄기 -> 라이트 목록 다른곳에 두고 호출만 하기
-                foreach (Light light in stressLight)
-                {
-                    light.GetComponent<StressLight>().enabled = true;
-                }
+                GameManager.Instance.OnGhostLight();
                 break;
 
         }
