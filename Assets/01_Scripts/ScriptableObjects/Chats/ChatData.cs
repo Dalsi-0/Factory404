@@ -23,7 +23,7 @@ public struct Chat
 [CreateAssetMenu(fileName = "Chat", menuName = "Scriptable Object/New ChatData")]
 public class ChatData : DataReaderBase
 {
-    public List<Chat> chatData = new List<Chat>();
+    public List<Chat> chatDataList = new List<Chat>();
 
     internal void UpdateStats(List<GSTU_Cell> list, int chatId)
     {
@@ -42,7 +42,7 @@ public class ChatData : DataReaderBase
                     break;
             }
         }
-        chatData.Add(new Chat(id, content));
+        chatDataList.Add(new Chat(id, content));
     }
 }
 
@@ -66,7 +66,7 @@ public class ChatDataReaderEditor : Editor
         if (GUILayout.Button("데이터 읽기(API 호출)"))
         {
             UpdateStats(UpdateMethodOne);
-            data.chatData.Clear();
+            data.chatDataList.Clear();
         }
     }
 
