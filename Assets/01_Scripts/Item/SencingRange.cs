@@ -10,7 +10,7 @@ public class SensingRange : MonoBehaviour
         {
             Debug.Log("°¨ÁöµÊ!");
 
-            GameManager.Instance.Player.stress.GetStress(Time.deltaTime * 105);
+            GameManager.Instance.Player.stress.GetStress(Time.deltaTime * 10);
         }
     }
 }
