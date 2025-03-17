@@ -4,7 +4,7 @@ public class CratePallet : InteractableObject, IInteractable
 
     public string GetInteractionText()
     {
-        string str = "'E'키를 상자 배치하기";
+        string str = "'E'키로 선반에 상자 배치하기";
 
         return str;
     }
