@@ -1,23 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class OptionManager : MonoBehaviour
 {
+    public AudioSource audioSource;
     public SceneLoader sefse;
     public GameObject OptionPanel;
     public Slider bgmSlider; // Bgm 슬라이더
     public Slider sfxSlider; // SFX 슬라이더
     public Slider mouseSensitivitySlider; // 마우스 감도
     public GameObject continueButton; // 계속하기 버튼
+    public TextMeshProUGUI volumeText; // 볼륨 값
+    public TextMeshProUGUI sfxText; // 효과음 값
+    public TextMeshProUGUI sensitivityText; // 마우스 감도 값
 
     private float mouseSensitivity = 1.0f; // 마우스 감도 기본값
     private float xRotation = 0f;
     private int currentStage; // 현재 스테이지
+    private string sensitivityKey = "MouseSensitivity";
+    private int MouseSensitivity;
 
     public void ToggleOptionPanel() // 옵션 패널 on/off 기능
     {
@@ -44,20 +52,20 @@ public class OptionManager : MonoBehaviour
     void Start()
     {
         // 슬라이더 값 변경
-        bgmSlider.onValueChanged.AddListener(SetBgmVolume);
-        sfxSlider.onValueChanged.AddListener(SetSfxVolume);
+        bgmSlider.onValueChanged.AddListener(delegate { SetBgmVolume((int)bgmSlider.value); });
+        sfxSlider.onValueChanged.AddListener(delegate { SetSfxVolume((int)sfxSlider.value); });
+        mouseSensitivitySlider.onValueChanged.AddListener(delegate { UpdateSmouseSensitivitySlider((int)mouseSensitivitySlider.value); }); ;
 
         // 처음으로 시작할때 볼륨
         bgmSlider.value = PlayerPrefs.GetFloat("BgmVolume", 1f);
         sfxSlider.value = PlayerPrefs.GetFloat("SfxVolume", 1f);
+        
 
 
         ApplySound(); // 볼륨적용
 
-        mouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 1.0f);
+        mouseSensitivity = PlayerPrefs.GetInt(sensitivityKey, 1);
         mouseSensitivitySlider.value = mouseSensitivity; // 저장된 감도 불러오기
-
-        mouseSensitivitySlider.onValueChanged.AddListener(UpdateSmouseSensitivitySlider); // 감도 조절
 
         //Cursor.lockState = CursorLockMode.Locked; // 마우스 커서 고정
 
@@ -66,8 +74,25 @@ public class OptionManager : MonoBehaviour
         int saveStage = PlayerPrefs.GetInt("Stage", 1); // 기본값 1로 고정
 
         ContinueButton();
+    }
 
+    public void SetVolume(int volume)
+    {
+        volumeText.text = volume.ToString();
+        audioSource.volume = volume / 100f; // 0-100 -> 0-1 변환
+        PlayerPrefs.SetInt("BgmVolume", volume);
+    }
 
+    public void SetSfx(int volume)
+    {
+        sfxText.text = volume.ToString();
+        PlayerPrefs.SetInt("SfxVolume", volume);
+    }
+
+    public void SetSensitivity(int sensitivity)
+    {
+        sensitivityText.text = sensitivity.ToString();
+        PlayerPrefs.SetInt(sensitivityKey, sensitivity);
     }
 
     public void SetBgmVolume(float volume) // BgmVolume 조절
@@ -82,7 +107,11 @@ public class OptionManager : MonoBehaviour
 
     public void ApplySound()
     {
-        //OptionManager.Instance.
+        int bgm = PlayerPrefs.GetInt("BgmVolume", 100);
+        int sfx = PlayerPrefs.GetInt("SfxVolume", 100);
+        int sensitivity = PlayerPrefs.GetInt(sensitivityKey, 5);
+
+        audioSource.volume = bgm / 100f;
     }
 
 
