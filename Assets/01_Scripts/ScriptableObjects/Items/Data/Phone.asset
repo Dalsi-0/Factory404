@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4657c4fc41809bd41a7a5b7361b2a290, type: 3}
+  m_Name: Phone
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: b08957de42f94664ab2722a904831b6b, type: 3}
+  itemPrefab: {fileID: 2822349368449365345, guid: 196bd0b84e4ef944a8b6e1b38882e8b7,
+    type: 3}
+  detailPrefab: {fileID: 2822349368449365345, guid: e046506a6cfd2bc4d891925f4408b5a0,
+    type: 3}
+  itemName: "\uD734\uB300\uD3F0"
+  itemDescription: "\uACF5\uC7A5\uC548\uC5D0 \uC788\uB294 \uD734\uB300\uD3F0 \uCE58\uACE0\uB294
+    \uC0C8\uAC70\uAC19\uC544 \uBCF4\uC778\uB2E4. \uC5EC\uAE30\uC5D0 \uBB34\uC2A8
+    \uC911\uC694\uD55C \uC815\uBCF4\uAC00 \uC788\uC744\uC9C0\uB3C4 \uBAA8\uB978\uB2E4."
+  canStack: 0
+  maxStackAmount: 0
