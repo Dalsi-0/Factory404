@@ -224,7 +224,6 @@ public class Cart : MonoBehaviour
         {
             isGoal = true;
             isControlling = false;
-            Debug.Log("축하합니다");
         }
     }
 }

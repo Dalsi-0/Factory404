@@ -26,9 +26,12 @@ public class CartControlPanel : InteractableObject, IInteractable
 
     private bool isFinished = false;
 
+    public GameObject guideTxt;
+
     private void Awake()
     {
         mainCam = Camera.main;
+        guideTxt.SetActive(false);
     }
 
     private void Update()
@@ -77,11 +80,13 @@ public class CartControlPanel : InteractableObject, IInteractable
         {
             cartMapCam.Priority = 2000;
             mainCam.cullingMask = cartMapCamLayerMask;
+            guideTxt.SetActive(true);
         }
         else
         {
             cartMapCam.Priority = 10;
             mainCam.cullingMask = mainLayerMask;
+            guideTxt.SetActive(false);
         }
     }
 
