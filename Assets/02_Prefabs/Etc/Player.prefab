@@ -4236,6 +4236,7 @@ MonoBehaviour:
   maxXLook: 85
   flash: {fileID: 7430415847875569647}
   handLight: {fileID: 5034329834517605734}
+  isHaveFlash: 0
   lookSensitivity: 0.1
   canLook: 1
 --- !u!114 &7502045148036918950
@@ -4334,13 +4335,13 @@ MonoBehaviour:
     m_ActionName: PlayerInput/Interaction[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6976187949686685225}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 7750322752547449250}
+        m_TargetAssemblyTypeName: PlayerControlloer, Assembly-CSharp
+        m_MethodName: OnOption
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
