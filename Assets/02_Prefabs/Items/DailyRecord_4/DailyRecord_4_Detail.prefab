@@ -169,8 +169,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC5C5\uBB34 \uC77C\uC9C04 (3\uC6D4 23\uC77C\uC790)\n\n\uAD6C\uD574\uC918..."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 624db7ef3feb6cc4ba186c8a3c4d0cad, type: 2}
-  m_sharedMaterial: {fileID: 8586119712792642901, guid: 624db7ef3feb6cc4ba186c8a3c4d0cad,
+  m_fontAsset: {fileID: 11400000, guid: 10e8bb076fa41b14cb9c0fce19acaa56, type: 2}
+  m_sharedMaterial: {fileID: 4946097208866494722, guid: 10e8bb076fa41b14cb9c0fce19acaa56,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -22,7 +22,6 @@ public class ChatText : MonoBehaviour
     private void Start()
     {
         chatText.text = string.Empty;
-        UpdateChatText(0);
     }
 
     /// <summary>

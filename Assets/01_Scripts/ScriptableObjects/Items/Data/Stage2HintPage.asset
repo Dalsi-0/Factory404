@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4657c4fc41809bd41a7a5b7361b2a290, type: 3}
+  m_Name: Stage2HintPage
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 9acbaf2fa4b0e9b45b56ab04039ba328, type: 3}
+  itemPrefab: {fileID: 8913377080659719739, guid: 9668d9d48b70d254da1e5a11afd10035,
+    type: 3}
+  detailPrefab: {fileID: 8913377080659719739, guid: 34330436a560ac74f8605d1227427bf2,
+    type: 3}
+  itemName: "\uB0A1\uC740 \uBA54\uBAA8\uC9C0"
+  itemDescription: "\uB0A1\uC740 \uC885\uC774\uC774\uB2E4. \uC885\uC774 \uC704\uC5D0\uB294
+    \uD750\uB9BF\uD55C \uAE00\uC528\uB85C \uBB34\uC5B8\uAC00 \uC801\uD600 \uC788\uB2E4."
+  canStack: 0
+  maxStackAmount: 0

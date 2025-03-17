@@ -169,8 +169,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC5C5\uBB34 \uC77C\uC9C04 (3\uC6D4 23\uC77C\uC790)\n\n\uAD6C\uD574\uC918..."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 624db7ef3feb6cc4ba186c8a3c4d0cad, type: 2}
-  m_sharedMaterial: {fileID: 8586119712792642901, guid: 624db7ef3feb6cc4ba186c8a3c4d0cad,
+  m_fontAsset: {fileID: 11400000, guid: 10e8bb076fa41b14cb9c0fce19acaa56, type: 2}
+  m_sharedMaterial: {fileID: 4946097208866494722, guid: 10e8bb076fa41b14cb9c0fce19acaa56,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 6640914285580213497}
   - component: {fileID: 3066986659014625039}
   - component: {fileID: 8318232512292844134}
+  - component: {fileID: -1961825940644747989}
   m_Layer: 7
   m_Name: DailyRecord_4
   m_TagString: Untagged
@@ -325,6 +326,33 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!54 &-1961825940644747989
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490602572821942813}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2648775920985251227
 GameObject:
   m_ObjectHideFlags: 0
