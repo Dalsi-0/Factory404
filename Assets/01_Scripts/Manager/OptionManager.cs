@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -14,6 +15,9 @@ public class OptionManager : MonoBehaviour
     public Slider sfxSlider; // SFX 슬라이더
     public Slider mouseSensitivitySlider; // 마우스 감도
     public GameObject continueButton; // 계속하기 버튼
+    public TextMeshProUGUI bgmSliderValueText;
+    public TextMeshProUGUI sfxSliderValueText;
+    public TextMeshProUGUI mouseSensitivitySliderValueText;
 
     private float mouseSensitivity = 1.0f; // 마우스 감도 기본값
     private float xRotation = 0f;
@@ -26,7 +30,7 @@ public class OptionManager : MonoBehaviour
             bool wasActive = OptionPanel.activeSelf;
             OptionPanel.SetActive(!wasActive);
 
-            if (wasActive) 
+            if (wasActive)
             {
                 Savevalue();
             }
@@ -55,9 +59,9 @@ public class OptionManager : MonoBehaviour
         ApplySound(); // 볼륨적용
 
         mouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 1.0f);
-        mouseSensitivitySlider.value = mouseSensitivity; // 저장된 감도 불러오기
 
         mouseSensitivitySlider.onValueChanged.AddListener(UpdateSmouseSensitivitySlider); // 감도 조절
+        mouseSensitivitySlider.value = mouseSensitivity; // 저장된 감도 불러오기
 
         //Cursor.lockState = CursorLockMode.Locked; // 마우스 커서 고정
 
@@ -66,29 +70,28 @@ public class OptionManager : MonoBehaviour
         int saveStage = PlayerPrefs.GetInt("Stage", 1); // 기본값 1로 고정
 
         ContinueButton();
-
-
     }
 
     public void SetBgmVolume(float volume) // BgmVolume 조절
     {
         bgmSlider.value = volume;
+        bgmSliderValueText.text = Mathf.FloorToInt(bgmSlider.value * 100f).ToString();
     }
 
     public void SetSfxVolume(float volume) //SfxVolume 조절
     {
         sfxSlider.value = volume;
+        sfxSliderValueText.text = Mathf.FloorToInt(sfxSlider.value * 100f).ToString();
     }
 
     public void ApplySound()
     {
         //OptionManager.Instance.
     }
-
-
     private void UpdateSmouseSensitivitySlider(float value)
     {
         mouseSensitivity = value;
+        mouseSensitivitySliderValueText.text = Mathf.FloorToInt(mouseSensitivitySlider.value * 100f).ToString();
     }
     public float GetSensitivity()
     {
