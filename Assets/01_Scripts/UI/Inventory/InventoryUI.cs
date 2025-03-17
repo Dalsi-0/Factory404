@@ -90,6 +90,11 @@ public class InventoryUI : MonoBehaviour
 
         if(emptySlot != null)
         {
+            if(data.itemName == "¼ÕÀüµî")
+            {
+                GameManager.Instance.Player.controlloer.SetHaveFlash();
+            }
+
             emptySlot.item = data;
             UpdateSlots();
             GameManager.Instance.Player.curItemData = null;

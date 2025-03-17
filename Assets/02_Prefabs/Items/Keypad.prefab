@@ -312,7 +312,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -27.919466, y: 3.44, z: 9.53}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2539008605612350204}
@@ -340,6 +340,7 @@ MonoBehaviour:
   accessGrantedText: Granted
   accessDeniedText: Denied
   door: {fileID: 0}
+  doorCamera: {fileID: 0}
   displayResultTime: 1
   screenIntensity: 2.2
   screenNormalColor: {r: 0.98, g: 0.5, b: 0.032, a: 1}
@@ -351,6 +352,9 @@ MonoBehaviour:
   panelMesh: {fileID: 6559422305284453145}
   keypadDisplayText: {fileID: 1671603125542765825}
   audioSource: {fileID: 7948602171171089367}
+  doorLayerMask:
+    serializedVersion: 2
+    m_Bits: 215
 --- !u!82 &7948602171171089367
 AudioSource:
   m_ObjectHideFlags: 0
