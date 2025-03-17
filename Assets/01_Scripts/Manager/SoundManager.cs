@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : Singleton<SoundManager>
 {
-    [Header("Audio Clips")]
+    [Header("사용할 모든 오디오 클립")]
     [SerializeField] private AudioClip[] audioClips; // 오디오 클립 배열
 
     private float bgmVolume = 1f;
@@ -13,6 +13,14 @@ public class SoundManager : Singleton<SoundManager>
     private Dictionary<string, AudioClip> soundDict; // SFX와 BGM 저장용 Dictionary
     private AudioSource bgmPlayer; // BGM 재생용 AudioSource
     private Coroutine bgmFadeCoroutine;
+
+    [Header("랜덤 스산한 효과음")]
+    [SerializeField] private AudioClip[] randomSFXAudioClipName; // 오디오 클립 배열
+    [SerializeField] private float interval = 2f;
+    private bool isRandomSFXPlaying = false;
+
+    [Header("발소리")]
+    public AudioClip[] footSetpAudioClips; // 발소리4개 클립 배열
 
     private void Start()
     {
@@ -116,6 +124,58 @@ public class SoundManager : Singleton<SoundManager>
     }
 
     /// <summary>
+    /// playerTransform 주변에서 일정 시간 간격으로 랜덤한 효과음을 재생하는 기능을 시작합니다.
+    /// </summary>
+    public void PlayRandomSFXPeriodically(Transform playerTransform)
+    {
+        if (!isRandomSFXPlaying)
+        {
+            isRandomSFXPlaying = true;
+            StartCoroutine(RandomSFXCoroutine(playerTransform));
+        }
+    }
+
+    /// <summary>
+    /// playerTransform 주변의 랜덤한 위치에서 일정한 간격으로 랜덤한 효과음을 재생하는 코루틴입니다.
+    /// </summary>
+    private IEnumerator RandomSFXCoroutine(Transform playerTransform)
+    {
+        while (true)
+        {
+            float randomDelay = Random.Range(0f, 3f);
+            yield return new WaitForSeconds(interval + randomDelay);
+
+            if (randomSFXAudioClipName.Length > 0)
+            {
+                string randomSound = randomSFXAudioClipName[Random.Range(0, randomSFXAudioClipName.Length)].name;
+                Vector3 randomPosition = playerTransform.position + Random.insideUnitSphere * 4f;
+                randomPosition.y = playerTransform.position.y;
+                PlaySFX(randomSound, randomPosition);
+            }
+        }
+    }
+
+    /// <summary>
+    /// 현재 재생 중인 BGM을 서서히 페이드 아웃
+    /// </summary>
+    /// <param name="duration">페이드 아웃 지속 시간</param>
+    private IEnumerator FadeOutBGMCoroutine(float duration)
+    {
+        float startVolume = bgmPlayer.volume;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            bgmPlayer.volume = Mathf.Lerp(startVolume, 0f, elapsedTime / duration);
+            yield return null;
+        }
+
+        bgmPlayer.Stop();
+        bgmPlayer.clip = null;
+    }
+
+    /// <summary>
     /// BGM을 서서히 페이드 아웃한 후 새로운 BGM을 페이드 인하여 변경
     /// </summary>
     /// <param name="newClip">변경할 새로운 BGM 오디오 클립</param>
@@ -143,26 +203,6 @@ public class SoundManager : Singleton<SoundManager>
             bgmPlayer.volume = Mathf.Lerp(0f, bgmVolume, elapsedTime / duration);
             yield return null;
         }
-    }
-
-    /// <summary>
-    /// 현재 재생 중인 BGM을 서서히 페이드 아웃
-    /// </summary>
-    /// <param name="duration">페이드 아웃 지속 시간</param>
-    private IEnumerator FadeOutBGMCoroutine(float duration)
-    {
-        float startVolume = bgmPlayer.volume;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < duration)
-        {
-            elapsedTime += Time.deltaTime;
-            bgmPlayer.volume = Mathf.Lerp(startVolume, 0f, elapsedTime / duration);
-            yield return null;
-        }
-
-        bgmPlayer.Stop();
-        bgmPlayer.clip = null;
     }
 
     /// <summary>

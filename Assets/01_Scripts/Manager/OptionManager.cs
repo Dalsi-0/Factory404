@@ -76,12 +76,14 @@ public class OptionManager : MonoBehaviour
     {
         bgmSlider.value = volume;
         bgmSliderValueText.text = Mathf.FloorToInt(bgmSlider.value * 100f).ToString();
+        SoundManager.Instance.SetBGMVolume(bgmSlider.value);
     }
 
     public void SetSfxVolume(float volume) //SfxVolume 조절
     {
         sfxSlider.value = volume;
         sfxSliderValueText.text = Mathf.FloorToInt(sfxSlider.value * 100f).ToString();
+        SoundManager.Instance.SetSFXVolume(sfxSlider.value);
     }
 
     public void ApplySound()
