@@ -19,11 +19,7 @@ public class PlayerStress : MonoBehaviour
 {
     [SerializeField]private IntReactiveProperty nowStressLevel = new IntReactiveProperty();
 
-    // 위치 이동 필요
-    [SerializeField] private Light[] stressLight;
-
     [SerializeField]private FloatReactiveProperty stress;
-
 
     [SerializeField]private Volume volume;
     private Vignette vignette;

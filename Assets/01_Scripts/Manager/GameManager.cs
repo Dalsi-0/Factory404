@@ -25,7 +25,7 @@ public class GameManager : Singleton<GameManager>
 
 
     /// <summary>
-    /// 스트레스로 보일 헛것 리스트로 저장
+    /// 스트레스로 보일 헛것 리스트로 저장 및 초기화
     /// </summary>
     public void SetGhostLightList()
     {
@@ -36,7 +36,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     /// <summary>
-    /// 헛것들 Light 켜기
+    /// 헛것들 Light 켜기/끄기
     /// </summary>
     public void OnGhostLight(bool set)
     {
