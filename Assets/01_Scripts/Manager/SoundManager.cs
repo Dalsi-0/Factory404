@@ -34,7 +34,13 @@ public class SoundManager : Singleton<SoundManager>
         // BGM 플레이어 초기화
         bgmPlayer = gameObject.AddComponent<AudioSource>();
         bgmPlayer.loop = true;
-        bgmPlayer.volume = bgmVolume; // 초기 볼륨 설정
+        bgmPlayer.volume = bgmVolume; 
+
+        // 3D 공간 효과 제거
+        bgmPlayer.spatialBlend = 0f; 
+        bgmPlayer.rolloffMode = AudioRolloffMode.Linear; 
+        bgmPlayer.dopplerLevel = 0f; 
+        bgmPlayer.spread = 0f; 
     }
 
     /// <summary>
