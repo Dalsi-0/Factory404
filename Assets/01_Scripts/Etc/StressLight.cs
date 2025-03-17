@@ -28,7 +28,7 @@ public class StressLight : MonoBehaviour
     private IObservable<Unit> CheckLight()
     {
         return Observable.ReturnUnit()
-            .Where(_ => gameObject.active == true)
+            .Where(_ => gameObject.activeSelf == true)
             .Do(_ =>
             {
                 Observable.EveryUpdate().Subscribe(_ => CheckPlayer()).AddTo(this);
