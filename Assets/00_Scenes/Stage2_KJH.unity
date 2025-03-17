@@ -14945,6 +14945,8 @@ GameObject:
   - component: {fileID: 954387459}
   - component: {fileID: 954387458}
   - component: {fileID: 954387457}
+  - component: {fileID: 954387461}
+  - component: {fileID: 954387460}
   m_Layer: 0
   m_Name: LP_Door_Wall_snaps
   m_TagString: Untagged
@@ -14986,8 +14988,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.3000087, y: 9.000004, z: 6.000003}
-  m_Center: {x: 0.0000032410026, y: 4.500002, z: 3.0000014}
+  m_Size: {x: 0.3000087, y: 6.861517, z: 6.000003}
+  m_Center: {x: 0.0000032484531, y: 5.5692453, z: 3.0000014}
 --- !u!23 &954387458
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15038,6 +15040,48 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954387455}
   m_Mesh: {fileID: 4300004, guid: b47e3bba032b35441a80e6b384d61baf, type: 3}
+--- !u!65 &954387460
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954387455}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3000137, y: 2.162708, z: 2.1853838}
+  m_Center: {x: 0.00000010430813, y: 1.0907799, z: 4.91}
+--- !u!65 &954387461
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954387455}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3000137, y: 2.162708, z: 2.1853838}
+  m_Center: {x: 0.00000010430813, y: 1.0907799, z: 1.092689}
 --- !u!1001 &955116737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28673,7 +28717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1782856884
 Transform:
   m_ObjectHideFlags: 0
@@ -32921,6 +32965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392838cb92c5dcb4ba53fed4867413b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chatData: {fileID: 0}
 --- !u!4 &2071102667
 Transform:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ public class PlayerControlloer : MonoBehaviour
     [Header("Flash")]
     [SerializeField]private GameObject flash;
     [SerializeField]private Light handLight;
-    [SerializeField] private bool isHaveFlash;
+    private bool isHaveFlash;
     private bool isOnFlash;
 
     private float camCurXRot;
