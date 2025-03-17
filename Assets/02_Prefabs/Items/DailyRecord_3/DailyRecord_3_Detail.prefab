@@ -208,8 +208,8 @@ MonoBehaviour:
     \uB4DC\uB514\uC5B4 \uC6B0\uB9AC \uACF5\uC7A5\uB3C4 \uC0B4\uC544\uB0A0 \uC218
     \uC788\uB2E4."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 624db7ef3feb6cc4ba186c8a3c4d0cad, type: 2}
-  m_sharedMaterial: {fileID: 8586119712792642901, guid: 624db7ef3feb6cc4ba186c8a3c4d0cad,
+  m_fontAsset: {fileID: 11400000, guid: 10e8bb076fa41b14cb9c0fce19acaa56, type: 2}
+  m_sharedMaterial: {fileID: 4946097208866494722, guid: 10e8bb076fa41b14cb9c0fce19acaa56,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -234,8 +234,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
