@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public Action addItem;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         GameManager.Instance.Player = this;
         controlloer = GetComponent<PlayerControlloer>();
