@@ -59,9 +59,9 @@ public class OptionManager : MonoBehaviour
         ApplySound(); // 볼륨적용
 
         mouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 1.0f);
-        mouseSensitivitySlider.value = mouseSensitivity; // 저장된 감도 불러오기
 
         mouseSensitivitySlider.onValueChanged.AddListener(UpdateSmouseSensitivitySlider); // 감도 조절
+        mouseSensitivitySlider.value = mouseSensitivity; // 저장된 감도 불러오기
 
         //Cursor.lockState = CursorLockMode.Locked; // 마우스 커서 고정
 
