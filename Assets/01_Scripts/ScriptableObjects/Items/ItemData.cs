@@ -12,7 +12,7 @@ public class ItemData : ScriptableObject
     public string itemName;
     public string itemDescription;
 
-    [Header("Stackable")]
-    public bool canStack;
-    public int maxStackAmount;
+    [Header("Can Listen")]
+    public bool canListen;
+    public AudioClip clip;
 }
