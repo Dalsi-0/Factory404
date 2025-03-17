@@ -33,7 +33,7 @@ public class ControlPanel : InteractableObject, IInteractable
     void Awake()
     {
         mainCam = Camera.main;
-        answers = new List<int>() { 0,0,0,0,0 }; //0, 4, 3, 1, 4
+        answers = new List<int>() { 0, 4, 3, 1, 4 }; //0, 4, 3, 1, 4
     }
 
     public string GetInteractionText()
@@ -54,7 +54,7 @@ public class ControlPanel : InteractableObject, IInteractable
     }
 
     /// <summary>
-    /// Control Panel과 상호작용 했을때 정답개수와 일치하는지 검사하고 그에 때라느 행동을 수행하는 기능
+    /// Control Panel과 상호작용 했을때 정답개수와 일치하는지 검사하고 결과에 따라 행동을 수행하는 기능
     /// </summary>
     void TryOpenDoor()
     {
@@ -77,7 +77,6 @@ public class ControlPanel : InteractableObject, IInteractable
     /// </summary>
     void SuccessToOpendoor()
     {
-        Debug.Log("성공");
         isFinished = true;
         door.transform.DOMove(door.transform.position + new Vector3(0, 4f, 0), 10f);
         StartCoroutine(ChangeCamPriority(doorCamera, 2000, 5f));
@@ -88,9 +87,12 @@ public class ControlPanel : InteractableObject, IInteractable
     /// </summary>
     void FailToOpendoor()
     {
-        Debug.Log("실패");
+
     }
 
+    /// <summary>
+    /// 카메라 연출을 위한 코루틴
+    /// </summary>
     private IEnumerator ChangeCamPriority(CinemachineVirtualCamera cam, int priority, float delay)
     {
         int originalPriority = cam.Priority;
