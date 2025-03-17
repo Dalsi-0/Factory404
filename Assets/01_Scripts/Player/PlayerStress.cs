@@ -1,4 +1,3 @@
-
 using UniRx;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -16,17 +15,10 @@ enum ABNORMAL
 
 public class PlayerStress : MonoBehaviour
 {
-    //[SerializeField] private float stress;
-
-
     [SerializeField]private IntReactiveProperty nowStressLevel = new IntReactiveProperty();
-
 
     // 위치 이동 필요
     [SerializeField] private Light[] stressLight;
-
-    // UI 표현 방식 확정 필요
-    public Image slider;
 
     [SerializeField]private FloatReactiveProperty stress;
 
@@ -34,11 +26,19 @@ public class PlayerStress : MonoBehaviour
     [SerializeField]private Volume volume;
     private Vignette vignette;
 
+    [SerializeField] Image bar;
+
     // Start is called before the first frame update
     void Start()
     {
+        bar = GameObject.Find("StressBar").GetComponent<Image>();
+        volume = GameObject.Find("Global Volume").GetComponent<Volume>();
+        stress.Value = 0;
         nowStressLevel.Value = 0;
-        stress.DistinctUntilChanged().Select(val => slider.fillAmount = val/100)
+
+
+        stress.DistinctUntilChanged()
+            .Do(val => { val = Mathf.Clamp(val, 0, 100); bar.fillAmount = val / 100; })
             .Where(x => x > 0.3f).Select(_ => nowStressLevel.Value = 1)
             .Where(x => x > 0.7f).Select(_ => nowStressLevel.Value = 2).Subscribe();
         nowStressLevel.Distinct().Subscribe(val => SetStressLevel(val));
@@ -62,7 +62,7 @@ public class PlayerStress : MonoBehaviour
             case ABNORMAL.INETENSITY:
                 if(volume.profile.TryGet<Vignette>(out vignette))
                 {
-                    vignette.intensity.value = 0.6f;
+                    vignette.intensity.value = 0.7f;
                 }
                 break;
             case ABNORMAL.GHOSTLIGHT:
