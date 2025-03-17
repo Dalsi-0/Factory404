@@ -75,13 +75,13 @@ public class OptionManager : MonoBehaviour
     public void SetBgmVolume(float volume) // BgmVolume 조절
     {
         bgmSlider.value = volume;
-        bgmSliderValueText.text = (bgmSlider.value * 100f).ToString();
+        bgmSliderValueText.text = Mathf.FloorToInt(bgmSlider.value * 100f).ToString();
     }
 
     public void SetSfxVolume(float volume) //SfxVolume 조절
     {
         sfxSlider.value = volume;
-        sfxSliderValueText.text = (sfxSlider.value * 100f).ToString();
+        sfxSliderValueText.text = Mathf.FloorToInt(sfxSlider.value * 100f).ToString();
     }
 
     public void ApplySound()
@@ -91,7 +91,7 @@ public class OptionManager : MonoBehaviour
     private void UpdateSmouseSensitivitySlider(float value)
     {
         mouseSensitivity = value;
-        mouseSensitivitySliderValueText.text = (mouseSensitivitySlider.value * 100f).ToString();
+        mouseSensitivitySliderValueText.text = Mathf.FloorToInt(mouseSensitivitySlider.value * 100f).ToString();
     }
     public float GetSensitivity()
     {
