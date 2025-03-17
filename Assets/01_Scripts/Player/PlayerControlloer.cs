@@ -1,6 +1,8 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -39,15 +41,19 @@ public class PlayerControlloer : MonoBehaviour
 
     private Animator animator;
 
+    CinemachineVirtualCamera _camera;
+    CinemachineBasicMultiChannelPerlin noise;
+
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameManager.Instance;
         _rigidbody = GetComponent<Rigidbody>();
         animator=GetComponentInChildren<Animator>();
+        _camera = GetComponentInChildren<CinemachineVirtualCamera>();
+        noise = _camera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         isHaveFlash = false;
         isOnFlash = false;
-
 
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -111,11 +117,36 @@ public class PlayerControlloer : MonoBehaviour
         {
             curMovementInput = context.ReadValue<Vector2>();
             animator.SetBool("IsMoving", true);
+            noise.m_AmplitudeGain = 0.5f;
+            noise.m_FrequencyGain = 0.05f;
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
             curMovementInput = Vector2.zero;
             animator.SetBool("IsMoving", false);
+            noise.m_AmplitudeGain = 0.5f;
+            noise.m_FrequencyGain = 0.01f;
+        }
+    }
+
+    public void OnRun(InputAction.CallbackContext context)
+    {
+        if (_rigidbody.velocity == Vector3.zero)
+            return;
+
+        if(context.phase==InputActionPhase.Performed)
+        {
+            animator.SetBool("IsRun", true);
+            moveSpeed = 5f;
+            noise.m_AmplitudeGain = 1f;
+            noise.m_FrequencyGain = 0.1f;
+        }
+        else if(context.phase == InputActionPhase.Canceled)
+        {
+            animator.SetBool("IsRun", false);
+            moveSpeed = 3f;
+            noise.m_AmplitudeGain = 0.5f;
+            noise.m_FrequencyGain = 0.05f;
         }
     }
 
