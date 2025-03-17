@@ -5727,6 +5727,9 @@ MonoBehaviour:
   sfxSlider: {fileID: 1322770245}
   mouseSensitivitySlider: {fileID: 580220972}
   continueButton: {fileID: 373924483}
+  bgmSliderValueText: {fileID: 506509706}
+  sfxSliderValueText: {fileID: 1372536579}
+  mouseSensitivitySliderValueText: {fileID: 1853272760}
 --- !u!4 &1837583993
 Transform:
   m_ObjectHideFlags: 0
