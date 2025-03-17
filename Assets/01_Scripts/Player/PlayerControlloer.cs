@@ -131,22 +131,20 @@ public class PlayerControlloer : MonoBehaviour
 
     public void OnRun(InputAction.CallbackContext context)
     {
-        if (_rigidbody.velocity == Vector3.zero)
-            return;
-
-        if(context.phase==InputActionPhase.Performed)
-        {
-            animator.SetBool("IsRun", true);
-            moveSpeed = 5f;
-            noise.m_AmplitudeGain = 1f;
-            noise.m_FrequencyGain = 0.1f;
-        }
-        else if(context.phase == InputActionPhase.Canceled)
+        if (_rigidbody.velocity == Vector3.zero || context.phase == InputActionPhase.Canceled)
         {
             animator.SetBool("IsRun", false);
             moveSpeed = 3f;
             noise.m_AmplitudeGain = 0.5f;
             noise.m_FrequencyGain = 0.05f;
+            return;
+        }
+        else if(context.phase==InputActionPhase.Performed)
+        {
+            animator.SetBool("IsRun", true);
+            moveSpeed = 5f;
+            noise.m_AmplitudeGain = 1f;
+            noise.m_FrequencyGain = 0.1f;
         }
     }
 
