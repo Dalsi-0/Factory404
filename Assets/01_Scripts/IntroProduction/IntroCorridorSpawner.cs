@@ -26,11 +26,30 @@ public class IntroCorridorSpawner : MonoBehaviour
 
     private void Start()
     {
+        // 소리
+        SoundManager.Instance.PlayBGM("BGM_StartScene");
+        SoundManager.Instance.PlayRandomSFXPeriodically(introAgent);
+        StartCoroutine(AutoFootStepSound());
+
         RenderSettings.fog = true;
         currentCorridor = null;
         SpawnerNewCorridors(originPos);
         introAgent.position = originPos.position;
         ShuffleArray(prefabsCorridors);
+    }
+
+    private IEnumerator AutoFootStepSound()
+    {
+        Transform camera = Camera.main.transform;
+
+        AudioClip[] footStep = SoundManager.Instance.footSetpAudioClips;
+
+        while (true)
+        {
+            SoundManager.Instance.PlaySFX(footStep[Random.Range(0, 4)].name, camera.position);
+
+            yield return new WaitForSeconds(.75f);
+        }
     }
 
     public void SpawnerNewCorridors(Transform spawnPoint)
