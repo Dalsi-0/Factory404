@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-
-
     private Player _player;
 
     public Player Player
@@ -14,10 +12,10 @@ public class GameManager : Singleton<GameManager>
         set { _player = value; }
     }
 
+    public ChatData chatData;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
     }
-
-
 }
