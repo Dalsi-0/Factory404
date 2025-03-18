@@ -23,8 +23,10 @@ public class SoundManager : Singleton<SoundManager>
     public AudioClip[] footSetpAudioClips; // 발소리4개 클립 배열
 
     // 스트레스 반복 효과음
-    [SerializeField] private float stressInterval = 5f; // 효과음 반복 간격
-    private Coroutine stressSoundCoroutine;
+    [SerializeField] private float stressSFXInterval = 5f; // 효과음 반복 간격
+    [SerializeField] private float stressBGMInterval = 1f; // 효과음 반복 간격
+    private Coroutine stressSFXSoundCoroutine;
+    private Coroutine stressBGMSoundCoroutine;
 
     private void Awake()
     {
@@ -110,7 +112,7 @@ public class SoundManager : Singleton<SoundManager>
     /// </summary>
     /// <param name="newBgmName">변경할 BGM의 이름</param>
     /// <param name="fadeDuration">페이드 아웃,인 시간</param>
-    public void ChangeBGM(string newBgmName, float fadeDuration = 1.5f)
+    public void ChangeBGM(string newBgmName, float fadeDuration = 1f)
     {
         if (soundDict.TryGetValue(newBgmName, out var newClip))
         {
@@ -263,22 +265,24 @@ public class SoundManager : Singleton<SoundManager>
 
     public void StartStressSoundCoroutine()
     {
-        stressSoundCoroutine = StartCoroutine(StressSoundRoutine());
+        stressSFXSoundCoroutine = StartCoroutine(StressSFXSoundRoutine());
+        stressBGMSoundCoroutine = StartCoroutine(StressBGMSoundRoutine());
     }
 
     public void StopStressSoundCoroutine()
     {
-         StopCoroutine(stressSoundCoroutine);
+        StopCoroutine(stressSFXSoundCoroutine);
+        StopCoroutine(stressBGMSoundCoroutine);
     }
 
     /// <summary>
     /// 스트레스 수준에 따라 효과음을 재생하는 코루틴
     /// </summary>
-    private IEnumerator StressSoundRoutine()
+    private IEnumerator StressSFXSoundRoutine()
     {
         while (true)
         {
-            if(GameManager.Instance.Player != null)
+            if (GameManager.Instance.Player != null)
             {
                 break;
             }
@@ -291,19 +295,59 @@ public class SoundManager : Singleton<SoundManager>
         while (true)
         {
             float stressValue = playerStress.GetStressValue();
-            yield return new WaitForSeconds(stressInterval); // 일정 주기마다 실행
+            yield return new WaitForSeconds(stressSFXInterval); // 일정 주기마다 실행
 
             if (stressValue >= 70f)
             {
                 ChangeBGM("BGM_Stress70");
                 PlaySFX("SFX_Beat", player.transform.position);
-                yield return new WaitForSeconds(Random.Range(1,3));
+                yield return new WaitForSeconds(Random.Range(1, 3));
                 PlaySFX("SFX_Breathing", player.transform.position);
             }
             else if (stressValue >= 30f)
             {
                 ChangeBGM("BGM_Stress30");
                 PlaySFX("SFX_Beat", player.transform.position);
+            }
+            else if (stressValue < 30)
+            {
+                ChangeBGM("BGM_Factory");
+            }
+        }
+    }
+
+    /// <summary>
+    /// 스트레스 수준에 따라 배경음을 재생하는 코루틴
+    /// </summary>
+    private IEnumerator StressBGMSoundRoutine()
+    {
+        while (true)
+        {
+            if (GameManager.Instance.Player != null)
+            {
+                break;
+            }
+            yield return new WaitForSeconds(1f);
+        }
+
+        PlayerStress playerStress = GameManager.Instance.Player.stress;
+
+        while (true)
+        {
+            float stressValue = playerStress.GetStressValue();
+            yield return new WaitForSeconds(stressBGMInterval); // 일정 주기마다 실행
+
+            if (stressValue >= 70f)
+            {
+                ChangeBGM("BGM_Stress70");
+            }
+            else if (stressValue >= 30f)
+            {
+                ChangeBGM("BGM_Stress30");
+            }
+            else if (stressValue < 30)
+            {
+                ChangeBGM("BGM_Factory");
             }
         }
     }

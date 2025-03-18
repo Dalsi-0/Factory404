@@ -1,4 +1,4 @@
-using Cinemachine;
+﻿using Cinemachine;
 using DG.Tweening;
 using System;
 using System.Collections;
@@ -138,6 +138,7 @@ namespace NavKeypad
             //onAccessGranted?.Invoke();
             door.transform.DOMove(door.transform.position + new Vector3(0, 5f, 0), 10f);
 
+            SoundManager.Instance.PlaySFX("SFX_Opendoor", transform.position);
             panelMesh.material.SetVector("_EmissionColor", screenGrantedColor * screenIntensity);
             audioSource.PlayOneShot(accessGrantedSfx);
 
@@ -146,6 +147,7 @@ namespace NavKeypad
 
         private IEnumerator ChangeCamPriority(CinemachineVirtualCamera cam, int priority, float delay)
         {
+            SoundManager.Instance.PlaySFX("Opendoor", door.transform.position);
             int originalPriority = cam.Priority;
             cam.Priority = priority;
             LayerMask layermask = mainCam.cullingMask;

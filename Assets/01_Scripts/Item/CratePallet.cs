@@ -1,26 +1,28 @@
-public class CratePallet : InteractableObject, IInteractable
+ï»¿public class CratePallet : InteractableObject, IInteractable
 {
     public Shelf shelf;
 
     public string GetInteractionText()
     {
-        string str = "'E'Å°·Î ¼±¹İ¿¡ »óÀÚ ¹èÄ¡ÇÏ±â";
+        string str = "'E'í‚¤ë¡œ ì„ ë°˜ì— ìƒì ë°°ì¹˜í•˜ê¸°";
 
         return str;
     }
 
     public string GetNameText()
     {
-        return "»óÀÚ´õ¹Ì";
+        return "ìƒìë”ë¯¸";
     }
 
     public void OnInteract()
     {
+        SoundManager.Instance.PlaySFX("SFX_InteractPickDrop", transform.position);
+        
         InterectWithPallet();
     }
 
     /// <summary>
-    /// Pallet¿Í »óÈ£ÀÛ¿ëÇßÀ» ¶§ »óÀÚ°¡ ÀÖÀ» °æ¿ì ¼±¹İÀÇ »óÀÚ¸¦ Áõ°¡½ÃÅ°´Â ±â´É(ÃÖ´ë°³¼öÁ¦ÇÑ)
+    /// Palletì™€ ìƒí˜¸ì‘ìš©í–ˆì„ ë•Œ ìƒìê°€ ìˆì„ ê²½ìš° ì„ ë°˜ì˜ ìƒìë¥¼ ì¦ê°€ì‹œí‚¤ëŠ” ê¸°ëŠ¥(ìµœëŒ€ê°œìˆ˜ì œí•œ)
     /// </summary>
     public void InterectWithPallet()
     {

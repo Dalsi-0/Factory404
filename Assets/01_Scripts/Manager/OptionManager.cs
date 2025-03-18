@@ -1,10 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UniRx.Triggers;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.SceneManagement;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,7 +16,7 @@ public class OptionManager : Singleton<OptionManager>
     public TextMeshProUGUI mouseSensitivitySliderValueText;
     public GameObject optionExitButton;
 
-    private float mouseSensitivity = 1.0f; // 마우스 감도 기본값
+    private float mouseSensitivity = 0.5f; // 마우스 감도 기본값
     private float xRotation = 0f;
     private int currentStage; // 현재 스테이지
 
@@ -44,7 +38,7 @@ public class OptionManager : Singleton<OptionManager>
 
         ApplySound(); // 볼륨적용
 
-        mouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 1.0f);
+        mouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 0.5f);
 
         mouseSensitivitySlider.onValueChanged.AddListener(UpdateMouseSensitivitySlider); // 감도 조절
         mouseSensitivitySlider.value = mouseSensitivity; // 저장된 감도 불러오기

@@ -8,6 +8,7 @@ public class SceneStartHelper : MonoBehaviour
 {
     [SerializeField] private PlayableDirector playableDirector;
     public ChatText ChatText;
+    public int chatId;
 
     void Start()
     {
@@ -21,12 +22,15 @@ public class SceneStartHelper : MonoBehaviour
     /// <returns></returns>
     IEnumerator StartScene()
     {
+        // 문 닫히는 소리 작동
+        SoundManager.Instance.PlaySFX("SFX_Closedoor", GameManager.Instance.Player.transform.position);
+
         yield return new WaitForEndOfFrame(); // 한 프레임 안전장치
         // 시네머신 작동
         playableDirector.Play();
         // Playerinput막고
         GameManager.Instance.Player.playerInput.enabled = false;
-        // 상호작용 오브젝트 막고
+        // 상호작용 오브젝트 막고 
         GameManager.Instance.Player.playerInteraction.SetisRayInteractionActive(false);
         // 팩토리 브금 실행
         SoundManager.Instance.ChangeBGM("BGM_Factory");
@@ -62,7 +66,7 @@ public class SceneStartHelper : MonoBehaviour
     private void OnTimelineEnd(PlayableDirector director)
     {
         playableDirector.transform.parent.gameObject.SetActive(false);
-        ChatText.UpdateChatText(0);
+        ChatText.UpdateChatText(chatId);
         StartCoroutine(EndGuideTimeline());
     }
 }

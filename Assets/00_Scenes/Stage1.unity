@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 15171951}
   - component: {fileID: 15171953}
   - component: {fileID: 15171952}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tunnel Beams001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6570,7 +6570,7 @@ GameObject:
   - component: {fileID: 465190019}
   - component: {fileID: 465190018}
   - component: {fileID: 465190017}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tunnel Floor001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7638,7 +7638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 557082927}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Corridor Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7665,6 +7665,7 @@ Transform:
   - {fileID: 465190016}
   - {fileID: 1826695312}
   - {fileID: 1666768369}
+  - {fileID: 1785617999}
   - {fileID: 1124041157}
   m_Father: {fileID: 493121688}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -9055,6 +9056,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 617071947}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &619094985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1795977716124312310, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 936.0049
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 510.0068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 39.32288
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc9f018d4f9e53148bf600a534f6c5e5, type: 3}
 --- !u!1001 &621341545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9145,7 +9214,7 @@ GameObject:
   - component: {fileID: 628457329}
   - component: {fileID: 628457328}
   - component: {fileID: 628457327}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tunnel Ceiling001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11020,7 +11089,7 @@ GameObject:
   - component: {fileID: 800388515}
   - component: {fileID: 800388517}
   - component: {fileID: 800388516}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SciFi_WallLight005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15831,7 +15900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1124041157}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Destination
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23897,7 +23966,7 @@ GameObject:
   - component: {fileID: 1666768372}
   - component: {fileID: 1666768371}
   - component: {fileID: 1666768370}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tunnel Walls001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24554,7 +24623,7 @@ GameObject:
   - component: {fileID: 1705469102}
   - component: {fileID: 1705469104}
   - component: {fileID: 1705469103}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SciFi_WallLightBulb005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26474,6 +26543,85 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &1785617998
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 557082927}
+    m_Modifications:
+    - target: {fileID: 834512158947799716, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneLoadObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.573
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095702731390422369, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: stageName
+      value: Stage2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7025dd0c21bc684b8d967f55ecc00ae, type: 3}
+--- !u!4 &1785617999 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1785617998}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1787948551
 GameObject:
   m_ObjectHideFlags: 0
@@ -27454,7 +27602,7 @@ GameObject:
   - component: {fileID: 1826695312}
   - component: {fileID: 1826695314}
   - component: {fileID: 1826695313}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tunnel Piipes001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30057,6 +30205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chatData: {fileID: 11400000, guid: 7904c0c2b1fa35741bc78efd603f31aa, type: 2}
+  iconSpriteAtlas: {fileID: 4343727234628468602, guid: a220422830ee36347bbd3f1a75eb1b01,
+    type: 2}
 --- !u!4 &1978672915
 Transform:
   m_ObjectHideFlags: 0
@@ -34908,6 +35058,7 @@ SceneRoots:
   - {fileID: 1382504927}
   - {fileID: 1300822661}
   - {fileID: 161653230}
+  - {fileID: 619094985}
   - {fileID: 6084681743928099180}
   - {fileID: 1855415216}
   - {fileID: 1165342783}

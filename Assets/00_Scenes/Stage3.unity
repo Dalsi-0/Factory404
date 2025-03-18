@@ -874,6 +874,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7530814803169865986, guid: cf6231f408f1c014095967d9395b8476,
         type: 3}
+      propertyPath: chatId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530814803169865986, guid: cf6231f408f1c014095967d9395b8476,
+        type: 3}
+      propertyPath: ChatText
+      value: 
+      objectReference: {fileID: 215270859}
+    - target: {fileID: 7530814803169865986, guid: cf6231f408f1c014095967d9395b8476,
+        type: 3}
       propertyPath: playableDirector
       value: 
       objectReference: {fileID: 1823264332}
@@ -3117,7 +3127,7 @@ GameObject:
   - component: {fileID: 167622191}
   - component: {fileID: 167622190}
   - component: {fileID: 167622189}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tunnel Ceiling001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13613,7 +13623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 870740487}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Corridor Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14762,7 +14772,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 997105312}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Destination
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17406,7 +17416,7 @@ GameObject:
   - component: {fileID: 1177047579}
   - component: {fileID: 1177047578}
   - component: {fileID: 1177047577}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tunnel Floor001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18770,6 +18780,79 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!1001 &1277463837
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 834512158947799716, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneLoadObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.809
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095702731390422369, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: stageName
+      value: Stage4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7025dd0c21bc684b8d967f55ecc00ae, type: 3}
 --- !u!1001 &1277513752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19333,7 +19416,7 @@ GameObject:
   - component: {fileID: 1307483965}
   - component: {fileID: 1307483967}
   - component: {fileID: 1307483966}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tunnel Piipes001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20691,7 +20774,7 @@ GameObject:
   - component: {fileID: 1408406202}
   - component: {fileID: 1408406204}
   - component: {fileID: 1408406203}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SciFi_WallLightBulb005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21615,7 +21698,7 @@ GameObject:
   - component: {fileID: 1473174075}
   - component: {fileID: 1473174077}
   - component: {fileID: 1473174076}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SciFi_WallLight005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22921,7 +23004,7 @@ GameObject:
   - component: {fileID: 1578609339}
   - component: {fileID: 1578609338}
   - component: {fileID: 1578609337}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tunnel Walls001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25739,7 +25822,7 @@ GameObject:
   - component: {fileID: 1784477618}
   - component: {fileID: 1784477620}
   - component: {fileID: 1784477619}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tunnel Beams001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28497,6 +28580,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2017926857}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2024544774
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1795977716124312310, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 936.0049
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 510.0068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 39.32288
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc9f018d4f9e53148bf600a534f6c5e5, type: 3}
 --- !u!1001 &2026493988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35011,6 +35162,7 @@ SceneRoots:
   - {fileID: 1227162523}
   - {fileID: 256803971}
   - {fileID: 1359889111}
+  - {fileID: 2024544774}
   - {fileID: 1026684094}
   - {fileID: 47979929}
   - {fileID: 1788798190}
@@ -35022,3 +35174,4 @@ SceneRoots:
   - {fileID: 1595009878}
   - {fileID: 505690592}
   - {fileID: 1602627386}
+  - {fileID: 1277463837}
