@@ -26283,6 +26283,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1963738965}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1976941256 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 911236788136305644, guid: 74194693b0e149543beec21d181424f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1300822661}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c26f376e1c941b4897116fd4f40a2bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1978672913
 GameObject:
   m_ObjectHideFlags: 0
@@ -30101,6 +30113,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7530814803169865986, guid: cf6231f408f1c014095967d9395b8476,
+        type: 3}
+      propertyPath: ChatText
+      value: 
+      objectReference: {fileID: 1976941256}
     - target: {fileID: 7530814803169865986, guid: cf6231f408f1c014095967d9395b8476,
         type: 3}
       propertyPath: playableDirector

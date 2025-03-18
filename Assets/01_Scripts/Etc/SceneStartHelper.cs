@@ -7,6 +7,7 @@ using UnityEngine.Playables;
 public class SceneStartHelper : MonoBehaviour
 {
     [SerializeField] private PlayableDirector playableDirector;
+    public ChatText ChatText;
 
     void Start()
     {
@@ -61,6 +62,7 @@ public class SceneStartHelper : MonoBehaviour
     private void OnTimelineEnd(PlayableDirector director)
     {
         playableDirector.transform.parent.gameObject.SetActive(false);
+        ChatText.UpdateChatText(0);
         StartCoroutine(EndGuideTimeline());
     }
 }
