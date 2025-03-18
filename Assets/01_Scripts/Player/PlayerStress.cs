@@ -59,7 +59,7 @@ public class PlayerStress : MonoBehaviour
 
     public void GetStress(float amount)
     {
-        stress.Value += amount;
+        stress.Value = Mathf.Clamp(stress.Value + amount, 0, 100);
     }
 
     private void SetStressLevel(int level)
