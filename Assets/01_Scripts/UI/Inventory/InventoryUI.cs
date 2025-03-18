@@ -17,6 +17,8 @@ public class InventoryUI : MonoBehaviour
     public GameObject detailWindow;
     public DetailUI detailUI;
 
+    public Button listenButton;
+
     [Header("Select Item Info")]
     public Image selectedItemIcon;
     public TextMeshProUGUI selectedItemName;
@@ -56,6 +58,7 @@ public class InventoryUI : MonoBehaviour
         selectedItemName.text = string.Empty;
         selectedItemDescription.text = string.Empty;
         detailButton.gameObject.SetActive(false);
+        listenButton.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -166,7 +169,15 @@ public class InventoryUI : MonoBehaviour
 
         selectedItemIcon.gameObject.SetActive(true);
         detailButton.gameObject.SetActive(true);
-        selectedItemIcon.sprite = selectedItem.icon;
+        if (selectedItem.canListen)
+        {
+            listenButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            listenButton.gameObject.SetActive(false);
+        }
+            selectedItemIcon.sprite = selectedItem.icon;
         selectedItemName.text = selectedItem.itemName;
         selectedItemDescription.text = selectedItem.itemDescription;
     }
@@ -196,5 +207,17 @@ public class InventoryUI : MonoBehaviour
         detailUI.GetItemInfo(selectedItem);
         detailWindow.SetActive(true);
         InventoryToggle();
+    }
+
+    public void OnClickListenButton()
+    {
+        AudioClip curClip = selectedItem.clip;
+
+        if(curClip != null)
+        {
+            SoundManager.Instance.PlaySFX(curClip.name, GameManager.Instance.Player.transform.position);
+        }
+
+        print("오디오 클립 출력");
     }
 }

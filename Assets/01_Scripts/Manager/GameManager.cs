@@ -1,11 +1,15 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
     private Player _player;
 
+
+    private List<Light> ghostLight = new List<Light>();
     public Player Player
     {
         get { return _player; }
@@ -16,6 +20,36 @@ public class GameManager : Singleton<GameManager>
 
     private void Awake()
     {
+        if (_instance != null && _instance != (this as GameManager))
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+
+    /// <summary>
+    /// 스트레스로 보일 헛것 리스트로 저장 및 초기화
+    /// </summary>
+    public void SetGhostLightList()
+    {
+        ghostLight.Clear();
+
+        ghostLight=GameObject.Find("GhostLightParent").GetComponentsInChildren<Light>().ToList();
+        OnGhostLight(false);
+    }
+
+    /// <summary>
+    /// 헛것들 Light 켜기/끄기
+    /// </summary>
+    public void OnGhostLight(bool set)
+    {
+        foreach (Light light in ghostLight)
+        {
+            light.gameObject.SetActive(set);
+        }
     }
 }

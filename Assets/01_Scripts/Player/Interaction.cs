@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,20 +14,25 @@ public class Interaction : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI interactionText;
     private Camera mainCamera;
+    private bool isRayInteractionActive;
 
     void Start()
     {
         mainCamera = Camera.main;
+        ClearInteraction();
     }
 
     void Update()
     {
-        RayInteraction();
+        if (isRayInteractionActive)
+        {
+            RayInteraction();
+        }
     }
     
     /// <summary>
-    /// ·¹ÀÌÄ³½ºÆ®¸¦ ÅëÇØ »óÈ£ÀÛ¿ë °¡´ÉÇÑ ¿ÀºêÁ§Æ®¿Í »óÈ£ÀÛ¿ëÇÒ ÁØºñ¸¦ ÇÏ´Â ÇÔ¼ö
-    /// »óÈ£ÀÛ¿ë °¡´ÉÇÑ ¿ÀºêÁ§Æ®°¡ ·¹ÀÌÄ³½ºÆ®¿¡ ´êÀ¸¸é OutlineÀÌ »ı±â°í ÀÌ¸§°ú »óÈ£ÀÛ¿ë °¡´ÉÇÑ Å°¸¦ UI¿¡ ¶ç¿î´Ù 
+    /// ë ˆì´ìºìŠ¤íŠ¸ë¥¼ í†µí•´ ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ ì˜¤ë¸Œì íŠ¸ì™€ ìƒí˜¸ì‘ìš©í•  ì¤€ë¹„ë¥¼ í•˜ëŠ” í•¨ìˆ˜
+    /// ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ ì˜¤ë¸Œì íŠ¸ê°€ ë ˆì´ìºìŠ¤íŠ¸ì— ë‹¿ìœ¼ë©´ Outlineì´ ìƒê¸°ê³  ì´ë¦„ê³¼ ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ í‚¤ë¥¼ UIì— ë„ìš´ë‹¤ 
     /// </summary>
     private void RayInteraction()
     {
@@ -54,22 +59,27 @@ public class Interaction : MonoBehaviour
         }
         else
         {
-            if (curInteractableObject != null)
-            {
-                curInteractableObject.OffOutline();
-            }
-
-            curInteractGameObject = null;
-            curInteractable = null;
-            curInteractableObject = null;
-
-            nameText.gameObject.SetActive(false);
-            interactionText.gameObject.SetActive(false);
+            ClearInteraction();
         }
     }
 
+    private void ClearInteraction()
+    {
+        if (curInteractableObject != null)
+        {
+            curInteractableObject.OffOutline();
+        }
+
+        curInteractGameObject = null;
+        curInteractable = null;
+        curInteractableObject = null;
+
+        nameText.gameObject.SetActive(false);
+        interactionText.gameObject.SetActive(false);
+    }
+
     /// <summary>
-    /// »óÈ£ÀÛ¿ë °¡´ÉÇÑ ¿ÀºêÁ§Æ®ÀÇ ÀÌ¸§À» UI¿¡ ¶ç¿ì´Â ÇÔ¼ö
+    /// ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ ì˜¤ë¸Œì íŠ¸ì˜ ì´ë¦„ì„ UIì— ë„ìš°ëŠ” í•¨ìˆ˜
     /// </summary>
     private void SetNameText()
     {
@@ -78,7 +88,7 @@ public class Interaction : MonoBehaviour
     }
 
     /// <summary>
-    /// »óÈ£ÀÛ¿ë °¡´ÉÇÑ Å°¸¦ UI¿¡ ¶ç¿ì´Â ÇÔ¼ö
+    /// ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ í‚¤ë¥¼ UIì— ë„ìš°ëŠ” í•¨ìˆ˜
     /// </summary>
     private void SetInteractionText()
     {
@@ -87,9 +97,9 @@ public class Interaction : MonoBehaviour
     }
 
     /// <summary>
-    /// Input SystemÀÇ °ªÀ» ¹Ş¾Æ »óÈ£ÀÛ¿ë °¡´ÉÇÑ ¿ÀºêÁ§Æ®¿Í »óÈ£ÀÛ¿ëÇÏ´Â ÇÔ¼ö
+    /// Input Systemì˜ ê°’ì„ ë°›ì•„ ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ ì˜¤ë¸Œì íŠ¸ì™€ ìƒí˜¸ì‘ìš©í•˜ëŠ” í•¨ìˆ˜
     /// </summary>
-    /// <param name="context"> -> »óÈ£ÀÛ¿ë ÇÒ Å° </param>
+    /// <param name="context"> -> ìƒí˜¸ì‘ìš© í•  í‚¤ </param>
     public void OnInteractInput(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Started && curInteractable != null)
@@ -100,5 +110,13 @@ public class Interaction : MonoBehaviour
             nameText.gameObject.SetActive(false);
             interactionText.gameObject.SetActive(false);
         }
+    }
+
+    /// <summary>
+    /// ìƒí˜¸ì‘ìš©í•˜ëŠ” Ray í‚¤ê³  ë„ëŠ” í•¨ìˆ˜
+    /// </summary>
+    public void SetisRayInteractionActive(bool value)
+    {
+        isRayInteractionActive = value;
     }
 }

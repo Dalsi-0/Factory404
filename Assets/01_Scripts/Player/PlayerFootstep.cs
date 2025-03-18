@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,14 +11,14 @@ public class PlayerFootstep : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioClips = SoundManager.Instance.footSetpAudioClips;
     }
 
     /// <summary>
-    /// ¿òÁ÷ÀÏ ¶§ ¹ß¼Ò¸®
+    /// ì›€ì§ì¼ ë•Œ ë°œì†Œë¦¬
     /// </summary>
     public void OnFootStep()
     {
-        Debug.Log("¹ß¼Ò¸®");
-        //SoundManager.Instance.PlaySFX(audioClips[Random.Range(0, audioClips.Length)].name, transform.position);
+        SoundManager.Instance.PlaySFX(audioClips[Random.Range(0, audioClips.Length)].name, transform.position);
     }
 }

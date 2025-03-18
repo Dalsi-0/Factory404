@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 8041850664149703079}
   - component: {fileID: 6146569053967762218}
   - component: {fileID: 2677964378384716682}
+  - component: {fileID: 4385866006426334827}
   m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
@@ -545,6 +546,23 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!114 &4385866006426334827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858654944949178799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0.5
+  m_FrequencyGain: 0.01
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &995884673045813749
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,6 +4145,7 @@ GameObject:
   - component: {fileID: 7750322752547449250}
   - component: {fileID: 7502045148036918950}
   - component: {fileID: 1681372756673887788}
+  - component: {fileID: 1015499357532724248}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -4214,6 +4233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlloer: {fileID: 0}
+  stress: {fileID: 0}
   curItemData: {fileID: 0}
 --- !u!114 &7750322752547449250
 MonoBehaviour:
@@ -4234,6 +4254,7 @@ MonoBehaviour:
   maxXLook: 85
   flash: {fileID: 7430415847875569647}
   handLight: {fileID: 5034329834517605734}
+  isHaveFlash: 0
   lookSensitivity: 0.1
   canLook: 1
 --- !u!114 &7502045148036918950
@@ -4332,13 +4353,13 @@ MonoBehaviour:
     m_ActionName: PlayerInput/Interaction[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6976187949686685225}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 7750322752547449250}
+        m_TargetAssemblyTypeName: PlayerControlloer, Assembly-CSharp
+        m_MethodName: OnOption
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4362,6 +4383,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0f19c24d-dead-4a06-9873-40eedb508374
     m_ActionName: PlayerInput/Flash[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7750322752547449250}
+        m_TargetAssemblyTypeName: PlayerControlloer, Assembly-CSharp
+        m_MethodName: OnRun
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 52a5f666-3946-4dde-a876-d428a4b53479
+    m_ActionName: PlayerInput/Run[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerInput
@@ -4385,6 +4422,24 @@ MonoBehaviour:
     m_Bits: 128
   nameText: {fileID: 0}
   interactionText: {fileID: 0}
+--- !u!114 &1015499357532724248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6976187949686685225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6edbcc7f51faa8d4faa49b7464036eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nowStressLevel:
+    value: 0
+  stress:
+    value: 0
+  volume: {fileID: 0}
+  bar: {fileID: 0}
 --- !u!1 &7200056500818674543
 GameObject:
   m_ObjectHideFlags: 0

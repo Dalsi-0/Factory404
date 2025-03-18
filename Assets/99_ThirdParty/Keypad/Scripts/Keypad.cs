@@ -122,6 +122,7 @@ namespace NavKeypad
             //onAccessDenied?.Invoke();
             panelMesh.material.SetVector("_EmissionColor", screenDeniedColor * screenIntensity);
             audioSource.PlayOneShot(accessDeniedSfx);
+            GameManager.Instance.Player.stress.GetStress(20);
         }
 
         private void ClearInput()

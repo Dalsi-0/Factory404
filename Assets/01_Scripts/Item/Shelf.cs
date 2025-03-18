@@ -18,7 +18,7 @@ public class Shelf : InteractableObject, IInteractable
 
     public string GetInteractionText()
     {
-        string str = "'E'키를 상자 회수하기";
+        string str = "'E'키로 상자 회수하기";
 
         return str;
     }
