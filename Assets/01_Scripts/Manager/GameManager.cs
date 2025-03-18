@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor.U2D;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class GameManager : Singleton<GameManager>
 {
     private Player _player;
-
-
-    private List<Light> ghostLight = new List<Light>();
     public Player Player
     {
         get { return _player; }
         set { _player = value; }
     }
 
+    private List<Light> ghostLight = new List<Light>();
+
     public ChatData chatData;
+
+    public SpriteAtlas iconSpriteAtlas;
 
     private void Awake()
     {

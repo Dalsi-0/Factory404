@@ -177,7 +177,7 @@ public class InventoryUI : MonoBehaviour
         {
             listenButton.gameObject.SetActive(false);
         }
-            selectedItemIcon.sprite = selectedItem.icon;
+        selectedItemIcon.sprite = GameManager.Instance.iconSpriteAtlas.GetSprite(selectedItem.icon.name);
         selectedItemName.text = selectedItem.itemName;
         selectedItemDescription.text = selectedItem.itemDescription;
     }
