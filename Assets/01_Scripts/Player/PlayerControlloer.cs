@@ -38,6 +38,9 @@ public class PlayerControlloer : MonoBehaviour
 
     private InventoryUI inventoryUI;
 
+    private GameObject inventoryPanel;
+    private GameObject optionPanel;
+
     private Rigidbody _rigidbody;
 
     private Animator animator;
@@ -52,7 +55,9 @@ public class PlayerControlloer : MonoBehaviour
         animator=GetComponentInChildren<Animator>();
         _camera = GetComponentInChildren<CinemachineVirtualCamera>();
         noise = _camera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        inventoryUI = GameObject.Find("UI/Inventory/InventoryUI").GetComponent<InventoryUI>();
+        inventoryPanel = GameObject.Find("UI/Inventory/InventoryUI");
+        optionPanel = GameObject.Find("UI/PlayerCanvas/OptionPanel");
+        inventoryUI = inventoryPanel.GetComponent<InventoryUI>();
         isOnFlash = false;
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -159,7 +164,7 @@ public class PlayerControlloer : MonoBehaviour
 
     public void OnInventory(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started)
+        if (context.phase == InputActionPhase.Started && !optionPanel.activeInHierarchy)
         {
             inventory?.Invoke();
             ToggleCursor();
@@ -168,7 +173,7 @@ public class PlayerControlloer : MonoBehaviour
 
     public void OnOption(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started)
+        if (context.phase == InputActionPhase.Started && !inventoryPanel.activeInHierarchy)
         {
             option?.Invoke();
             ToggleCursor();
