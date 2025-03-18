@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
-public interface IInteractable
+﻿public interface IInteractable
 {
     /// <summary>
     /// UI에 띄울 이름을 반환하는 함수
