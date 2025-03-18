@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class OptionManager : Singleton<OptionManager>
 {
-    public SceneLoader sefse;
     public GameObject OptionPanel;
     public Slider bgmSlider; // Bgm 슬라이더
     public Slider sfxSlider; // SFX 슬라이더
@@ -28,9 +27,6 @@ public class OptionManager : Singleton<OptionManager>
         // 처음으로 시작할때 볼륨
         bgmSlider.value = PlayerPrefs.GetFloat("BgmVolume", 1f);
         sfxSlider.value = PlayerPrefs.GetFloat("SfxVolume", 1f);
-
-
-        ApplySound(); // 볼륨적용
 
         mouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 0.5f);
 
@@ -68,8 +64,14 @@ public class OptionManager : Singleton<OptionManager>
             }
         }
 
+
         if (scene.name.Substring(0, 5) == "Stage")
         {
+            int StageNum = int.Parse(scene.name.Substring(5));
+
+            PlayerPrefs.SetInt("Stage", StageNum);
+            PlayerPrefs.Save();
+
             optionExitButton.SetActive(false);
         }
         else
@@ -95,7 +97,6 @@ public class OptionManager : Singleton<OptionManager>
 
     public void ExitGame()
     {
-        Debug.Log("게임 종료");
         Application.Quit();
     }
 
@@ -113,10 +114,6 @@ public class OptionManager : Singleton<OptionManager>
         SoundManager.Instance.SetSFXVolume(sfxSlider.value);
     }
 
-    public void ApplySound()
-    {
-        //OptionManager.Instance.
-    }
     private void UpdateMouseSensitivitySlider(float value)
     {
         mouseSensitivity = value;
@@ -149,7 +146,7 @@ public class OptionManager : Singleton<OptionManager>
 
     public void LoadStage()
     {
-        SceneLoader.Instance.LoadScene("Stage1" + currentStage); //스테이지 로드
+        SceneLoader.Instance.LoadScene("Stage" + currentStage); //스테이지 로드
     }
 
     void OnPlayRestart()
@@ -158,7 +155,7 @@ public class OptionManager : Singleton<OptionManager>
         SceneLoader.Instance.LoadScene("stage" + lastStage);
     }
 
-    void ResetGame()
+    public void ResetGame()
     {
         PlayerPrefs.SetInt("Stage", 1); // 처음 1스테이지부터로 초기화
         PlayerPrefs.Save();
@@ -182,7 +179,7 @@ public class OptionManager : Singleton<OptionManager>
         currentStage = PlayerPrefs.GetInt("Stage", 1);
         if(continueButton != null)
         {
-            if (currentStage == 1 || currentStage > 1) // 스테이지 1이나 5를 클리어 했다면 버튼 비활성화
+            if (currentStage == 1) // 스테이지 1이나 5를 클리어 했다면 버튼 비활성화
             {
                 continueButton.SetActive(false);
             }
