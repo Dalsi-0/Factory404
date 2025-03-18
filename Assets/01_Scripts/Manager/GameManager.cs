@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -20,12 +20,19 @@ public class GameManager : Singleton<GameManager>
 
     private void Awake()
     {
+        if (_instance != null && _instance != (this as GameManager))
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
 
     /// <summary>
-    /// ½ºÆ®·¹½º·Î º¸ÀÏ Çê°Í ¸®½ºÆ®·Î ÀúÀå ¹× ÃÊ±âÈ­
+    /// ìŠ¤íŠ¸ë ˆìŠ¤ë¡œ ë³´ì¼ í—›ê²ƒ ë¦¬ìŠ¤íŠ¸ë¡œ ì €ì¥ ë° ì´ˆê¸°í™”
     /// </summary>
     public void SetGhostLightList()
     {
@@ -36,7 +43,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     /// <summary>
-    /// Çê°Íµé Light ÄÑ±â/²ô±â
+    /// í—›ê²ƒë“¤ Light ì¼œê¸°/ë„ê¸°
     /// </summary>
     public void OnGhostLight(bool set)
     {

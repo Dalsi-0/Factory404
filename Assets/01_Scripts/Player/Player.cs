@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 {
     public PlayerControlloer controlloer;
     public PlayerStress stress;
+    public PlayerInput playerInput;
+    public Interaction playerInteraction;
 
 
     public ItemData curItemData;
@@ -19,5 +21,7 @@ public class Player : MonoBehaviour
         GameManager.Instance.Player = this;
         controlloer = GetComponent<PlayerControlloer>();
         stress= GetComponent<PlayerStress>();
+        playerInput = GetComponent<PlayerInput>();
+        playerInteraction = GetComponent<Interaction>();
     }
 }

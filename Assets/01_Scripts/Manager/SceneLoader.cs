@@ -27,6 +27,18 @@ public class SceneLoader : Singleton<SceneLoader>
 
     private string nextScene;
 
+    private void Awake()
+    {
+        if (_instance != null && _instance != (this as SceneLoader))
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);

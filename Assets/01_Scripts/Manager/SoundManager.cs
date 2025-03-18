@@ -16,11 +16,27 @@ public class SoundManager : Singleton<SoundManager>
 
     [Header("랜덤 스산한 효과음")]
     [SerializeField] private AudioClip[] randomSFXAudioClipName; // 오디오 클립 배열
-    [SerializeField] private float interval = 2f;
-    private bool isRandomSFXPlaying = false;
+    [SerializeField] private float randomSFXInterval = 4f;
+    private Coroutine randomSFXCoroutine;
 
     [Header("발소리")]
     public AudioClip[] footSetpAudioClips; // 발소리4개 클립 배열
+
+    // 스트레스 반복 효과음
+    [SerializeField] private float stressInterval = 5f; // 효과음 반복 간격
+    private Coroutine stressSoundCoroutine;
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != (this as SoundManager))
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
@@ -128,10 +144,21 @@ public class SoundManager : Singleton<SoundManager>
     /// </summary>
     public void PlayRandomSFXPeriodically(Transform playerTransform)
     {
-        if (!isRandomSFXPlaying)
+        if (randomSFXCoroutine != null)
         {
-            isRandomSFXPlaying = true;
-            StartCoroutine(RandomSFXCoroutine(playerTransform));
+            StopCoroutine(randomSFXCoroutine);
+        }
+        randomSFXCoroutine = StartCoroutine(RandomSFXCoroutine(playerTransform));
+    }
+
+    /// <summary>
+    /// 랜덤 공포 효과음 멈추는 기능
+    /// </summary>
+    public void StopPlayRandomSFX()
+    {
+        if (randomSFXCoroutine != null)
+        {
+            StopCoroutine(randomSFXCoroutine);
         }
     }
 
@@ -143,7 +170,7 @@ public class SoundManager : Singleton<SoundManager>
         while (true)
         {
             float randomDelay = Random.Range(0f, 3f);
-            yield return new WaitForSeconds(interval + randomDelay);
+            yield return new WaitForSeconds(randomSFXInterval + randomDelay);
 
             if (randomSFXAudioClipName.Length > 0)
             {
@@ -224,9 +251,60 @@ public class SoundManager : Singleton<SoundManager>
         sfxVolume = Mathf.Clamp01(volume);
     }
 
+    /// <summary>
+    /// 모든 소리 0
+    /// </summary>
+    /// <param name="mute"></param>
     public void SetMute(bool mute)
     {
         bgmVolume = 0;
         sfxVolume = 0;
+    }
+
+    public void StartStressSoundCoroutine()
+    {
+        stressSoundCoroutine = StartCoroutine(StressSoundRoutine());
+    }
+
+    public void StopStressSoundCoroutine()
+    {
+         StopCoroutine(stressSoundCoroutine);
+    }
+
+    /// <summary>
+    /// 스트레스 수준에 따라 효과음을 재생하는 코루틴
+    /// </summary>
+    private IEnumerator StressSoundRoutine()
+    {
+        while (true)
+        {
+            if(GameManager.Instance.Player != null)
+            {
+                break;
+            }
+            yield return new WaitForSeconds(1f);
+        }
+
+        Player player = GameManager.Instance.Player;
+        PlayerStress playerStress = GameManager.Instance.Player.stress;
+
+        while (true)
+        {
+            float stressValue = playerStress.GetStressValue();
+            yield return new WaitForSeconds(stressInterval); // 일정 주기마다 실행
+
+            if (stressValue >= 70f)
+            {
+                ChangeBGM("BGM_Stress70");
+                PlaySFX("SFX_Beat", player.transform.position);
+                yield return new WaitForSeconds(Random.Range(1,3));
+                PlaySFX("SFX_Breathing", player.transform.position);
+            }
+            else if (stressValue >= 30f)
+            {
+                ChangeBGM("BGM_Stress30");
+                PlaySFX("SFX_Beat", player.transform.position);
+            }
+        }
     }
 }
