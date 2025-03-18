@@ -41,7 +41,6 @@ public class SoundManager : Singleton<SoundManager>
     private void Start()
     {
         InitSoundManager();
-        stressSoundCoroutine = StartCoroutine(StressSoundRoutine());
     }
 
     /// <summary>
@@ -251,13 +250,33 @@ public class SoundManager : Singleton<SoundManager>
         sfxVolume = 0;
     }
 
+    public void StartStressSoundCoroutine()
+    {
+        stressSoundCoroutine = StartCoroutine(StressSoundRoutine());
+    }
+
+    public void StopStressSoundCoroutine()
+    {
+         StopCoroutine(stressSoundCoroutine);
+    }
+
     /// <summary>
     /// 스트레스 수준에 따라 효과음을 재생하는 코루틴
     /// </summary>
     private IEnumerator StressSoundRoutine()
     {
+        while (true)
+        {
+            if(GameManager.Instance.Player != null)
+            {
+                break;
+            }
+            yield return new WaitForSeconds(1f);
+        }
+
         Player player = GameManager.Instance.Player;
         PlayerStress playerStress = GameManager.Instance.Player.stress;
+
         while (true)
         {
             float stressValue = playerStress.GetStressValue();
