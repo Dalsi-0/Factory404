@@ -5094,6 +5094,58 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 393193543}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &401814524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 401814526}
+  - component: {fileID: 401814525}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &401814525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401814524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fc4b18b30438a49b3bfad8f0e39b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips: []
+  randomSFXAudioClipName: []
+  interval: 2
+  footSetpAudioClips:
+  - {fileID: 8300000, guid: b8d709610b0a41645bc1be8195ab59c6, type: 3}
+  - {fileID: 8300000, guid: 56b92bc4f72d0864aace0187cc1204d9, type: 3}
+  - {fileID: 8300000, guid: 267bbb2057ae16a4db2412a8751ef7fa, type: 3}
+  - {fileID: 8300000, guid: 3a2a68754695d8a4fbe155cfbe4fc8fb, type: 3}
+--- !u!4 &401814526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401814524}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.840329, y: -0.96661115, z: 30.833002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &417873813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22978,7 +23030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1782856884
 Transform:
   m_ObjectHideFlags: 0
@@ -26260,7 +26312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392838cb92c5dcb4ba53fed4867413b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chatData: {fileID: 0}
+  chatData: {fileID: 11400000, guid: 7904c0c2b1fa35741bc78efd603f31aa, type: 2}
 --- !u!4 &1978672915
 Transform:
   m_ObjectHideFlags: 0
@@ -30934,6 +30986,7 @@ SceneRoots:
   - {fileID: 1810571088}
   - {fileID: 281569038}
   - {fileID: 1978672915}
+  - {fileID: 401814526}
   - {fileID: 1382504927}
   - {fileID: 1300822661}
   - {fileID: 161653230}
