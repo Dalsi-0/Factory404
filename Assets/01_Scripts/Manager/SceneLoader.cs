@@ -80,6 +80,7 @@ public class SceneLoader : Singleton<SceneLoader>
 
         if(sceneName == "StageEnd01" || sceneName == "StageEnd02")
         {
+            Cursor.lockState = CursorLockMode.None;
             SoundManager.Instance.ChangeBGM("BGM_Memories");
         }
         else if(sceneName == "StartScene")

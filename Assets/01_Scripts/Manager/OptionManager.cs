@@ -159,7 +159,7 @@ public class OptionManager : Singleton<OptionManager>
     {
         PlayerPrefs.SetInt("Stage", 1); // 처음 1스테이지부터로 초기화
         PlayerPrefs.Save();
-        SceneLoader.Instance.LoadScene("Stage1");
+        SceneLoader.Instance.LoadScene("StartScene");
     }
 
     void CleaerStage5()
