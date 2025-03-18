@@ -39,11 +39,13 @@ public class DetailUI : MonoBehaviour
         curFOV = 60f;
         targetFOV = curFOV;
         GameManager.Instance.Player.GetComponent<PlayerInput>().enabled = false;
+        uiCamera.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     private void OnDisable()
     {
         GameManager.Instance.Player.GetComponent<PlayerInput>().enabled = true;
+        uiCamera.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     /// <summary>
