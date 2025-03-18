@@ -27,6 +27,8 @@ public class SceneStartHelper : MonoBehaviour
         GameManager.Instance.Player.playerInput.enabled = false;
         // 상호작용 오브젝트 막고
         GameManager.Instance.Player.playerInteraction.SetisRayInteractionActive(false);
+        // 팩토리 브금 실행
+        SoundManager.Instance.ChangeBGM("BGM_Factory");
     }
 
     /// <summary>
@@ -39,6 +41,9 @@ public class SceneStartHelper : MonoBehaviour
         GameManager.Instance.Player.playerInput.enabled = true;
         // 상호작용 오브젝트 풀고
         GameManager.Instance.Player.playerInteraction.SetisRayInteractionActive(true);
+        // 랜덤 공포 효과음 작동
+        SoundManager.Instance.PlayRandomSFXPeriodically(GameManager.Instance.Player.transform);
+
         SoundManager.Instance.StartStressSoundCoroutine();
     }
 
@@ -46,6 +51,7 @@ public class SceneStartHelper : MonoBehaviour
     {
         playableDirector.stopped -= OnTimelineEnd;
         SoundManager.Instance.StopStressSoundCoroutine();
+        SoundManager.Instance.StopPlayRandomSFX();
     }
 
     /// <summary>

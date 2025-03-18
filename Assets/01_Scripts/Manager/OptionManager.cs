@@ -110,6 +110,7 @@ public class OptionManager : MonoBehaviour
 
     public void StartGame()
     {
+        SoundManager.Instance.StopPlayRandomSFX();
         SceneLoader.Instance.LoadScene("Stage1");
     }
 

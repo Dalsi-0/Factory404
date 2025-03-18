@@ -19,7 +19,6 @@ public class PlayerFootstep : MonoBehaviour
     /// </summary>
     public void OnFootStep()
     {
-        Debug.Log("발소리");
-        //SoundManager.Instance.PlaySFX(audioClips[Random.Range(0, audioClips.Length)].name, transform.position);
+        SoundManager.Instance.PlaySFX(audioClips[Random.Range(0, audioClips.Length)].name, transform.position);
     }
 }

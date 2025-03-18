@@ -17,7 +17,7 @@ public class SoundManager : Singleton<SoundManager>
     [Header("랜덤 스산한 효과음")]
     [SerializeField] private AudioClip[] randomSFXAudioClipName; // 오디오 클립 배열
     [SerializeField] private float randomSFXInterval = 4f;
-    private bool isRandomSFXPlaying = false;
+    private Coroutine randomSFXCoroutine;
 
     [Header("발소리")]
     public AudioClip[] footSetpAudioClips; // 발소리4개 클립 배열
@@ -144,10 +144,21 @@ public class SoundManager : Singleton<SoundManager>
     /// </summary>
     public void PlayRandomSFXPeriodically(Transform playerTransform)
     {
-        if (!isRandomSFXPlaying)
+        if (randomSFXCoroutine != null)
         {
-            isRandomSFXPlaying = true;
-            StartCoroutine(RandomSFXCoroutine(playerTransform));
+            StopCoroutine(randomSFXCoroutine);
+        }
+        randomSFXCoroutine = StartCoroutine(RandomSFXCoroutine(playerTransform));
+    }
+
+    /// <summary>
+    /// 랜덤 공포 효과음 멈추는 기능
+    /// </summary>
+    public void StopPlayRandomSFX()
+    {
+        if (randomSFXCoroutine != null)
+        {
+            StopCoroutine(randomSFXCoroutine);
         }
     }
 
@@ -284,12 +295,14 @@ public class SoundManager : Singleton<SoundManager>
 
             if (stressValue >= 70f)
             {
+                ChangeBGM("BGM_Stress70");
                 PlaySFX("SFX_Beat", player.transform.position);
                 yield return new WaitForSeconds(Random.Range(1,3));
                 PlaySFX("SFX_Breathing", player.transform.position);
             }
             else if (stressValue >= 30f)
             {
+                ChangeBGM("BGM_Stress30");
                 PlaySFX("SFX_Beat", player.transform.position);
             }
         }
