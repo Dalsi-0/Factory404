@@ -110,7 +110,7 @@ public class SoundManager : Singleton<SoundManager>
     /// </summary>
     /// <param name="newBgmName">변경할 BGM의 이름</param>
     /// <param name="fadeDuration">페이드 아웃,인 시간</param>
-    public void ChangeBGM(string newBgmName, float fadeDuration = 1.5f)
+    public void ChangeBGM(string newBgmName, float fadeDuration = 1f)
     {
         if (soundDict.TryGetValue(newBgmName, out var newClip))
         {

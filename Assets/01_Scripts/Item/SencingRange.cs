@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,8 +8,6 @@ public class SensingRange : MonoBehaviour
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Debug.Log("°¨ÁöµÊ!");
-
             GameManager.Instance.Player.stress.GetStress(Time.deltaTime * 10);
         }
     }

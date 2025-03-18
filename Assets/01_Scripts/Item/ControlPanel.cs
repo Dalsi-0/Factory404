@@ -1,4 +1,4 @@
-using Cinemachine;
+ï»¿using Cinemachine;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,29 +6,29 @@ using UnityEngine;
 
 public class ControlPanel : InteractableObject, IInteractable
 {
-    [Header("°³¼ö ÆÇÁ¤ÇÒ ¼±¹İµé ¸®½ºÆ®")]
+    [Header("ê°œìˆ˜ íŒì •í•  ì„ ë°˜ë“¤ ë¦¬ìŠ¤íŠ¸")]
     public List<Shelf> shelfList;
     
-    //Á¤´ä ¹è¿­
+    //ì •ë‹µ ë°°ì—´
     private List<int> answers = new List<int>();
 
-    [Header("1Â÷·Î ¿­¸± ¹®")]
+    [Header("1ì°¨ë¡œ ì—´ë¦´ ë¬¸")]
     public GameObject door ;
 
-    [Header("¹®À» ºñÃçÁÙ Ä«¸Ş¶ó")]
+    [Header("ë¬¸ì„ ë¹„ì¶°ì¤„ ì¹´ë©”ë¼")]
     [SerializeField] private CinemachineVirtualCamera doorCamera;
 
-    [Header("¹®À» ºñÃçÁÙ Ä«¸Ş¶ó°¡ ÂïÀ» ·¹ÀÌ¾î")]
+    [Header("ë¬¸ì„ ë¹„ì¶°ì¤„ ì¹´ë©”ë¼ê°€ ì°ì„ ë ˆì´ì–´")]
     [SerializeField] LayerMask doorLayerMask;
 
-    //¸ŞÀÎ Ä«¸Ş¶ó
+    //ë©”ì¸ ì¹´ë©”ë¼
     private Camera mainCam;
 
-    //ÀÌ¹Ì ÇÑ¹ø ½ÇÇàÇß´ÂÁöÀÇ ¿©ºÎ
+    //ì´ë¯¸ í•œë²ˆ ì‹¤í–‰í–ˆëŠ”ì§€ì˜ ì—¬ë¶€
     private bool isFinished;
     
     /// <summary>
-    /// Á¤´äÀ» ¹Ì¸® ³Ö¾îÁÖ°í ½ÃÀÛ
+    /// ì •ë‹µì„ ë¯¸ë¦¬ ë„£ì–´ì£¼ê³  ì‹œì‘
     /// </summary>
     void Awake()
     {
@@ -38,23 +38,24 @@ public class ControlPanel : InteractableObject, IInteractable
 
     public string GetInteractionText()
     {
-        string str = "'E'Å°¸¦ ´­·¯ ¹® ¿­±â ½Ãµµ";
+        string str = "'E'í‚¤ë¥¼ ëˆŒëŸ¬ ë¬¸ ì—´ê¸° ì‹œë„";
 
         return str;
     }
 
     public string GetNameText()
     {
-        return "Á¦¾î ÀåÄ¡";
+        return "ì œì–´ ì¥ì¹˜";
     }
 
     public void OnInteract()
     {
+        SoundManager.Instance.PlaySFX("SFX_Controllerpanel", transform.position);
         TryOpenDoor();
     }
 
     /// <summary>
-    /// Control Panel°ú »óÈ£ÀÛ¿ë ÇßÀ»¶§ Á¤´ä°³¼ö¿Í ÀÏÄ¡ÇÏ´ÂÁö °Ë»çÇÏ°í °á°ú¿¡ µû¶ó Çàµ¿À» ¼öÇàÇÏ´Â ±â´É
+    /// Control Panelê³¼ ìƒí˜¸ì‘ìš© í–ˆì„ë•Œ ì •ë‹µê°œìˆ˜ì™€ ì¼ì¹˜í•˜ëŠ”ì§€ ê²€ì‚¬í•˜ê³  ê²°ê³¼ì— ë”°ë¼ í–‰ë™ì„ ìˆ˜í–‰í•˜ëŠ” ê¸°ëŠ¥
     /// </summary>
     void TryOpenDoor()
     {
@@ -73,7 +74,7 @@ public class ControlPanel : InteractableObject, IInteractable
     }
 
     /// <summary>
-    /// Á¤´äÀ» ¸ÂÃß¾úÀ»¶§ ¹® ¿­±â¸¦ ½ÇÇàÇÏ´Â ±â´É
+    /// ì •ë‹µì„ ë§ì¶”ì—ˆì„ë•Œ ë¬¸ ì—´ê¸°ë¥¼ ì‹¤í–‰í•˜ëŠ” ê¸°ëŠ¥
     /// </summary>
     void SuccessToOpendoor()
     {
@@ -83,7 +84,7 @@ public class ControlPanel : InteractableObject, IInteractable
     }
 
     /// <summary>
-    /// Á¤´äÀ» ¸ÂÃß±â ¸øÇßÀ» ¶§ ½ÇÆĞ µğ¹öÇÁ¸¦ ºÎ¿©ÇÏ´Â ±â´É (½ºÆ®·¹½º °ÔÀÌÁö)
+    /// ì •ë‹µì„ ë§ì¶”ê¸° ëª»í–ˆì„ ë•Œ ì‹¤íŒ¨ ë””ë²„í”„ë¥¼ ë¶€ì—¬í•˜ëŠ” ê¸°ëŠ¥ (ìŠ¤íŠ¸ë ˆìŠ¤ ê²Œì´ì§€)
     /// </summary>
     void FailToOpendoor()
     {
@@ -91,7 +92,7 @@ public class ControlPanel : InteractableObject, IInteractable
     }
 
     /// <summary>
-    /// Ä«¸Ş¶ó ¿¬ÃâÀ» À§ÇÑ ÄÚ·çÆ¾
+    /// ì¹´ë©”ë¼ ì—°ì¶œì„ ìœ„í•œ ì½”ë£¨í‹´
     /// </summary>
     private IEnumerator ChangeCamPriority(CinemachineVirtualCamera cam, int priority, float delay)
     {

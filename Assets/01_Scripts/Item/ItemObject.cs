@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,19 +6,19 @@ using UnityEngine.UI;
 public interface IInteractable
 {
     /// <summary>
-    /// UI¿¡ ¶ç¿ï ÀÌ¸§À» ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+    /// UIì— ë„ìš¸ ì´ë¦„ì„ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
     /// </summary>
-    /// <returns> ¾ÆÀÌÅÛÀÇ ÀÌ¸§ </returns>
+    /// <returns> ì•„ì´í…œì˜ ì´ë¦„ </returns>
     public string GetNameText();
 
     /// <summary>
-    /// UI¿¡ ¶ç¿ï »óÈ£ÀÛ¿ë °¡´ÉÇÑ Å°¸¦ ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+    /// UIì— ë„ìš¸ ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ í‚¤ë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
     /// </summary>
-    /// <returns> »óÈ£ÀÛ¿ë °¡´ÉÇÑ Å°¿¡ ´ëÇÑ ¼³¸í </returns>
+    /// <returns> ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ í‚¤ì— ëŒ€í•œ ì„¤ëª… </returns>
     public string GetInteractionText();
 
     /// <summary>
-    /// »óÈ£ÀÛ¿ë °¡´ÉÇÑ ¿ÀºêÁ§Æ®¿Í ÇÃ·¹ÀÌ¾î°¡ »óÈ£ÀÛ¿ëÇßÀ» ¶§ È£ÃâµÇ´Â ÇÔ¼ö
+    /// ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ ì˜¤ë¸Œì íŠ¸ì™€ í”Œë ˆì´ì–´ê°€ ìƒí˜¸ì‘ìš©í–ˆì„ ë•Œ í˜¸ì¶œë˜ëŠ” í•¨ìˆ˜
     /// </summary>
     public void OnInteract();
 }
@@ -36,13 +36,15 @@ public class ItemObject : InteractableObject, IInteractable
 
     public string GetInteractionText()
     {
-        string str = "'E'Å°¸¦ ´­·¯ ¾ÆÀÌÅÛ È¹µæ";
+        string str = "'E'í‚¤ë¥¼ ëˆŒëŸ¬ ì•„ì´í…œ íšë“";
 
         return str;
     }
 
     public void OnInteract()
     {
+        SoundManager.Instance.PlaySFX("SFX_AddItem", transform.position);
+
         GameManager.Instance.Player.curItemData = data;
 
         GameManager.Instance.Player.addItem?.Invoke();

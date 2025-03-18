@@ -1,9 +1,9 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class Shelf : InteractableObject, IInteractable
 {
-    [Header("Shelf À§¿¡ ÀÖ´Â »óÀÚµé ¸ñ·Ï")]
+    [Header("Shelf ìœ„ì— ìˆëŠ” ìƒìë“¤ ëª©ë¡")]
     public List<GameObject> crates;
 
     public int activeCount;
@@ -18,23 +18,24 @@ public class Shelf : InteractableObject, IInteractable
 
     public string GetInteractionText()
     {
-        string str = "'E'Å°·Î »óÀÚ È¸¼öÇÏ±â";
+        string str = "'E'í‚¤ë¡œ ìƒì íšŒìˆ˜í•˜ê¸°";
 
         return str;
     }
 
     public string GetNameText()
     {
-        return "¼±¹İ";
+        return "ì„ ë°˜";
     }
 
     public void OnInteract()
     {
+        SoundManager.Instance.PlaySFX("SFX_InteractPickDrop", transform.position);
         InterectWithShelf();
     }
 
     /// <summary>
-    /// ¼±¹İ°ú »óÈ£ÀÛ¿ëÇßÀ» ¶§ »óÀÚ°¡ ÀÖÀ» °æ¿ì »óÀÚ¸¦ ÁÙÀÌ´Â ±â´É(ÃÖ¼Ò°³¼öÁ¦ÇÑ)
+    /// ì„ ë°˜ê³¼ ìƒí˜¸ì‘ìš©í–ˆì„ ë•Œ ìƒìê°€ ìˆì„ ê²½ìš° ìƒìë¥¼ ì¤„ì´ëŠ” ê¸°ëŠ¥(ìµœì†Œê°œìˆ˜ì œí•œ)
     /// </summary>
     public void InterectWithShelf()
     {
