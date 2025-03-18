@@ -31,13 +31,19 @@ public class IntroCorridorSpawner : MonoBehaviour
         SoundManager.Instance.PlayRandomSFXPeriodically(introAgent);
         StartCoroutine(AutoFootStepSound());
 
+        // 통로의 끝을 안보이게 하기 위한 검은 안개 세팅
         RenderSettings.fog = true;
+
         currentCorridor = null;
         SpawnerNewCorridors(originPos);
         introAgent.position = originPos.position;
         ShuffleArray(prefabsCorridors);
     }
 
+    /// <summary>
+    /// 자동 발걸음 소리 재생
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator AutoFootStepSound()
     {
         Transform camera = Camera.main.transform;
@@ -52,6 +58,10 @@ public class IntroCorridorSpawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 새로운 복도 생성 및 이전 복도는 삭제
+    /// </summary>
+    /// <param name="spawnPoint"></param>
     public void SpawnerNewCorridors(Transform spawnPoint)
     {
         if (prefabsCorridors.Length == 0) return;

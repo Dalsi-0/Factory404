@@ -6,41 +6,29 @@ using UnityEngine.AI;
 
 public class IntroAgent : MonoBehaviour
 {
+    // 네비메쉬를 Bake하기우한 NavMeshSurface 오브젝트
     [SerializeField] private NavMeshSurface surface;
+
     private NavMeshAgent agent;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-       // StartCoroutine(UpdateNavmesh());
     }
 
-    void Update()
-    {
-        /*if (Vector3.Distance(surface.transform.position, transform.position) > 5f)
-        {
-            surface.transform.position = transform.position;
-            surface.BuildNavMesh();
-        }*/
-    }
-
+    /// <summary>
+    /// 동적 네비메쉬 Bake
+    /// </summary>
     public void PassivityUpdateNavmesh()
     {
         surface.transform.position = transform.position;
         surface.BuildNavMesh();
     }
 
-    IEnumerator UpdateNavmesh()
-    {
-        while (true)
-        {
-            surface.transform.position = transform.position;
-            surface.BuildNavMesh();
-
-            yield return new WaitForSeconds(1f);
-        }
-    }
-
+    /// <summary>
+    /// 목표 지점 설정
+    /// </summary>
+    /// <param name="destination"></param>
     public void SetNewDestination(Vector3 destination)
     {
         PassivityUpdateNavmesh();
