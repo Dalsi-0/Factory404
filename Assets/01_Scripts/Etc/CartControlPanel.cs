@@ -28,6 +28,9 @@ public class CartControlPanel : InteractableObject, IInteractable
 
     public GameObject guideTxt;
 
+    [Header("스테이지 3의 chatText")]
+    public ChatText chatText;
+
     private void Awake()
     {
         mainCam = Camera.main;
@@ -92,6 +95,7 @@ public class CartControlPanel : InteractableObject, IInteractable
 
     void OpenDoor()
     {
+        chatText.UpdateChatText(3);
         door.transform.DOMove(door.transform.position + new Vector3(0, 4f, 0), 10f); 
     }
 }

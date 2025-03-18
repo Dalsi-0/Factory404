@@ -14881,6 +14881,11 @@ PrefabInstance:
       objectReference: {fileID: 1271562160}
     - target: {fileID: 5896005593866861130, guid: adfddee2625b7744999151ec0b39c9c2,
         type: 3}
+      propertyPath: keypadCombo
+      value: 8796
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896005593866861130, guid: adfddee2625b7744999151ec0b39c9c2,
+        type: 3}
       propertyPath: doorLayerMask.m_Bits
       value: 215
       objectReference: {fileID: 0}
@@ -21562,6 +21567,7 @@ MonoBehaviour:
   detailButton: {fileID: 1297602163}
   detailWindow: {fileID: 1678437889}
   detailUI: {fileID: 1678437891}
+  listenButton: {fileID: 0}
   selectedItemIcon: {fileID: 169481421}
   selectedItemName: {fileID: 1950892325}
   selectedItemDescription: {fileID: 185935566}
@@ -34011,6 +34017,11 @@ PrefabInstance:
       propertyPath: doorCamera
       value: 
       objectReference: {fileID: 1271562160}
+    - target: {fileID: 5896005593866861130, guid: adfddee2625b7744999151ec0b39c9c2,
+        type: 3}
+      propertyPath: keypadCombo
+      value: 5437
+      objectReference: {fileID: 0}
     - target: {fileID: 5896005593866861130, guid: adfddee2625b7744999151ec0b39c9c2,
         type: 3}
       propertyPath: doorLayerMask.m_Bits
