@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using UniRx;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -39,20 +39,20 @@ public class PlayerStress : MonoBehaviour
         GameManager.Instance.SetGhostLightList();
 
 
-        // ½ºÆ®·¹½º °ªÀÌ º¯ÇÏ¸é ´ÙÀ½ ¹®Àå È£Ãâ
+        // ìŠ¤íŠ¸ë ˆìŠ¤ ê°’ì´ ë³€í•˜ë©´ ë‹¤ìŒ ë¬¸ì¥ í˜¸ì¶œ
         stress.DistinctUntilChanged()
-            // ½ºÆ®·¹½º °ª 0~100 »çÀÌ¿¡¼­ °ÔÀÌÁö °ª º¯°æÇØÁÖ±â
+            // ìŠ¤íŠ¸ë ˆìŠ¤ ê°’ 0~100 ì‚¬ì´ì—ì„œ ê²Œì´ì§€ ê°’ ë³€ê²½í•´ì£¼ê¸°
             .Do(val => { val = Mathf.Clamp(val, 0, 100); bar.fillAmount = val / 100; })
-            // ½ºÆ®·¹½º °ªÀÌ 30 ³ÑÀ¸¸é ½ºÆ®·¹½º·¹º§ 1·Î º¯°æ
+            // ìŠ¤íŠ¸ë ˆìŠ¤ ê°’ì´ 30 ë„˜ìœ¼ë©´ ìŠ¤íŠ¸ë ˆìŠ¤ë ˆë²¨ 1ë¡œ ë³€ê²½
             .Where(x => x > 30f).Do(_ => nowStressLevel.Value = 1)
-            // ½ºÆ®·¹½º °ªÀÌ 70 ³ÑÀ¸¸é ½ºÆ®·¹½º·¹º§ 2·Î º¯°æ
+            // ìŠ¤íŠ¸ë ˆìŠ¤ ê°’ì´ 70 ë„˜ìœ¼ë©´ ìŠ¤íŠ¸ë ˆìŠ¤ë ˆë²¨ 2ë¡œ ë³€ê²½
             .Where(x => x > 70f).Do(_ => nowStressLevel.Value = 2).Subscribe();
 
-        // ½ºÆ®·¹½º ·¹º§ÀÌ ¹Ù²î¸é ´ÙÀ½ ¹®Àå È£Ãâ(Áßº¹°ª ÀÎÁ¤x)
+        // ìŠ¤íŠ¸ë ˆìŠ¤ ë ˆë²¨ì´ ë°”ë€Œë©´ ë‹¤ìŒ ë¬¸ì¥ í˜¸ì¶œ(ì¤‘ë³µê°’ ì¸ì •x)
         nowStressLevel.Distinct().Subscribe(val => SetStressLevel(val));
 
 
-        // ½ºÆ®·¹½º ¼öÄ¡ ¼­¼­È÷ °¨¼Ò
+        // ìŠ¤íŠ¸ë ˆìŠ¤ ìˆ˜ì¹˜ ì„œì„œíˆ ê°ì†Œ
         Observable.Timer(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.1f))
             .Select(_ =>  stress.Value=Mathf.Clamp(stress.Value - downStress,0,100)).Subscribe();
     }
@@ -79,7 +79,7 @@ public class PlayerStress : MonoBehaviour
                 }
                 break;
             case ABNORMAL.GHOSTLIGHT:
-                // ºÒ²ô±â -> ¶óÀÌÆ® ¸ñ·Ï ´Ù¸¥°÷¿¡ µÎ°í È£Ãâ¸¸ ÇÏ±â
+                // ë¶ˆë„ê¸° -> ë¼ì´íŠ¸ ëª©ë¡ ë‹¤ë¥¸ê³³ì— ë‘ê³  í˜¸ì¶œë§Œ í•˜ê¸°
                 GameManager.Instance.OnGhostLight(true);
                 break;
 
@@ -87,7 +87,7 @@ public class PlayerStress : MonoBehaviour
     }
 
     /// <summary>
-    /// ¼­¼­È÷ ½Ã¾ß °¨¼Ò
+    /// ì„œì„œíˆ ì‹œì•¼ ê°ì†Œ
     /// </summary>
     /// <param name="vignette"></param>
     private void IntensityChange(Vignette vignette)
@@ -98,5 +98,10 @@ public class PlayerStress : MonoBehaviour
                 vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 0.7f, Time.deltaTime * 5f);
 
             }).Subscribe().AddTo(this);
+    }
+
+    public float GetStressValue()
+    {
+        return stress.Value;
     }
 }

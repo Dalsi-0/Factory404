@@ -1,4 +1,4 @@
-using Cinemachine;
+ï»¿using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -44,7 +44,6 @@ public class PlayerControlloer : MonoBehaviour
     CinemachineVirtualCamera _camera;
     CinemachineBasicMultiChannelPerlin noise;
 
-    // Start is called before the first frame update
     void Start()
     {
         gameManager = GameManager.Instance;
@@ -56,7 +55,11 @@ public class PlayerControlloer : MonoBehaviour
         isOnFlash = false;
 
         Cursor.lockState = CursorLockMode.Locked;
+    }
 
+    private void Update()
+    {
+        lookSensitivity = OptionManager.Instance.mouseSensitivitySlider.value;
     }
 
     private void FixedUpdate()
@@ -73,7 +76,7 @@ public class PlayerControlloer : MonoBehaviour
     }
 
     /// <summary>
-    /// ½ÇÁ¦ ÀÌµ¿ ºÎºĞ
+    /// ì‹¤ì œ ì´ë™ ë¶€ë¶„
     /// </summary>
     private void Move()
     {
@@ -95,7 +98,7 @@ public class PlayerControlloer : MonoBehaviour
     }
 
     /// <summary>
-    /// Ä«¸Ş¶ó ½ÃÁ¡ È¸Àü ¹× Ä³¸¯ÅÍ È¸Àü
+    /// ì¹´ë©”ë¼ ì‹œì  íšŒì „ ë° ìºë¦­í„° íšŒì „
     /// </summary>
     private void CameraLook()
     {
@@ -107,7 +110,7 @@ public class PlayerControlloer : MonoBehaviour
     }
 
     /// <summary>
-    /// ÀÎÇ²½Ã½ºÅÛ °ü·Ã
+    /// ì¸í’‹ì‹œìŠ¤í…œ ê´€ë ¨
     /// </summary>
     /// <param name="context"></param>
     #region InputAction
@@ -184,7 +187,7 @@ public class PlayerControlloer : MonoBehaviour
     #endregion
 
     /// <summary>
-    /// ¸¶¿ì½º Ä¿¼­ º¸ÀÌ°Ô/¾Èº¸ÀÌ°Ô
+    /// ë§ˆìš°ìŠ¤ ì»¤ì„œ ë³´ì´ê²Œ/ì•ˆë³´ì´ê²Œ
     /// </summary>
     private void ToggleCursor()
     {
@@ -194,7 +197,7 @@ public class PlayerControlloer : MonoBehaviour
     }
 
     /// <summary>
-    /// ÇÃ·¡½Ã È¹µæÇÒ ¶§ È£Ãâ
+    /// í”Œë˜ì‹œ íšë“í•  ë•Œ í˜¸ì¶œ
     /// </summary>
     public void SetHaveFlash()
     {

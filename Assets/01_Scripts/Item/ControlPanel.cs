@@ -26,6 +26,9 @@ public class ControlPanel : InteractableObject, IInteractable
 
     //이미 한번 실행했는지의 여부
     private bool isFinished;
+
+    [Header("스테이지 2의 chatText")]
+    public ChatText chatText;
     
     /// <summary>
     /// 정답을 미리 넣어주고 시작
@@ -33,7 +36,7 @@ public class ControlPanel : InteractableObject, IInteractable
     void Awake()
     {
         mainCam = Camera.main;
-        answers = new List<int>() { 0, 4, 3, 1, 4 }; //0, 4, 3, 1, 4
+        answers = new List<int>() { 0,0,0,0,0 }; //0, 4, 3, 1, 4
     }
 
     public string GetInteractionText()
@@ -106,6 +109,8 @@ public class ControlPanel : InteractableObject, IInteractable
 
         yield return new WaitForSeconds(2);
         mainCam.cullingMask = layermask;
+
+        chatText.UpdateChatText(2);
     }
 
 }

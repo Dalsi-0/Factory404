@@ -146,6 +146,7 @@ namespace NavKeypad
 
         private IEnumerator ChangeCamPriority(CinemachineVirtualCamera cam, int priority, float delay)
         {
+            SoundManager.Instance.PlaySFX("Opendoor", door.transform.position);
             int originalPriority = cam.Priority;
             cam.Priority = priority;
             LayerMask layermask = mainCam.cullingMask;

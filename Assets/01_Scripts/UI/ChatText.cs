@@ -42,10 +42,13 @@ public class ChatText : MonoBehaviour
     /// <returns> UI의 ChatText에 대화 내용 출력 </returns>
     IEnumerator DisplayChat()
     {
+        int speeker = chat[0][chat[0].Length-1] - '0';
         for (int i = 0; i < chat.Length; i++)
         {
-            if (i % 4 == 0)
+            if (chat[i][chat[i].Length-1] != speeker)
             {
+                speeker = chat[i][chat[i].Length - 1];
+
                 yield return new WaitForSeconds(clearSpeed);
                 chatText.text = string.Empty;
             }
@@ -63,10 +66,11 @@ public class ChatText : MonoBehaviour
     /// <returns> typingSpeed마다 1글자 출력 </returns>
     IEnumerator TypingText(string str)
     {
-        foreach (char c in str.ToCharArray())
+        for(int i = 0; i < str.Length - 1; i++)
         {
-            chatText.text += c;
+            chatText.text += str[i];
             yield return new WaitForSeconds(typingSpeed);
         }
+        chatText.text += "\n";
     }
 }
