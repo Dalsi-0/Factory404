@@ -58,7 +58,7 @@ public class Cart : MonoBehaviour
 
     void Update()
     {
-        if(!isMoving && isControlling && Input.GetKeyUp(KeyCode.Escape))
+        if(!isMoving && isControlling && Input.GetKeyUp(KeyCode.Space))
         {
             isControlling = false;
         }
