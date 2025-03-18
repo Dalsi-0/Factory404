@@ -25,7 +25,6 @@ public class PlayerControlloer : MonoBehaviour
     [Header("Flash")]
     [SerializeField]private GameObject flash;
     [SerializeField]private Light handLight;
-    [SerializeField]private bool isHaveFlash;
     private bool isOnFlash;
 
     private float camCurXRot;
@@ -36,6 +35,8 @@ public class PlayerControlloer : MonoBehaviour
 
     public Action inventory;
     public Action option;
+
+    private InventoryUI inventoryUI;
 
     private Rigidbody _rigidbody;
 
@@ -51,7 +52,7 @@ public class PlayerControlloer : MonoBehaviour
         animator=GetComponentInChildren<Animator>();
         _camera = GetComponentInChildren<CinemachineVirtualCamera>();
         noise = _camera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        isHaveFlash = false;
+        inventoryUI = GameObject.Find("UI/Inventory/InventoryUI").GetComponent<InventoryUI>();
         isOnFlash = false;
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -176,15 +177,27 @@ public class PlayerControlloer : MonoBehaviour
 
     public void OnFlash(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && isHaveFlash)
+        if (context.phase == InputActionPhase.Started && HaveFlash())
         {
-            // flash On/Off
             isOnFlash = !isOnFlash;
             handLight.gameObject.SetActive(isOnFlash);
         }
     }
 
     #endregion
+
+    public bool HaveFlash()
+    {
+        if (inventoryUI.FindItem("손전등"))
+        {
+            flash.SetActive(true);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     /// <summary>
     /// 마우스 커서 보이게/안보이게
@@ -194,14 +207,5 @@ public class PlayerControlloer : MonoBehaviour
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;
-    }
-
-    /// <summary>
-    /// 플래시 획득할 때 호출
-    /// </summary>
-    public void SetHaveFlash()
-    {
-        isHaveFlash = true;
-        flash.SetActive(true);
     }
 }

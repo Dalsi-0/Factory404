@@ -89,11 +89,6 @@ public class InventoryUI : MonoBehaviour
 
         if(emptySlot != null)
         {
-            if(data.itemName == "손전등")
-            {
-                GameManager.Instance.Player.controlloer.SetHaveFlash();
-            }
-
             emptySlot.item = data;
             UpdateSlots();
             GameManager.Instance.Player.curItemData = null;
@@ -182,17 +177,20 @@ public class InventoryUI : MonoBehaviour
     /// 인벤토리에 아이템이 존재하는 지 찾는 함수
     /// </summary>
     /// <param name="name"> -> 찾고 싶은 아이템의 이름 </param>
-    /// <returns> 아이템이 존재하면 그 아이템의 정보를 반환, 아이템이 없으면 null을 반환 </returns>
-    public ItemData FindItem(string name)
+    /// <returns> 아이템이 존재하면 ture를 반환, 아이템이 없으면 false를 반환 </returns>
+    public bool FindItem(string name)
     {
         for(int i = 0; i < slots.Length; i++)
         {
-            if (slots[i].item.itemName == name)
+            if (slots[i].item != null)
             {
-                return slots[i].item;
+                if (slots[i].item.itemName == name)
+                {
+                    return true;
+                }
             }
         }
-        return null;
+        return false;
     }
 
     /// <summary>
