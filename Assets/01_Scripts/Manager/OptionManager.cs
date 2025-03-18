@@ -20,11 +20,6 @@ public class OptionManager : Singleton<OptionManager>
     private float xRotation = 0f;
     private int currentStage; // 현재 스테이지
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     void Start()
     {
         // 슬라이더 값 변경
@@ -188,14 +183,16 @@ public class OptionManager : Singleton<OptionManager>
     public void ContinueButton()
     {
         currentStage = PlayerPrefs.GetInt("Stage", 1);
-
-        if (currentStage == 1 || currentStage > 1) // 스테이지 1이나 5를 클리어 했다면 버튼 비활성화
+        if(continueButton != null)
         {
-            continueButton.SetActive(false);
-        }
-        else
-        {
-            continueButton.SetActive(true);
+            if (currentStage == 1 || currentStage > 1) // 스테이지 1이나 5를 클리어 했다면 버튼 비활성화
+            {
+                continueButton.SetActive(false);
+            }
+            else
+            {
+                continueButton.SetActive(true);
+            }
         }
     }
 }
