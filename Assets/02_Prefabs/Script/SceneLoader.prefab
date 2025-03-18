@@ -176,9 +176,9 @@ MonoBehaviour:
   - sceneName: Stage5
     thumbnail: {fileID: 21300000, guid: a138897328824e743882ada5ff580b47, type: 3}
   - sceneName: StageEnd01
-    thumbnail: {fileID: 21300000, guid: a138897328824e743882ada5ff580b47, type: 3}
+    thumbnail: {fileID: 21300000, guid: d27b06b68c9c33e47ba5384e3d914d21, type: 3}
   - sceneName: StageEnd02
-    thumbnail: {fileID: 21300000, guid: a138897328824e743882ada5ff580b47, type: 3}
+    thumbnail: {fileID: 21300000, guid: d27b06b68c9c33e47ba5384e3d914d21, type: 3}
 --- !u!1 &1972212207859157054
 GameObject:
   m_ObjectHideFlags: 0
