@@ -16,8 +16,7 @@ public class OptionManager : Singleton<OptionManager>
     public TextMeshProUGUI mouseSensitivitySliderValueText;
     public GameObject optionExitButton;
 
-    private float mouseSensitivity = 0.5f; // 마우스 감도 기본값
-    private float xRotation = 0f;
+    public float mouseSensitivity = 0.5f; // 마우스 감도 기본값
     private int currentStage; // 현재 스테이지
 
     void Start()
@@ -37,8 +36,6 @@ public class OptionManager : Singleton<OptionManager>
 
         mouseSensitivitySlider.onValueChanged.AddListener(UpdateMouseSensitivitySlider); // 감도 조절
         mouseSensitivitySlider.value = mouseSensitivity; // 저장된 감도 불러오기
-
-        //Cursor.lockState = CursorLockMode.Locked; // 마우스 커서 고정
 
         OptionPanel.SetActive(false);
 

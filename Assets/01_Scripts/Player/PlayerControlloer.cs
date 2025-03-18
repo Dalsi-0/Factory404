@@ -65,7 +65,7 @@ public class PlayerControlloer : MonoBehaviour
 
     private void Update()
     {
-        lookSensitivity = OptionManager.Instance.mouseSensitivitySlider.value;
+        lookSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 0.5f);
     }
 
     private void FixedUpdate()
