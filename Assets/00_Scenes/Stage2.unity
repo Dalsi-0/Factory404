@@ -6860,6 +6860,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7530814803169865986, guid: cf6231f408f1c014095967d9395b8476,
         type: 3}
+      propertyPath: chatId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530814803169865986, guid: cf6231f408f1c014095967d9395b8476,
+        type: 3}
+      propertyPath: ChatText
+      value: 
+      objectReference: {fileID: 2105263449}
+    - target: {fileID: 7530814803169865986, guid: cf6231f408f1c014095967d9395b8476,
+        type: 3}
       propertyPath: playableDirector
       value: 
       objectReference: {fileID: 2011339165}
@@ -12281,6 +12291,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 894002330}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &903034017
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1795977716124312310, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 936.0049
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 510.0068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 39.32288
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063173690995628304, guid: fc9f018d4f9e53148bf600a534f6c5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc9f018d4f9e53148bf600a534f6c5e5, type: 3}
 --- !u!1001 &903062001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17588,6 +17666,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4441861298438718191, guid: 4da7cd4243bfe9f44b3bc9ac63b3cd1d,
     type: 3}
   m_PrefabInstance: {fileID: 1061005998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1062842016 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 5137037106949633056}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1072385858
 PrefabInstance:
@@ -27432,7 +27516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1782856884
 Transform:
   m_ObjectHideFlags: 0
@@ -33487,7 +33571,6 @@ MonoBehaviour:
   doorLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  chatText: {fileID: 2105263449}
 --- !u!114 &821102081951272573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34349,7 +34432,7 @@ GameObject:
   - component: {fileID: 9103848778676910441}
   - component: {fileID: 2014605990438459998}
   - component: {fileID: 6375759355279777985}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tunnel Floor001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35831,6 +35914,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 859293903564802833}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1001 &5137037106949633056
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7453743577876781408}
+    m_Modifications:
+    - target: {fileID: 834512158947799716, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneLoadObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.573
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075788405012387987, guid: c7025dd0c21bc684b8d967f55ecc00ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7025dd0c21bc684b8d967f55ecc00ae, type: 3}
 --- !u!65 &5260712968154686824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37100,7 +37251,7 @@ GameObject:
   - component: {fileID: 7138023041972433703}
   - component: {fileID: 734387524326223426}
   - component: {fileID: 710071223295736664}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tunnel Ceiling001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37248,6 +37399,7 @@ Transform:
   - {fileID: 2376178746396987264}
   - {fileID: 149827105580612927}
   - {fileID: 5435633035162519838}
+  - {fileID: 1062842016}
   m_Father: {fileID: 1050205631432219303}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &7460569755486439475
@@ -37804,7 +37956,7 @@ GameObject:
   - component: {fileID: 4888935659963583939}
   - component: {fileID: 316402937764639822}
   - component: {fileID: 5260712968154686824}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tunnel Walls001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38105,6 +38257,7 @@ SceneRoots:
   - {fileID: 1227162523}
   - {fileID: 1029072200}
   - {fileID: 1359889111}
+  - {fileID: 903034017}
   - {fileID: 461091947}
   - {fileID: 1162596503199665801}
   - {fileID: 1788798190}

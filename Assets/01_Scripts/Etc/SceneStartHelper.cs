@@ -8,6 +8,7 @@ public class SceneStartHelper : MonoBehaviour
 {
     [SerializeField] private PlayableDirector playableDirector;
     public ChatText ChatText;
+    public int chatId;
 
     void Start()
     {
@@ -62,7 +63,7 @@ public class SceneStartHelper : MonoBehaviour
     private void OnTimelineEnd(PlayableDirector director)
     {
         playableDirector.transform.parent.gameObject.SetActive(false);
-        ChatText.UpdateChatText(0);
+        ChatText.UpdateChatText(chatId);
         StartCoroutine(EndGuideTimeline());
     }
 }
