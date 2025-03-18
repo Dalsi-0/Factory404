@@ -46,7 +46,7 @@ public class ChatData : DataReaderBase
     }
 }
 
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(ChatData))]
 public class ChatDataReaderEditor : Editor
 {
@@ -84,3 +84,4 @@ public class ChatDataReaderEditor : Editor
         EditorUtility.SetDirty(target);
     }
 }
+#endif
