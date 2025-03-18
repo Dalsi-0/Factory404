@@ -77,6 +77,16 @@ public class SceneLoader : Singleton<SceneLoader>
     {
         nextScene = sceneName;
         RenderSettings.fog = false;
+
+        if(sceneName == "StageEnd01" || sceneName == "StageEnd02")
+        {
+            SoundManager.Instance.ChangeBGM("BGM_Memories");
+        }
+        else if(sceneName == "StartScene")
+        {
+            SoundManager.Instance.ChangeBGM("BGM_StartScene");
+        }
+
         StartCoroutine(LoadSceneCoroutine());
     }
 
