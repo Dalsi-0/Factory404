@@ -56,7 +56,11 @@ public class PlayerControlloer : MonoBehaviour
         isOnFlash = false;
 
         Cursor.lockState = CursorLockMode.Locked;
+    }
 
+    private void Update()
+    {
+        lookSensitivity = OptionManager.Instance.mouseSensitivitySlider.value;
     }
 
     private void FixedUpdate()

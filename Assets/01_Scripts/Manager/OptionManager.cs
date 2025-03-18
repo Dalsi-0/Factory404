@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UniRx.Triggers;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class OptionManager : MonoBehaviour
+public class OptionManager : Singleton<OptionManager>
 {
     public SceneLoader sefse;
     public GameObject OptionPanel;
@@ -18,10 +20,77 @@ public class OptionManager : MonoBehaviour
     public TextMeshProUGUI bgmSliderValueText;
     public TextMeshProUGUI sfxSliderValueText;
     public TextMeshProUGUI mouseSensitivitySliderValueText;
+    public GameObject optionExitButton;
 
     private float mouseSensitivity = 1.0f; // 마우스 감도 기본값
     private float xRotation = 0f;
     private int currentStage; // 현재 스테이지
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void Start()
+    {
+        // 슬라이더 값 변경
+        bgmSlider.onValueChanged.AddListener(SetBgmVolume);
+        sfxSlider.onValueChanged.AddListener(SetSfxVolume);
+
+        // 처음으로 시작할때 볼륨
+        bgmSlider.value = PlayerPrefs.GetFloat("BgmVolume", 1f);
+        sfxSlider.value = PlayerPrefs.GetFloat("SfxVolume", 1f);
+
+
+        ApplySound(); // 볼륨적용
+
+        mouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 1.0f);
+
+        mouseSensitivitySlider.onValueChanged.AddListener(UpdateMouseSensitivitySlider); // 감도 조절
+        mouseSensitivitySlider.value = mouseSensitivity; // 저장된 감도 불러오기
+
+        //Cursor.lockState = CursorLockMode.Locked; // 마우스 커서 고정
+
+        OptionPanel.SetActive(false);
+
+        int saveStage = PlayerPrefs.GetInt("Stage", 1); // 기본값 1로 고정
+
+        ContinueButton();
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Player player = FindObjectOfType<Player>();
+
+        if(player != null)
+        {
+            PlayerControlloer controller = player.GetComponent<PlayerControlloer>();
+
+            if(controller != null)
+            {
+                controller.option += ToggleOptionPanel;
+            }
+        }
+
+        if (scene.name.Substring(0, 5) == "Stage")
+        {
+            optionExitButton.SetActive(false);
+        }
+        else
+        {
+            optionExitButton.SetActive(true);
+        }
+    }
 
     public void ToggleOptionPanel() // 옵션 패널 on/off 기능
     {
@@ -44,34 +113,6 @@ public class OptionManager : MonoBehaviour
         Application.Quit();
     }
 
-
-    void Start()
-    {
-        // 슬라이더 값 변경
-        bgmSlider.onValueChanged.AddListener(SetBgmVolume);
-        sfxSlider.onValueChanged.AddListener(SetSfxVolume);
-
-        // 처음으로 시작할때 볼륨
-        bgmSlider.value = PlayerPrefs.GetFloat("BgmVolume", 1f);
-        sfxSlider.value = PlayerPrefs.GetFloat("SfxVolume", 1f);
-
-
-        ApplySound(); // 볼륨적용
-
-        mouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 1.0f);
-
-        mouseSensitivitySlider.onValueChanged.AddListener(UpdateSmouseSensitivitySlider); // 감도 조절
-        mouseSensitivitySlider.value = mouseSensitivity; // 저장된 감도 불러오기
-
-        //Cursor.lockState = CursorLockMode.Locked; // 마우스 커서 고정
-
-        OptionPanel.SetActive(false);
-
-        int saveStage = PlayerPrefs.GetInt("Stage", 1); // 기본값 1로 고정
-
-        ContinueButton();
-    }
-
     public void SetBgmVolume(float volume) // BgmVolume 조절
     {
         bgmSlider.value = volume;
@@ -90,7 +131,7 @@ public class OptionManager : MonoBehaviour
     {
         //OptionManager.Instance.
     }
-    private void UpdateSmouseSensitivitySlider(float value)
+    private void UpdateMouseSensitivitySlider(float value)
     {
         mouseSensitivity = value;
         mouseSensitivitySliderValueText.text = Mathf.FloorToInt(mouseSensitivitySlider.value * 100f).ToString();
