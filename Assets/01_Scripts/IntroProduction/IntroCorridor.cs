@@ -6,12 +6,13 @@ public class IntroCorridor : MonoBehaviour
 {
     [SerializeField] private Transform destination;
     [SerializeField] private Transform spawnPoint;
-
+    private bool isActived = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("IntroAgent"))
+        if(other.CompareTag("IntroAgent") && !isActived)
         {
+            isActived = true;
             other.GetComponent<IntroAgent>().PassivityUpdateNavmesh();
 
             StartCoroutine(WaitOneFrame(other));
