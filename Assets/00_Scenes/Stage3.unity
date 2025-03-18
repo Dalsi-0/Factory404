@@ -20973,7 +20973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c08609aa92bba48b381ef37f5693ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 3
+  distance: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
