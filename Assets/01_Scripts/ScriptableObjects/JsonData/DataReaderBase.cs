@@ -16,3 +16,6 @@ public abstract class DataReaderBase : ScriptableObject
     [Header("End Row Index")]
     public int endRowIndex;
 }
+
+
+
