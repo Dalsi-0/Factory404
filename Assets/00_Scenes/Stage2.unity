@@ -2638,7 +2638,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -93.530396, y: -46.765564}
+  m_AnchoredPosition: {x: -93.53046, y: -46.765564}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &155709998
@@ -21145,7 +21145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71977e07d7ce6784a9e0b4d16c2cc515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sefse: {fileID: 0}
   OptionPanel: {fileID: 148610655}
   bgmSlider: {fileID: 1158993073}
   sfxSlider: {fileID: 530092961}
@@ -21155,6 +21154,7 @@ MonoBehaviour:
   sfxSliderValueText: {fileID: 1580977304}
   mouseSensitivitySliderValueText: {fileID: 1449717595}
   optionExitButton: {fileID: 1893169584}
+  mouseSensitivity: 0.5
 --- !u!4 &1175902685
 Transform:
   m_ObjectHideFlags: 0
@@ -35242,7 +35242,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chatData: {fileID: 11400000, guid: 7904c0c2b1fa35741bc78efd603f31aa, type: 2}
-  iconSpriteAtlas: {fileID: 0}
+  iconSpriteAtlas: {fileID: 4343727234628468602, guid: a220422830ee36347bbd3f1a75eb1b01,
+    type: 2}
 --- !u!4 &2071102667
 Transform:
   m_ObjectHideFlags: 0

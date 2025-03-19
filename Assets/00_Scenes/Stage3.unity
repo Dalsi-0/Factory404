@@ -31955,7 +31955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71977e07d7ce6784a9e0b4d16c2cc515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sefse: {fileID: 0}
   OptionPanel: {fileID: 19997442}
   bgmSlider: {fileID: 1126766938}
   sfxSlider: {fileID: 619302442}
@@ -31965,6 +31964,7 @@ MonoBehaviour:
   sfxSliderValueText: {fileID: 476098492}
   mouseSensitivitySliderValueText: {fileID: 1132694735}
   optionExitButton: {fileID: 362648121}
+  mouseSensitivity: 0.5
 --- !u!4 &2018694203
 Transform:
   m_ObjectHideFlags: 0
@@ -32626,7 +32626,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chatData: {fileID: 11400000, guid: 7904c0c2b1fa35741bc78efd603f31aa, type: 2}
-  iconSpriteAtlas: {fileID: 0}
+  iconSpriteAtlas: {fileID: 4343727234628468602, guid: a220422830ee36347bbd3f1a75eb1b01,
+    type: 2}
 --- !u!4 &2071102667
 Transform:
   m_ObjectHideFlags: 0
