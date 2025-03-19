@@ -181,7 +181,16 @@ Google Sheets To Unity 에셋을 사용하여 Google Sheet의 데이터를 JSON�
 
 <br /><br />
 
+---
 
+## 📥 게임 다운로드  
+게임을 직접 플레이해보고 싶다면 아래 링크를 통해 다운로드할 수 있습니다.  
+
+🔗 **[Factory404 다운로드](https://drive.google.com/file/d/16z8XhYrcAdpTwwVOkG6CVSa4xvEIxJVu/view?usp=sharing)**  
+
+### ⚙️ 설치 및 실행 방법  
+1. 다운로드한 파일의 압축을 해제합니다.  
+2. `Factory404.exe` 파일을 실행하여 게임을 시작합니다.  
 
 ---
 
