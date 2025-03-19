@@ -6528,7 +6528,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 56b92bc4f72d0864aace0187cc1204d9, type: 3}
   - {fileID: 8300000, guid: 267bbb2057ae16a4db2412a8751ef7fa, type: 3}
   - {fileID: 8300000, guid: 3a2a68754695d8a4fbe155cfbe4fc8fb, type: 3}
-  stressInterval: 5
+  stressSFXInterval: 5
+  stressBGMInterval: 1
 --- !u!4 &401814526
 Transform:
   m_ObjectHideFlags: 0
@@ -8699,7 +8700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71977e07d7ce6784a9e0b4d16c2cc515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sefse: {fileID: 0}
   OptionPanel: {fileID: 568321835}
   bgmSlider: {fileID: 948979090}
   sfxSlider: {fileID: 1266464090}
@@ -8709,6 +8709,7 @@ MonoBehaviour:
   sfxSliderValueText: {fileID: 1713380639}
   mouseSensitivitySliderValueText: {fileID: 1291895915}
   optionExitButton: {fileID: 2014755096}
+  mouseSensitivity: 0.5
 --- !u!4 &561286336
 Transform:
   m_ObjectHideFlags: 0
@@ -9010,7 +9011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -93.530396, y: -46.765564}
+  m_AnchoredPosition: {x: -93.53046, y: -46.765564}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &570110067
@@ -12610,7 +12611,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 54439717729162364, guid: 126b2c575cf932341a8f0414ccd5b254, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13117,7 +13119,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 54439717729162364, guid: 126b2c575cf932341a8f0414ccd5b254, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
