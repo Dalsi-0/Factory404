@@ -1,7 +1,7 @@
 ﻿
 ﻿ <div align="center">
 
-## Factory404
+# Factory404
 
 <div align="center">
   <img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Logo.png?raw=true" width="350"/>
@@ -38,44 +38,51 @@
 ## 📸 화면 구성
 |메인 화면|
 |:---:|
-|<img src="https://github.com/Dalsi-0/LEGENOofOuch/blob/main/ReadMe/main.png?raw=true" width="700"/>|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Main.png?raw=true" width="700"/>|
 |게임 시작 및 설정으로 이동할 수 있는 화면입니다.|
 
 <br /><br />
 
 |게임 플레이 장면|
 |:---:|
-|<img src="https://github.com/Dalsi-0/LEGENOofOuch/blob/main/ReadMe/option.png?raw=true" width="700"/>|
-|키 바인딩, 사운드 조절 등의 게임 설정을 변경할 수 있습니다.|  
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Play1.png?raw=true" width="700"/>|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Play2.png?raw=true" width="700"/>|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Play3.png?raw=true" width="700"/>|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Play4.png?raw=true" width="700"/>|
+|플레이어가 공장을 탐색하며 다양한 오브젝트와 상호작용하는 장면입니다.|  
 
 <br /><br />
 
 |퍼즐|
 |:---:|
-|<img src="https://github.com/Dalsi-0/LEGENOofOuch/blob/main/ReadMe/Character.png?raw=true" width="700"/>|
-|플레이어가 사용할 캐릭터를 선택할 수 있는 화면입니다.|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Puzzle1.png?raw=true" width="700"/>|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Puzzle2.png?raw=true" width="700"/>|
+|각종 기계 장치와 단서를 활용해 퍼즐을 해결하는 장면입니다.|
 
 <br /><br />
 
 |인벤토리|
 |:---:|
-|<img src="https://github.com/Dalsi-0/LEGENOofOuch/blob/main/ReadMe/play.png?raw=true" width="700"/>|
-|<img src="https://github.com/Dalsi-0/LEGENOofOuch/blob/main/ReadMe/play.png?raw=true" width="700"/>|
-|실제 게임이 진행되는 화면으로 캐릭터가 이동하고 공격하며 적과 싸우는 장면입니다.|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Inven1.png?raw=true" width="700"/>|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Inven2.png?raw=true" width="700"/>|
+|플레이어가 수집한 아이템을 확인하고 사용할 수 있는 인벤토리 화면입니다. |
+|아이템을 마우스로 드래그해 회전시키며 상세하게 살펴볼 수 있습니다.|
 
 <br /><br />
 
 |스트레스|
 |:---:|
-|<img src="https://github.com/Dalsi-0/LEGENOofOuch/blob/main/ReadMe/play.png?raw=true" width="700"/>|
-|실제 게임이 진행되는 화면으로 캐릭터가 이동하고 공격하며 적과 싸우는 장면입니다.|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Stress.png?raw=true" width="700"/>|
+|스트레스 수치가 상승하면서 공포 연출이 강화되는 장면입니다.|
+|이 장면에서는 시야가 극도로 좁아지는 연출이 적용되었습니다.|
 
 <br /><br />
 
 |로딩화면|
 |:---:|
-|<img src="https://github.com/Dalsi-0/LEGENOofOuch/blob/main/ReadMe/play.png?raw=true" width="700"/>|
-|실제 게임이 진행되는 화면으로 캐릭터가 이동하고 공격하며 적과 싸우는 장면입니다.|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Loading.png?raw=true" width="700"/>|
+|각 스테이지 진입 전 표시되는 로딩 화면입니다.|
+|포스트 프로세싱 효과를 활용해 시각적 변화를 주었습니다.|
 
 ---
 
@@ -83,7 +90,7 @@
 
 | 팀원 | 역할 | GitHub 링크 |
 |---|---|---|
-| **유재혁 (팀장)** | 플레이어, 스트레스 게이지 | [링크](https://github.com/jj930220s?tab=repositories)  |
+| **유재혁 (팀장)** | 플레이어, 스트레스 시스템 | [링크](https://github.com/jj930220s?tab=repositories)  |
 | **김준혁** | 퍼즐, 시네머신 연출 | [링크](https://github.com/chajungto) |
 | **정창범** | 아이템, 인터랙션 | [링크](https://github.com/JeongChangBeom) |
 | **최상준** | 맵, 사운드, 시네머신 연출 | [링크](https://github.com/Dalsi-0) |
@@ -105,7 +112,7 @@
 
 ## 🛠 **개발 및 기술적 접근**
 
-### 🔧 사용 기술 스택
+### 🔧 사용 기술 스택  
 
 **개발 엔진:** Unity  
 **프로그래밍 언어:** C#  
@@ -113,40 +120,32 @@
 **데이터 관리:** Google Sheets  
 **라이브러리:** DOTween, UniRx  
 
-### 📊 데이터 연동 (Google Spreadsheet)
-이 프로젝트에서는 Google Spreadsheet를 이용하여 아이템 정보, 던전 데이터 등을 관리하고, 이를 코드에서 불러와 활용합니다.
+### 📊 데이터 연동 – Google Spreadsheet  
+이 프로젝트에서는 Google Spreadsheet를 이용하여 스트레스 진행에 사용되는 대화 데이터를 관리하고, 이를 코드에서 불러와 활용합니다.
 
 🔗 **사용된 스프레드시트 데이터**
-- 아이템 데이터 [(보기)](https://docs.google.com/spreadsheets/d/1It4-oR-oFmeYBxu8bO_hokMhEJwK96By3014bM6gt5c/edit?gid=0#gid=0)
-- 세이브 파일 경로 [(보기)](https://docs.google.com/spreadsheets/d/1It4-oR-oFmeYBxu8bO_hokMhEJwK96By3014bM6gt5c/edit?gid=112729730#gid=112729730)
-- 던전 정보 [(보기)](https://docs.google.com/spreadsheets/d/1It4-oR-oFmeYBxu8bO_hokMhEJwK96By3014bM6gt5c/edit?gid=1233562025#gid=1233562025)
+- 대화 데이터 [(보기)](https://docs.google.com/spreadsheets/d/1M_9bD-lXn9BubHhOxKe_PDYnQMD7g540m2OHiKCczQs/edit?gid=0#gid=0)
   
 🛠️ **데이터 로딩 방식**
 ```
 // Google Spreadsheet에서 TSV 데이터 가져오기
-const string URL_itemsSheet = "https://docs.google.com/spreadsheets/.../export?format=tsv&range=A1:F14";
-const string URL_dungeonSheet = "https://docs.google.com/spreadsheets/.../export?format=tsv&gid=1233562025&range=A1:C4";
-const string URL_savefilePathSheet = "https://docs.google.com/spreadsheets/.../export?format=tsv&gid=112729730&range=A1:D2";
 
-using (HttpClient client = new HttpClient())
-{
-    var itemData = await client.GetStringAsync(URL_itemsSheet);
-    var dungeonData = await client.GetStringAsync(URL_dungeonSheet);
-    var savefilePathData = await client.GetStringAsync(URL_savefilePathSheet);
-    
-    // 비동기 작업이 완료될 때까지 기다립니다.
-    await Task.WhenAll(itemData, dungeonData, savefilePathData);
-    ...
-}
 ```
 
-### 📊 데이터 연동 (Google Spreadsheet)
+### 🎬 카메라 연출 – Cinemachine & Timeline  
 
-### 📊 데이터 연동 (Google Spreadsheet)
 
-### 📊 데이터 연동 (Google Spreadsheet)
+### 🗺 동적 네비게이션 메시 – Unity NavMesh  
+
+
+### 🏃 3D 캐릭터 경사면 이동 개선  
+
+
+### ⚡ UniRx 활용 
+
 
 ---
+
 ## 🤔 기술적 이슈와 해결 과정 
 
 ### **유재혁**    
@@ -203,7 +202,7 @@ using (HttpClient client = new HttpClient())
 
 ## 📹 플레이 영상
 
-**[![유튜브](https://github.com/Dalsi-0/LEGENOofOuch/blob/main/ReadMe/main.png?raw=true)](https://youtu.be/0VoYswxdsbM)** 
+**[![유튜브](https://github.com/Dalsi-0/Factory404/blob/main/Readme/Main.png?raw=true)](https://youtu.be/8zq_MxN52No)** 
 
 ---
 
