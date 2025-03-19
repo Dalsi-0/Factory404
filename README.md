@@ -179,6 +179,8 @@ Google Sheets To Unity 에셋을 사용하여 Google Sheet의 데이터를 JSON�
 |---|---|
 |<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/UniRx.png?raw=true" width="500"/>|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/UniRx2.png?raw=true" width="500"/>|
 
+<br /><br />
+
 
 
 ---
@@ -189,4 +191,15 @@ Google Sheets To Unity 에셋을 사용하여 Google Sheet의 데이터를 JSON�
 
 ---
 
+## 🔑 퍼즐 정답 및 힌트
+게임 진행 중 퍼즐이 어려워 진행이 막힐 경우를 대비해 아래에 정답을 제공합니다.
+
+| 스테이지 | 퍼즐 | 정답 |
+|---|---|---|
+| 1 | 키패드 | 5129 |
+| 2 | 선반에 물건 적제 / 키패드 | A0, B4, C3, D1, E4 / 0211 |
+| 3 | 카트 | 화살표를 이용해 카트를 빨간 지역으로 이동 |
+| 4 | 휴대폰 / 녹음기 | 5437 / 8796 |
+
+---
 
