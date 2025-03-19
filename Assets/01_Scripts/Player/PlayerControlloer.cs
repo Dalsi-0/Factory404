@@ -184,6 +184,7 @@ public class PlayerControlloer : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && HaveFlash())
         {
+            SoundManager.Instance.PlaySFX("SFX_FlashLight", transform.position);
             isOnFlash = !isOnFlash;
             handLight.gameObject.SetActive(isOnFlash);
         }
