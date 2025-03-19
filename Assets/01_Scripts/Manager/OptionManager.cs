@@ -67,12 +67,14 @@ public class OptionManager : Singleton<OptionManager>
 
         if (scene.name.Substring(0, 5) == "Stage")
         {
-            int StageNum = int.Parse(scene.name.Substring(5));
+            int StageNum;
+            if(int.TryParse(scene.name.Substring(5), out StageNum) == true)
+            {
+                PlayerPrefs.SetInt("Stage", StageNum);
+                PlayerPrefs.Save();
 
-            PlayerPrefs.SetInt("Stage", StageNum);
-            PlayerPrefs.Save();
-
-            optionExitButton.SetActive(false);
+                optionExitButton.SetActive(false);
+            }
         }
         else
         {

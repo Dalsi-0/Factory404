@@ -21,4 +21,4 @@ MonoBehaviour:
   itemDescription: "\uB108\uBB34 \uC624\uB798\uB41C\uAC74\uC9C0 \uD759\uBA3C\uC9C0\uAC00
     \uB9CE\uC774 \uBB3B\uC5B4\uC788\uB2E4."
   canListen: 1
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 2488776c80ea1f54894127ca13e86cf1, type: 3}
