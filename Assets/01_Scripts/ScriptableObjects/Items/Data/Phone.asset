@@ -22,4 +22,4 @@ MonoBehaviour:
     \uC0C8\uAC70\uAC19\uC544 \uBCF4\uC778\uB2E4. \uC5EC\uAE30\uC5D0 \uBB34\uC2A8
     \uC911\uC694\uD55C \uC815\uBCF4\uAC00 \uC788\uC744\uC9C0\uB3C4 \uBAA8\uB978\uB2E4."
   canListen: 1
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 7d2841bdc80b55e45aaa6a37de3a8695, type: 3}
