@@ -3,6 +3,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CartControlPanel : InteractableObject, IInteractable
 {
@@ -39,6 +40,7 @@ public class CartControlPanel : InteractableObject, IInteractable
         CheckCartState();
         if(cart.isGoal && !isFinished)
         {
+            GameManager.Instance.Player.GetComponent<PlayerInput>().enabled = true;
             OpenDoor();
             isFinished = true;
         }
@@ -78,12 +80,14 @@ public class CartControlPanel : InteractableObject, IInteractable
 
         if (IsControlling())
         {
+            GameManager.Instance.Player.GetComponent<PlayerInput>().enabled = false;
             cartMapCam.Priority = 2000;
             mainCam.cullingMask = cartMapCamLayerMask;
             guideTxt.SetActive(true);
         }
         else
         {
+            GameManager.Instance.Player.GetComponent<PlayerInput>().enabled = true;
             cartMapCam.Priority = 10;
             mainCam.cullingMask = mainLayerMask;
             guideTxt.SetActive(false);

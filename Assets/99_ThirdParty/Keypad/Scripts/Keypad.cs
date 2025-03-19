@@ -5,6 +5,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace NavKeypad
 {
@@ -147,6 +148,7 @@ namespace NavKeypad
 
         private IEnumerator ChangeCamPriority(CinemachineVirtualCamera cam, int priority, float delay)
         {
+            GameManager.Instance.Player.controlloer.GetComponent<PlayerInput>().enabled = false;
             SoundManager.Instance.PlaySFX("Opendoor", door.transform.position);
             int originalPriority = cam.Priority;
             cam.Priority = priority;
@@ -159,6 +161,7 @@ namespace NavKeypad
 
             yield return new WaitForSeconds(2);
             mainCam.cullingMask = layermask;
+            GameManager.Instance.Player.controlloer.GetComponent<PlayerInput>().enabled = true;
         }
 
     }
