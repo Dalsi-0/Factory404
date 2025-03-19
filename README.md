@@ -123,14 +123,17 @@
 ### 📊 데이터 연동 – Google Spreadsheet  
 이 프로젝트에서는 Google Spreadsheet를 이용하여 스트레스 진행에 사용되는 대화 데이터를 관리하고, 이를 코드에서 불러와 활용합니다.
 
-🔗 **사용된 스프레드시트 데이터**
+**Google Sheets To Unity 에셋 활용**  
+Google Sheets To Unity 에셋을 사용하여 Google Sheet의 데이터를 JSON으로 변환하는 과정 없이 바로 Unity에서 사용할 데이터로 가공할 수 있도록 구현하였습니다.  
+  
+    
+**사용된 스프레드시트 데이터**
 - 대화 데이터 [(보기)](https://docs.google.com/spreadsheets/d/1M_9bD-lXn9BubHhOxKe_PDYnQMD7g540m2OHiKCczQs/edit?gid=0#gid=0)
   
-🛠️ **데이터 로딩 방식**
-```
-// Google Spreadsheet에서 TSV 데이터 가져오기
+| 사용 코드 | Scriptable Object |
+|---|---|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/googleScript.png?raw=true" width="500"/>|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/googleSO.png?raw=true" width="500"/>|
 
-```
 
 ### 🎬 카메라 연출 – Cinemachine & Timeline  
 게임 내 다양한 연출을 위해 Cinemachine과 Timeline을 활용했습니다.  
@@ -160,61 +163,13 @@
 
 
 ### ⚡ UniRx 활용 
+이 프로젝트에서는 UniRx를 활용하여 스트레스 수치 변화를 감지하고, 이에 따라 UI와 게임 연출을 자동으로 적용하도록 구현하였습니다.
+
+| 스트레스 수치 변화 감지 | 스트레스 레벨 변화에 따른 연출 반영 |
+|---|---|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/UniRx.png?raw=true" width="500"/>|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/UniRx2.png?raw=true" width="500"/>|
 
 
----
-
-## 🤔 기술적 이슈와 해결 과정 
-
-### **유재혁**    
-**📍 원인 분석**  
-- ㅇ
-- ㅇ
-
-**💡 해결 방법**  
-- ㅇ
-- ㅇ 
-
-<br />  
-
-### **김준혁**  
-**📍 원인 분석**  
-- ㅇ
-- ㅇ
-
-**💡 해결 방법**  
-- ㅇ 
-- ㅇ 
-
-<br />  
-
-### **정창범**  
-**📍 원인 분석**  
-- ㅇ
-
-**💡 해결 방법**  
-- ㅇ 
-
-<br />  
-
-### **최상준**  
-**📍 원인 분석**  
-- ㅇ
-- ㅇ
-
-**💡 해결 방법**  
-- ㅇ
-- ㅇ
-
-<br />  
-
-### **김다샘**  
-**📍 원인 분석**  
-- ㅇ
-
-**💡 해결 방법**  
-- ㅇ 
-- ㅇ
 
 ---
 
