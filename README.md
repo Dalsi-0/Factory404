@@ -4,7 +4,7 @@
 ## Factory404
 
 <div align="center">
-  <img src="이미지_주소" width="200"/>
+  <img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Logo.png?raw=true" width="350"/>
 </div>
 
 <br/> [<img src="https://img.shields.io/badge/프로젝트 기간-2025.03.12~2025.03.19-73abf0?style=flat&logo=&logoColor=white" />]()
@@ -14,9 +14,11 @@
 
 ## 📝 프로젝트 소개
 
-퍼즐게임 기반에 추가로 공포 느낌을 더한 3D 게임 프로젝트입니다.
-총 4개의 스테이지로 이루어져있으며, wasd(이동), shift(달리기), e(상호작용), f(손전등), tap(인벤토리) 입력키입니다.
-또한 뭐뭐가 있다~
+퍼즐 게임에 공포 요소를 더한 3D 게임 프로젝트입니다.  
+플레이어는 폐쇄된 공장에서 다양한 기계 장치와 단서를 활용해 진행해야 합니다.  
+논리적 사고를 요구하는 퍼즐 요소, 긴장감을 조성하는 공포 연출, 그리고 탐색과 상호작용을 통한 스토리텔링이 결합된 게임입니다.  
+  
+총 4개의 스테이지로 구성되며, 플레이어는 제한된 시야와 자원을 활용해 공포스러운 환경을 극복하고 공장의 진실을 밝혀내야 합니다.  
 
 ---
 
@@ -24,10 +26,12 @@
 
 | 기능 | 설명 |
 |---|---|
-| **🎯 이동 및 상호작용** | 이동 키만을 이용해 캐릭터를 조작할 수 있으며, 이동을 멈추면 자동으로 공격합니다. |
-| **🏆 ** | 다양한 도전과제를 수행할 수 있습니다. |
-| **🎲 스테이지 가이드라인** | 스테이지 클리어시마다 랜덤으로 주어지는 어빌리티를 조합하여 캐릭터를 성장시킵니다. |
-| **🎮 ** | 적을 처치하고 점점 강력해지는 적들을 상대하며 스테이지를 클리어해야 합니다. |
+| **🚶 이동 및 상호작용** | WASD 키로 이동하고, E 키를 눌러 주변 사물과 상호작용할 수 있습니다. Shift 키를 사용하면 빠르게 달릴 수 있습니다. |
+| **🔦 시야 제한과 손전등 시스템** | 게임의 어두운 환겨에 의해 플레이어의 시야는 제한적이며, 손전등(F 키)을 활용해 어두운 공간을 탐색할 수 있습니다. |
+| **💀 스트레스 시스템** | 특정 상황에서 플레이어 캐릭터가 스트레스를 받으며, 스트레스 수치가 올라갈수록 더 강한 공포 연출이 추가됩니다. |
+| **🧩 퍼즐 시스템** | 기계 장치와 단서를 활용해 퍼즐을 해결해야 합니다. 단순한 기계 조작부터 환경을 이용한 복합적인 문제 해결까지 다양한 방식의 퍼즐이 등장합니다. |
+| **👻 공포 연출 및 위협 요소** | 예측할 수 없는 소리, 미지의 존재 등으로 긴장감을 조성합니다. |
+| **💬 스토리 진행 방식** | 각 스테이지의 시작 또는 클리어 시 대화 형식의 텍스트가 화면 아래에 표시됩니다. 이를 통해 플레이어는 공장의 진실을 점진적으로 밝혀나갈 수 있습니다. |
 
 ---
 
@@ -56,6 +60,7 @@
 |인벤토리|
 |:---:|
 |<img src="https://github.com/Dalsi-0/LEGENOofOuch/blob/main/ReadMe/play.png?raw=true" width="700"/>|
+|<img src="https://github.com/Dalsi-0/LEGENOofOuch/blob/main/ReadMe/play.png?raw=true" width="700"/>|
 |실제 게임이 진행되는 화면으로 캐릭터가 이동하고 공격하며 적과 싸우는 장면입니다.|
 
 <br /><br />
@@ -78,11 +83,11 @@
 
 | 팀원 | 역할 | GitHub 링크 |
 |---|---|---|
-| **유재혁 (팀장)** | 역할 | [링크](https://github.com/jj930220s?tab=repositories)  |
-| **김준혁** | 역할 | [링크](https://github.com/chajungto) |
-| **정창범** | 역할 | [링크](https://github.com/JeongChangBeom) |
-| **최상준** | 역할 | [링크](https://github.com/Dalsi-0) |
-| **김다샘** | 역할 | [링크](https://github.com/DasaemKim) |
+| **유재혁 (팀장)** | 플레이어, 스트레스 게이지 | [링크](https://github.com/jj930220s?tab=repositories)  |
+| **김준혁** | 퍼즐, 시네머신 연출 | [링크](https://github.com/chajungto) |
+| **정창범** | 아이템, 인터랙션 | [링크](https://github.com/JeongChangBeom) |
+| **최상준** | 맵, 사운드, 시네머신 연출 | [링크](https://github.com/Dalsi-0) |
+| **김다샘** | UI, 옵션 | [링크](https://github.com/DasaemKim) |
 
 ---
 
@@ -133,6 +138,13 @@ using (HttpClient client = new HttpClient())
     await Task.WhenAll(itemData, dungeonData, savefilePathData);
     ...
 }
+```
+
+### 📊 데이터 연동 (Google Spreadsheet)
+
+### 📊 데이터 연동 (Google Spreadsheet)
+
+### 📊 데이터 연동 (Google Spreadsheet)
 
 ---
 ## 🤔 기술적 이슈와 해결 과정 
@@ -192,13 +204,6 @@ using (HttpClient client = new HttpClient())
 ## 📹 플레이 영상
 
 **[![유튜브](https://github.com/Dalsi-0/LEGENOofOuch/blob/main/ReadMe/main.png?raw=true)](https://youtu.be/0VoYswxdsbM)** 
-
----
-
-## 🕹️ 플레이 링크  
-**👉 [플레이하기](https://play.unity.com/ko/games/ea0ef296-8fc8-443e-8812-5eb56b48b2d9/legenoofouch)**
-
-위 링크로 빌드파일을 다운받아서 바로 플레이할 수 있습니다! 🎮   
 
 ---
 
