@@ -133,9 +133,21 @@
 ```
 
 ### 🎬 카메라 연출 – Cinemachine & Timeline  
+<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Timeline1.png?raw=true" width="500"/>
 
+<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Timeline2.png?raw=true" width="500"/>
 
 ### 🗺 동적 네비게이션 메시 – Unity NavMesh  
+적들이 장애물을 피하거나 새로운 경로를 탐색할 수 있도록 **동적 네비게이션 메시(Unity NavMesh)** 를 적용했습니다.
+플레이어의 행동 및 환경 변화에 따라 NavMesh를 실시간으로 재생성하여, 보다 자연스러운 AI 경로 탐색을 구현했습니다.
+
+| Surface 컴포넌트 | 동적 네비메쉬 스크립트 |
+|---|---|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Nav1.png?raw=true" width="500"/>|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Nav2.png?raw=true" width="500"/>|
+
+
+
+
 
 
 ### 🏃 3D 캐릭터 경사면 이동 개선  
