@@ -3,6 +3,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ControlPanel : InteractableObject, IInteractable
 {
@@ -96,6 +97,7 @@ public class ControlPanel : InteractableObject, IInteractable
     /// </summary>
     private IEnumerator ChangeCamPriority(CinemachineVirtualCamera cam, int priority, float delay)
     {
+        GameManager.Instance.Player.GetComponent<PlayerInput>().enabled = false;
         int originalPriority = cam.Priority;
         cam.Priority = priority;
         LayerMask layermask = mainCam.cullingMask;
@@ -107,6 +109,7 @@ public class ControlPanel : InteractableObject, IInteractable
 
         yield return new WaitForSeconds(2);
         mainCam.cullingMask = layermask;
+        GameManager.Instance.Player.GetComponent<PlayerInput>().enabled = true;
     }
 
 }

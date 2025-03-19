@@ -1,27 +1,28 @@
-using Cinemachine;
+ï»¿using Cinemachine;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CartControlPanel : InteractableObject, IInteractable
 {
-    [Header("Ä«Æ®")]
+    [Header("ì¹´íŠ¸")]
     public Cart cart;
 
-    [Header("Ä«Æ®¸ÊÀ» ºñÃâ Ä«¸Ş¶ó")]
+    [Header("ì¹´íŠ¸ë§µì„ ë¹„ì¶œ ì¹´ë©”ë¼")]
     [SerializeField] private CinemachineVirtualCamera cartMapCam;
 
-    [Header("Ä«Æ®¸ÊÀ» ºñÃâ Ä«¸Ş¶ó°¡ ÂïÀ» ·¹ÀÌ¾î")]
+    [Header("ì¹´íŠ¸ë§µì„ ë¹„ì¶œ ì¹´ë©”ë¼ê°€ ì°ì„ ë ˆì´ì–´")]
     [SerializeField] LayerMask cartMapCamLayerMask;
 
-    [Header("Ä³¸¯ÅÍ¸¦ ºñÃâ Ä«¸Ş¶ó°¡ ÂïÀ» ·¹ÀÌ¾î")]
+    [Header("ìºë¦­í„°ë¥¼ ë¹„ì¶œ ì¹´ë©”ë¼ê°€ ì°ì„ ë ˆì´ì–´")]
     [SerializeField] LayerMask mainLayerMask;
 
-    [Header("Ä³¸¯ÅÍ¸¦ ºñÃâ Ä«¸Ş¶ó°¡ ÂïÀ» ·¹ÀÌ¾î")]
+    [Header("ìºë¦­í„°ë¥¼ ë¹„ì¶œ ì¹´ë©”ë¼ê°€ ì°ì„ ë ˆì´ì–´")]
     [SerializeField] GameObject door;
 
-    //¸ŞÀÎ Ä«¸Ş¶ó
+    //ë©”ì¸ ì¹´ë©”ë¼
     private Camera mainCam;
 
     private bool isFinished = false;
@@ -39,6 +40,7 @@ public class CartControlPanel : InteractableObject, IInteractable
         CheckCartState();
         if(cart.isGoal && !isFinished)
         {
+            GameManager.Instance.Player.GetComponent<PlayerInput>().enabled = true;
             OpenDoor();
             isFinished = true;
         }
@@ -46,23 +48,24 @@ public class CartControlPanel : InteractableObject, IInteractable
 
     public string GetInteractionText()
     {
-        string str = "'E'Å°¸¦ ´­·¯ Á¶Á¾ÇÏ±â";
+        string str = "'E'í‚¤ë¥¼ ëˆŒëŸ¬ ì¡°ì¢…í•˜ê¸°";
 
         return str;
     }
 
     public string GetNameText()
     {
-        return "Ä«Æ® ÀåÄ¡";
+        return "ì¹´íŠ¸ ì¥ì¹˜";
     }
 
     public void OnInteract()
     {
+        SoundManager.Instance.PlaySFX("SFX_Controllerpanel", transform.position);
         cart.isControlling = true;
     }
 
     /// <summary>
-    /// Ä«Æ®ÀÇ Á¶Á¾ »óÅÂ ¹İÈ¯
+    /// ì¹´íŠ¸ì˜ ì¡°ì¢… ìƒíƒœ ë°˜í™˜
     /// </summary>
     /// <returns></returns>
     public bool IsControlling()
@@ -71,19 +74,20 @@ public class CartControlPanel : InteractableObject, IInteractable
     }
 
     /// <summary>
-    /// Ä«Æ® »óÅÂ¿¡ µû¸¥ Ä«¸Ş¶ó Á¶Àı
+    /// ì¹´íŠ¸ ìƒíƒœì— ë”°ë¥¸ ì¹´ë©”ë¼ ì¡°ì ˆ
     /// </summary>
     void CheckCartState()
     {
-
         if (IsControlling())
         {
+            GameManager.Instance.Player.GetComponent<PlayerInput>().enabled = false;
             cartMapCam.Priority = 2000;
             mainCam.cullingMask = cartMapCamLayerMask;
             guideTxt.SetActive(true);
         }
         else
         {
+            GameManager.Instance.Player.GetComponent<PlayerInput>().enabled = true;
             cartMapCam.Priority = 10;
             mainCam.cullingMask = mainLayerMask;
             guideTxt.SetActive(false);
@@ -92,6 +96,7 @@ public class CartControlPanel : InteractableObject, IInteractable
 
     void OpenDoor()
     {
+        SoundManager.Instance.PlaySFX("SFX_Opendoor", door.transform.position);
         door.transform.DOMove(door.transform.position + new Vector3(0, 4f, 0), 10f); 
     }
 }
