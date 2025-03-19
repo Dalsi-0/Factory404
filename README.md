@@ -133,9 +133,13 @@
 ```
 
 ### 🎬 카메라 연출 – Cinemachine & Timeline  
-<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Timeline1.png?raw=true" width="500"/>
+게임 내 다양한 연출을 위해 Cinemachine과 Timeline을 활용했습니다.  
+씬 전환, 이벤트 컷씬 등에서 부드러운 카메라 이동과 동적인 화면 효과를 구현했습니다.  
 
-<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Timeline2.png?raw=true" width="500"/>
+| DollyTrack | Timeline |
+|---|---|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Timeline1.png?raw=true" width="500"/>|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Timeline2.png?raw=true" width="500"/>|
+
 
 ### 🗺 동적 네비게이션 메시 – Unity NavMesh  
 메인화면에서 무한 배경을 구현하기 위해 카메라가 새로운 경로를 지속적으로 탐색할 수 있도록 **동적 네비게이션 메시(Unity NavMesh)** 를 적용했습니다.
@@ -146,11 +150,13 @@
 |<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Nav1.png?raw=true" width="500"/>|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Nav2.png?raw=true" width="500"/>|
 
 
-
-
-
-
 ### 🏃 3D 캐릭터 경사면 이동 개선  
+기본적인 이동 방식에서는 경사면에서 캐릭터가 부자연스럽게 미끄러지거나 정상적으로 이동하지 못하는 문제가 발생했습니다.  
+이를 해결하기 위해 Vector3.ProjectOnPlane을 사용하여 경사면의 기울기를 고려한 이동 처리를 구현하였습니다.
+
+|경사면 이동 개선 코드|
+|:---:|
+|<img src="https://github.com/Dalsi-0/Factory404/blob/main/Readme/Slope.png?raw=true" width="500"/>|
 
 
 ### ⚡ UniRx 활용 
