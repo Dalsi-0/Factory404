@@ -14,9 +14,9 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
-  m_FogMode: 3
+  m_FogMode: 2
   m_FogDensity: 0.2
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
@@ -5789,7 +5789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71977e07d7ce6784a9e0b4d16c2cc515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sefse: {fileID: 2048423428}
   OptionPanel: {fileID: 952114006}
   bgmSlider: {fileID: 675013975}
   sfxSlider: {fileID: 1322770245}
@@ -5799,6 +5798,7 @@ MonoBehaviour:
   sfxSliderValueText: {fileID: 1372536579}
   mouseSensitivitySliderValueText: {fileID: 1853272760}
   optionExitButton: {fileID: 393742212}
+  mouseSensitivity: 0.5
 --- !u!4 &1837583993
 Transform:
   m_ObjectHideFlags: 0
@@ -6173,18 +6173,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040827374}
   m_CullTransparentMesh: 1
---- !u!114 &2048423428 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8293613932156618153, guid: fc9f018d4f9e53148bf600a534f6c5e5,
-    type: 3}
-  m_PrefabInstance: {fileID: 264501809}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4db5c4f61e745674885c87ad9fa95fb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2050762839
 GameObject:
   m_ObjectHideFlags: 0

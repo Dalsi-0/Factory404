@@ -33,6 +33,9 @@ public class IntroCorridorSpawner : MonoBehaviour
 
         // 통로의 끝을 안보이게 하기 위한 검은 안개 세팅
         RenderSettings.fog = true;
+        RenderSettings.fogColor = new Color(0,0,0);
+        RenderSettings.fogMode = FogMode.Exponential;
+        RenderSettings.fogDensity = 0.2f;
 
         currentCorridor = null;
         SpawnerNewCorridors(originPos);

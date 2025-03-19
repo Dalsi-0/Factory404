@@ -88,6 +88,9 @@ public class SceneLoader : Singleton<SceneLoader>
         {
             SoundManager.Instance.ChangeBGM("BGM_StartScene");
             RenderSettings.fog = true;
+            RenderSettings.fogColor = new Color(0, 0, 0);
+            RenderSettings.fogMode = FogMode.Exponential;
+            RenderSettings.fogDensity = 0.2f;
         }
 
 
